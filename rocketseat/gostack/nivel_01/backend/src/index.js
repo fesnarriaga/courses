@@ -1,5 +1,5 @@
 const express = require('express');
-const { uuid } = require('uuidv4');
+const { uuid, isUuid } = require('uuidv4');
 
 const app = express();
 
@@ -20,6 +20,35 @@ app.use(express.json());
  * Route Params: Identificar recursos ao atualizar ou excluir
  * Request Body: Conteúdo ao criar ou alterar um recurso (JSON)
  */
+
+/**
+ * Middleware
+ * Interceptador de requisições
+ * Pode interromper totalmente a requisição
+ * Pode alterar dados da requisição
+ */
+
+function logRequest(request, response, next) {
+  const { method, url } = request;
+
+  const logMessage = `[${method}] ${url}`;
+
+  console.log(logMessage);
+
+  return next();
+}
+
+function validateUUID(request, response, next) {
+  const { id } = request.params;
+
+  if (!isUuid(id))
+    return response.status(400).json({ error: 'Invalid project ID' });
+
+  return next();
+}
+
+app.use(logRequest);
+app.use('/projects/:id', validateUUID);
 
 const projects = [
   {
@@ -63,7 +92,7 @@ app.post('/projects', (request, response) => {
   return response.json(project);
 });
 
-app.put('/projects/:id', (request, response) => {
+app.put('/projects/:id', validateUUID, (request, response) => {
   const { id } = request.params;
 
   const projectIndex = projects.findIndex(project => project.id === id);
