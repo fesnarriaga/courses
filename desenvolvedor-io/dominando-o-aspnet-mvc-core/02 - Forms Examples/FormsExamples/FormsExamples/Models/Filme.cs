@@ -31,7 +31,7 @@ namespace FormsExamples.Models
         public decimal Preco { get; set; }
 
         [Required(ErrorMessage = "Obrigatório")]
-        [RegularExpression(@"^[0-5]*$", ErrorMessage = "Somente números")]
+        [RegularExpression(@"^[0-5]*$", ErrorMessage = "Somente números entre 0 e 5")]
         [Display(Name = "Avaliação")]
         public int Avaliacao { get; set; }
     }

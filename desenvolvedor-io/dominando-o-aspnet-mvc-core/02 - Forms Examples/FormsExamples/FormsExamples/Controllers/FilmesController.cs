@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FormsExamples.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FormsExamples.Controllers
 {
@@ -8,6 +9,12 @@ namespace FormsExamples.Controllers
         public IActionResult Adicionar()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Adicionar(Filme filme)
+        {
+            return !ModelState.IsValid ? View(filme) : View();
         }
     }
 }
