@@ -1,1 +1,56 @@
-(()=>{var r={548:r=>{r.exports=(r,o)=>r+o}},o={};function t(e){if(o[e])return o[e].exports;var s=o[e]={exports:{}};return r[e](s,s.exports,t),s.exports}(()=>{const r=t(548)(10,5);console.log(r)})()})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is not neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/sum.js":
+/*!********************!*\
+  !*** ./src/sum.js ***!
+  \********************/
+/***/ ((module) => {
+
+eval("var sum = function sum(a, b) {\n  return a + b;\n};\n\nmodule.exports = sum;\n\n//# sourceURL=webpack://js_modules/./src/sum.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		if(__webpack_module_cache__[moduleId]) {
+/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+(() => {
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+eval("var sum = __webpack_require__(/*! ./sum */ \"./src/sum.js\");\n\nvar total = sum(10, 5);\nconsole.log(total);\n\n//# sourceURL=webpack://js_modules/./src/index.js?");
+})();
+
+/******/ })()
+;
