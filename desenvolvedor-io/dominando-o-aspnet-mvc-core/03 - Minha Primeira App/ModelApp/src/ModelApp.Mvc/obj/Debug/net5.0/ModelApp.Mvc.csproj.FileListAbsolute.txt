@@ -35,3 +35,5 @@ C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\03 - Minha Prim
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\03 - Minha Primeira App\ModelApp\src\ModelApp.Mvc\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\03 - Minha Primeira App\ModelApp\src\ModelApp.Mvc\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\03 - Minha Primeira App\ModelApp\src\ModelApp.Mvc\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\03 - Minha Primeira App\ModelApp\src\ModelApp.Mvc\bin\Debug\net5.0\libman.json
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\03 - Minha Primeira App\ModelApp\src\ModelApp.Mvc\bin\Debug\net5.0\bundleconfig.json

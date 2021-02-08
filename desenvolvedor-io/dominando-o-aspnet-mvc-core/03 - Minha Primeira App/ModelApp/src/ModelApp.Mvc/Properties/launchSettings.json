@@ -8,20 +8,52 @@
     }
   },
   "profiles": {
-    "IIS Express": {
+    "IIS Dev": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "ModelApp.Mvc": {
+    "IIS Stg": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Staging"
+      }
+    },
+    "IIS Prd": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    "Self Dev": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Self Stg": {
+      "commandName": "Project",
+      "dotnetRunMessages": "true",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Staging"
+      }
+    },
+    "Self Prd": {
+      "commandName": "Project",
+      "dotnetRunMessages": "true",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
       }
     }
   }
