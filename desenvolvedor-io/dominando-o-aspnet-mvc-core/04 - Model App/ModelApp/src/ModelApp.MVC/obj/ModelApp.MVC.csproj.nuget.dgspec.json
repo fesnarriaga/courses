@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\ModelApp\\src\\ModelApp.MVC\\ModelApp.MVC.csproj": {}
+    "C:\\Projects\\courses\\desenvolvedor-io\\dominando-o-aspnet-mvc-core\\04 - Model App\\ModelApp\\src\\ModelApp.MVC\\ModelApp.MVC.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\ModelApp\\src\\ModelApp.MVC\\ModelApp.MVC.csproj": {
+    "C:\\Projects\\courses\\desenvolvedor-io\\dominando-o-aspnet-mvc-core\\04 - Model App\\ModelApp\\src\\ModelApp.MVC\\ModelApp.MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\ModelApp\\src\\ModelApp.MVC\\ModelApp.MVC.csproj",
+        "projectUniqueName": "C:\\Projects\\courses\\desenvolvedor-io\\dominando-o-aspnet-mvc-core\\04 - Model App\\ModelApp\\src\\ModelApp.MVC\\ModelApp.MVC.csproj",
         "projectName": "ModelApp.MVC",
-        "projectPath": "C:\\Projects\\ModelApp\\src\\ModelApp.MVC\\ModelApp.MVC.csproj",
+        "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\dominando-o-aspnet-mvc-core\\04 - Model App\\ModelApp\\src\\ModelApp.MVC\\ModelApp.MVC.csproj",
         "packagesPath": "C:\\Users\\f_esn\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\ModelApp\\src\\ModelApp.MVC\\obj\\",
+        "outputPath": "C:\\Projects\\courses\\desenvolvedor-io\\dominando-o-aspnet-mvc-core\\04 - Model App\\ModelApp\\src\\ModelApp.MVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -44,6 +44,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"

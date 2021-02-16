@@ -1,1 +1,6 @@
-﻿Home Page
+﻿@inject IOrderRepository OrderRepository
+@* AVOID *@
+
+<h1>Home Page</h1>
+
+<h2>@OrderRepository.Get().Id</h2>

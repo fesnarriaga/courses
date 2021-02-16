@@ -1,9 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ModelApp.MVC.Data;
+using ModelApp.MVC.Services;
+using System;
 
 namespace ModelApp.MVC
 {
@@ -27,7 +31,19 @@ namespace ModelApp.MVC
                 options.AreaViewLocationFormats.Add("/Views/Shared/{0}.cshtml");
             });
 
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddControllersWithViews();
+
+            services.AddTransient<IOrderRepository, OrderRepository>();
+
+            services.AddTransient<IOperationTransient, Operation>();
+            services.AddScoped<IOperationScoped, Operation>();
+            services.AddSingleton<IOperationSingleton, Operation>();
+            services.AddSingleton<IOperationSingletonInstance>(new Operation(Guid.Empty));
+
+            services.AddTransient<OperationService>(); // AVOID
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
