@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="/css/site.css">
 
     <style>
+        @media only screen and (min-width: 768px) {
+            article {
+                width: 350px;
+            }
+        }
+
         .input-group {
             margin-bottom: 20px;
         }
@@ -70,7 +76,11 @@
                 <div class="description"></div>
             </div>
 
-            <form action="POST">
+            <form action="POST" action="http://localhost:5000/api/test">
+                <input type="hidden" name="pie-order" id="pie-order" />
+
+                <input type="hidden" name="location" id="location" />
+
                 <div class="input-group">
                     <div><label for="first-name">First name</label></div>
                     <div><input type="text" name="first-name" id="first-name"></div>
@@ -131,7 +141,51 @@
     <script src="/js/site.js"></script>
 
     <script>
+        window.addEventListener('DOMContentLoaded', (e) => {
+            let locationInput = document.getElementById('location');
 
+            let location = {
+                latitude: 'unknown',
+                longitude: 'unknown'
+            };
+
+            window.navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    location = {
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude
+                    }
+
+                    locationInput.value = JSON.stringify(location);
+                },
+                (error) => {
+                    locationInput.value = JSON.stringify(location);
+                }
+            );
+
+            const data = localStorage.getItem("order");
+
+            if (data) {
+                const order = JSON.parse(data);
+
+                const orderInput = document.getElementById('pie-order');
+                orderInput.value = data;
+
+                const pie = document.querySelector('.pie');
+
+                const img = pie.querySelector('img');
+                img.setAttribute('src', `../img/${order.id}.png`);
+
+                const title = pie.querySelector('.title');
+                title.innerText = order.title;
+
+                const price = pie.querySelector('.price');
+                price.innerText = order.price;
+
+                const description = pie.querySelector('.description');
+                description.innerText = order.description;
+            }
+        });
     </script>
 </body>
 
