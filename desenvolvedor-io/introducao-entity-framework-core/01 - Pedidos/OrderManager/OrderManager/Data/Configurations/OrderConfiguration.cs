@@ -11,7 +11,7 @@ namespace OrderManager.Data.Configurations
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.StartDate)
-                .HasDefaultValue("GETDATE()")
+                .HasDefaultValueSql("GETDATE()")
                 .ValueGeneratedOnAdd();
 
             builder.Property(x => x.OrderStatus)
