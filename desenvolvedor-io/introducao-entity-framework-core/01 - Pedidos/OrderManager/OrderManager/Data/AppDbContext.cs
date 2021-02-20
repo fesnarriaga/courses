@@ -1,26 +1,39 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using OrderManager.Domain;
+using System;
+using System.Linq;
 
 namespace OrderManager.Data
 {
     public class AppDbContext : DbContext
     {
         private const string ConnectionString = "Data source=(localdb)\\mssqllocaldb;Initial Catalog=OrderManagerDB;Integrated Security=true";
+        private static readonly ILoggerFactory _logger = LoggerFactory.Create(x => x.AddConsole());
 
-        //public DbSet<Customer> Customers { get; set; }
-        //public DbSet<Product> Products { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlServer(ConnectionString);
+                .UseLoggerFactory(_logger)
+                .EnableSensitiveDataLogging()
+                .UseSqlServer(
+                    ConnectionString,
+                    option =>
+                        option
+                            .EnableRetryOnFailure(
+                                maxRetryCount: 3,
+                                maxRetryDelay: TimeSpan.FromSeconds(5),
+                                errorNumbersToAdd: null)
+                            //.MigrationsHistoryTable("MIGRATION_TABLE_NAME")
+                    );
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // CAN BE ANY CLASS IN ASSEMBLY
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
             //modelBuilder.ApplyConfiguration(new CustomerConfiguration());
             //modelBuilder.ApplyConfiguration(new ProductConfiguration());
             //modelBuilder.ApplyConfiguration(new OrderConfiguration());
@@ -110,6 +123,29 @@ namespace OrderManager.Data
             //    builder.Property(x => x.Discount)
             //        .IsRequired();
             //});
+
+            // CAN BE ANY CLASS IN ASSEMBLY
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+            SetDefaultValueForStringProperties(modelBuilder);
+        }
+
+        private static void SetDefaultValueForStringProperties(ModelBuilder builder)
+        {
+            foreach (var entity in builder.Model.GetEntityTypes())
+            {
+                var properties =
+                    entity.GetProperties().Where(x => x.ClrType == typeof(string));
+
+                foreach (var property in properties)
+                {
+                    if (string.IsNullOrEmpty(property.GetColumnType()) && !property.GetMaxLength().HasValue)
+                    {
+                        // This property do not sets type
+                        //property.SetMaxLength(100);
+                        property.SetColumnType("VARCHAR(100)");
+                    }
+                }
+            }
         }
     }
 }

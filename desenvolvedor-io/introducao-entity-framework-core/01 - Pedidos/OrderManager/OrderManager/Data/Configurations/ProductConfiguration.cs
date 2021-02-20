@@ -8,6 +8,8 @@ namespace OrderManager.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
+            builder.ToTable("Product");
+
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.BarCode)

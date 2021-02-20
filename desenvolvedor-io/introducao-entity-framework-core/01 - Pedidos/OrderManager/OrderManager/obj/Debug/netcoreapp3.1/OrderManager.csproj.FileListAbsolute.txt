@@ -62,3 +62,9 @@ C:\Projects\courses\desenvolvedor-io\introducao-entity-framework-core\01 - Pedid
 C:\Projects\courses\desenvolvedor-io\introducao-entity-framework-core\01 - Pedidos\OrderManager\OrderManager\obj\Debug\netcoreapp3.1\OrderManager.csproj.CopyComplete
 C:\Projects\courses\desenvolvedor-io\introducao-entity-framework-core\01 - Pedidos\OrderManager\OrderManager\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Projects\courses\desenvolvedor-io\introducao-entity-framework-core\01 - Pedidos\OrderManager\OrderManager\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Projects\courses\desenvolvedor-io\introducao-entity-framework-core\01 - Pedidos\OrderManager\OrderManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Projects\courses\desenvolvedor-io\introducao-entity-framework-core\01 - Pedidos\OrderManager\OrderManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Projects\courses\desenvolvedor-io\introducao-entity-framework-core\01 - Pedidos\OrderManager\OrderManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Configuration.dll
+C:\Projects\courses\desenvolvedor-io\introducao-entity-framework-core\01 - Pedidos\OrderManager\OrderManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Console.dll
+C:\Projects\courses\desenvolvedor-io\introducao-entity-framework-core\01 - Pedidos\OrderManager\OrderManager\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Projects\courses\desenvolvedor-io\introducao-entity-framework-core\01 - Pedidos\OrderManager\OrderManager\bin\Debug\netcoreapp3.1\System.Text.Json.dll
