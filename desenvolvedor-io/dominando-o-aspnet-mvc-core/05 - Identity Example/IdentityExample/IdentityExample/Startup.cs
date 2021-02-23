@@ -1,4 +1,5 @@
 using IdentityExample.Areas.Identity.Data;
+using IdentityExample.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -25,8 +26,27 @@ namespace IdentityExample
 
             services.AddDefaultIdentity<IdentityUser>(options =>
                     options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 //.AddDefaultUI()
                 .AddEntityFrameworkStores<IdentityContext>();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("CanDelete", policy => policy.RequireClaim("CanDelete"));
+
+                // With helper
+                options.AddPolicy("Create", policy =>
+                    policy.Requirements.Add(new CustomAuthorizationRequirement("Create")));
+
+                options.AddPolicy("Read", policy =>
+                    policy.Requirements.Add(new CustomAuthorizationRequirement("Read")));
+
+                options.AddPolicy("Update", policy =>
+                    policy.Requirements.Add(new CustomAuthorizationRequirement("Update")));
+
+                options.AddPolicy("Delete", policy =>
+                    policy.Requirements.Add(new CustomAuthorizationRequirement("Delete")));
+            });
 
             services.AddControllersWithViews();
         }

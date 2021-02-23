@@ -195,3 +195,5 @@ C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\05 - Identity E
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\05 - Identity Example\IdentityExample\IdentityExample\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\05 - Identity Example\IdentityExample\IdentityExample\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\05 - Identity Example\IdentityExample\IdentityExample\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\05 - Identity Example\IdentityExample\IdentityExample\obj\Debug\net5.0\Razor\Views\Home\Secret.cshtml.g.cs
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\05 - Identity Example\IdentityExample\IdentityExample\obj\Debug\net5.0\Razor\Views\Home\SecretClaim.cshtml.g.cs
