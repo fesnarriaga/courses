@@ -13,9 +13,9 @@ function Header({ title, children }) {
     <header>
       <h1>{title}</h1>
 
-      <nav>
+      {/* <nav>
         {children}
-      </nav>
+      </nav> */}
     </header>
   );
 }

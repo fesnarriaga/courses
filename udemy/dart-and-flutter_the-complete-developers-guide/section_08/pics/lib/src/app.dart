@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-import './src/app.dart';
-
-void main() {
-  var app = MaterialApp(
-    home: Scaffold(
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
-        title: Text('Let\'s See Images!'),
+        title: Text('Let\'s See Images'),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
@@ -14,8 +13,6 @@ void main() {
           print('Hi there!');
         },
       ),
-    ),
-  );
-
-  runApp(app);
+    );
+  }
 }
