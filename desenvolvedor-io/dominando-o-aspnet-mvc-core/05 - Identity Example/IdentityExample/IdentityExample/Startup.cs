@@ -1,5 +1,6 @@
 using IdentityExample.Areas.Identity.Data;
 using IdentityExample.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -47,6 +48,8 @@ namespace IdentityExample
                 options.AddPolicy("Delete", policy =>
                     policy.Requirements.Add(new CustomAuthorizationRequirement("Delete")));
             });
+
+            services.AddSingleton<IAuthorizationHandler, CustomAuthorizationRequirementHandler>();
 
             services.AddControllersWithViews();
         }

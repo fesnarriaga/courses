@@ -1,0 +1,35 @@
+﻿@using CustomIdentity.Extensions
+
+@{
+    ViewData["Title"] = "Custom Claims Authorized";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+<h2>Uhuuuulllll!!!!</h2>
+
+
+@{
+    if (this.HasClaim("HomeModule", "Create"))
+    {
+        <hr />
+        <p>This is printed when User has HomeModule | Create claim</p>
+    }
+
+    if (this.HasClaim("HomeModule", "NoSetToUser"))
+    {
+        <hr />
+        <p>This is printed when User has HomeModule | NoSetToUser claim</p>
+    }
+}
+
+<div>
+    @Html.ActionLink("Privacy", "Privacy").ShowIfHasClaim(Context, "HomeModule", "Read")
+    @Html.ActionLink("Privacy Do not show", "Privacy").ShowIfHasClaim(Context, "HomeModule", "NoSetToUser")
+</div>
+
+<div style="padding-top: 20px;">
+    <a href="/" class="btn btn-danger @Html.Raw(this.ShowIfHasClaim("HomeModule","NotSetToUser"))">Not Has Claim</a>
+    <a href="/" class="btn btn-primary @Html.Raw(this.ShowIfHasClaim("HomeModule","Read"))">Has Claim</a>
+</div>
