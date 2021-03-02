@@ -84,3 +84,5 @@ C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Ide
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Identity\CustomIdentity\CustomIdentity\obj\Debug\net5.0\CustomIdentity.pdb
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Identity\CustomIdentity\CustomIdentity\obj\Debug\net5.0\CustomIdentity.genruntimeconfig.cache
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Identity\CustomIdentity\CustomIdentity\obj\Debug\net5.0\Razor\Views\Home\CustomClaimsAuthorize.cshtml.g.cs
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Identity\CustomIdentity\CustomIdentity\bin\Debug\net5.0\appsettings.Production.json
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Identity\CustomIdentity\CustomIdentity\bin\Debug\net5.0\appsettings.Staging.json

@@ -7,15 +7,33 @@
       "sslPort": 44380
     }
   },
+
   "profiles": {
-    "IIS Express": {
+    "IIS Dev": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "CustomIdentity": {
+
+    "IIS Stg": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Staging"
+      }
+    },
+
+    "IIS Prd": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+
+    "Self Dev": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
