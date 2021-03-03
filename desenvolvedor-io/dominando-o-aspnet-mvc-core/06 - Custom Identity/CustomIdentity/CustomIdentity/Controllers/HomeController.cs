@@ -2,7 +2,7 @@
 using CustomIdentity.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Diagnostics;
+using System;
 
 namespace CustomIdentity.Controllers
 {
@@ -31,10 +31,56 @@ namespace CustomIdentity.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Exception()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            throw new NotImplementedException("You bad ass!!!");
+        }
+
+        [ClaimsAuthorize("HomeModule", "Forbidden")]
+        public IActionResult Forbidden()
+        {
+            return View("CustomClaimsAuthorize");
+        }
+
+        [Route("error/{code:length(3, 3)}")]
+        public IActionResult Error(int code)
+        {
+            ErrorViewModel errorViewModel;
+
+            switch (code)
+            {
+                case 500:
+                    errorViewModel = new ErrorViewModel
+                    {
+                        Code = code,
+                        Title = "Unexpected Error",
+                        Message = "Something went wrong. Try again later..."
+                    };
+                    break;
+
+                case 404:
+                    errorViewModel = new ErrorViewModel
+                    {
+                        Code = code,
+                        Title = "Page Not Found",
+                        Message = "We couldn't find the page you want to access..."
+                    };
+                    break;
+
+                case 403:
+                    errorViewModel = new ErrorViewModel
+                    {
+                        Code = code,
+                        Title = "Access Denied",
+                        Message = "You don't have permission to do that"
+                    };
+                    break;
+
+                default:
+                    return StatusCode(404);
+            }
+
+            return View("Error", errorViewModel);
         }
     }
 }
