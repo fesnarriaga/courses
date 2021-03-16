@@ -1,6 +1,7 @@
 using CustomIdentity.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,6 +30,10 @@ namespace CustomIdentity
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddKissLoggerConfiguration();
+
             services.AddIdentityConfiguration(Configuration);
 
             services.AddAuthorizationConfiguration();
@@ -58,6 +63,8 @@ namespace CustomIdentity
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseKissLoggerConfiguration(Configuration);
 
             app.UseEndpoints(endpoints =>
             {

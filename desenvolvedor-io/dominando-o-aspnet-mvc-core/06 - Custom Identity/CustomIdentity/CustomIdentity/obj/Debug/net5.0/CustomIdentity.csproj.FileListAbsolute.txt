@@ -86,3 +86,7 @@ C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Ide
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Identity\CustomIdentity\CustomIdentity\obj\Debug\net5.0\Razor\Views\Home\CustomClaimsAuthorize.cshtml.g.cs
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Identity\CustomIdentity\CustomIdentity\bin\Debug\net5.0\appsettings.Production.json
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Identity\CustomIdentity\CustomIdentity\bin\Debug\net5.0\appsettings.Staging.json
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Identity\CustomIdentity\CustomIdentity\obj\Debug\net5.0\Razor\Views\Logs\Index.cshtml.g.cs
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Identity\CustomIdentity\CustomIdentity\bin\Debug\net5.0\KissLog.dll
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Identity\CustomIdentity\CustomIdentity\bin\Debug\net5.0\KissLog.AspNetCore.dll
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\06 - Custom Identity\CustomIdentity\CustomIdentity\bin\Debug\net5.0\KissLog.CloudListeners.dll
