@@ -6,7 +6,6 @@ namespace CustomIdentity.Configurations
     {
         public static IServiceCollection AddAuthorizationConfiguration(this IServiceCollection services)
         {
-
             return services;
         }
     }
