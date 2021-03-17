@@ -2,6 +2,7 @@
 using BasicApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -10,11 +11,11 @@ using System.Threading.Tasks;
 namespace BasicApp.Controllers
 {
     [Authorize]
-    public class SuppliersController : Controller
+    public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public SuppliersController(ApplicationDbContext context)
+        public ProductsController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -22,7 +23,10 @@ namespace BasicApp.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Suppliers.ToListAsync());
+            var applicationDbContext =
+                _context.Products.Include(p => p.Supplier);
+
+            return View(await applicationDbContext.ToListAsync());
         }
 
         [AllowAnonymous]
@@ -33,33 +37,49 @@ namespace BasicApp.Controllers
                 return NotFound();
             }
 
-            var supplier = await _context.Suppliers
+            var product = await _context.Products
+                .Include(p => p.Supplier)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (supplier == null)
+
+            if (product == null)
             {
                 return NotFound();
             }
 
-            return View(supplier);
+            return View(product);
         }
 
-        // GET: Suppliers/Create
         public IActionResult Create()
         {
+            ViewData["SupplierId"] = new SelectList(_context.Suppliers, "Id", "Name");
+
+            //ViewBag.SupplierId = new SelectList(_context.Suppliers, "Id", "Document");
+            //TempData["SupplierId"] = new SelectList(_context.Suppliers, "Id", "Document");
+
+            // ViewBag is a property of ViewData
+            // Lifecycle: View render
+
+            // TempData is another structure
+            // Lifecycle: one more request
+            // Used to Redirect
+            // Is a short time session
+
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Supplier supplier)
+        public async Task<IActionResult> Create(Product product)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(supplier);
+                _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(supplier);
+            ViewData["SupplierId"] = new SelectList(_context.Suppliers, "Id", "Name", product.SupplierId);
+            // This call to SelectList with product.SupplierId, selects entry
+            return View(product);
         }
 
         public async Task<IActionResult> Edit(Guid? id)
@@ -69,19 +89,21 @@ namespace BasicApp.Controllers
                 return NotFound();
             }
 
-            var supplier = await _context.Suppliers.FindAsync(id);
-            if (supplier == null)
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
             {
                 return NotFound();
             }
-            return View(supplier);
+            ViewData["SupplierId"] = new SelectList(_context.Suppliers, "Id", "Name", product.SupplierId);
+            // This call to SelectList with product.SupplierId, selects entry
+            return View(product);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, Supplier supplier)
+        public async Task<IActionResult> Edit(Guid id, Product product)
         {
-            if (id != supplier.Id)
+            if (id != product.Id)
             {
                 return NotFound();
             }
@@ -90,12 +112,12 @@ namespace BasicApp.Controllers
             {
                 try
                 {
-                    _context.Update(supplier);
+                    _context.Update(product);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SupplierExists(supplier.Id))
+                    if (!ProductExists(product.Id))
                     {
                         return NotFound();
                     }
@@ -106,7 +128,8 @@ namespace BasicApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(supplier);
+            ViewData["SupplierId"] = new SelectList(_context.Suppliers, "Id", "Name", product.SupplierId);
+            return View(product);
         }
 
         public async Task<IActionResult> Delete(Guid? id)
@@ -116,29 +139,30 @@ namespace BasicApp.Controllers
                 return NotFound();
             }
 
-            var supplier = await _context.Suppliers
+            var product = await _context.Products
+                .Include(p => p.Supplier)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (supplier == null)
+            if (product == null)
             {
                 return NotFound();
             }
 
-            return View(supplier);
+            return View(product);
         }
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var supplier = await _context.Suppliers.FindAsync(id);
-            _context.Suppliers.Remove(supplier);
+            var product = await _context.Products.FindAsync(id);
+            _context.Products.Remove(product);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool SupplierExists(Guid id)
+        private bool ProductExists(Guid id)
         {
-            return _context.Suppliers.Any(e => e.Id == id);
+            return _context.Products.Any(e => e.Id == id);
         }
     }
 }

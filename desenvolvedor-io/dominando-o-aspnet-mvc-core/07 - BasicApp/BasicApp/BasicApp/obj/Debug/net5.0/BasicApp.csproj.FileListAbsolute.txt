@@ -442,3 +442,8 @@ C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\07 - BasicApp\B
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\07 - BasicApp\BasicApp\BasicApp\obj\Debug\net5.0\Razor\Views\Suppliers\Edit.cshtml.g.cs
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\07 - BasicApp\BasicApp\BasicApp\obj\Debug\net5.0\Razor\Views\Suppliers\Index.cshtml.g.cs
 C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\07 - BasicApp\BasicApp\BasicApp\obj\Debug\net5.0\Razor\Views\Suppliers\_Address.cshtml.g.cs
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\07 - BasicApp\BasicApp\BasicApp\obj\Debug\net5.0\Razor\Views\Products\Create.cshtml.g.cs
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\07 - BasicApp\BasicApp\BasicApp\obj\Debug\net5.0\Razor\Views\Products\Delete.cshtml.g.cs
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\07 - BasicApp\BasicApp\BasicApp\obj\Debug\net5.0\Razor\Views\Products\Details.cshtml.g.cs
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\07 - BasicApp\BasicApp\BasicApp\obj\Debug\net5.0\Razor\Views\Products\Edit.cshtml.g.cs
+C:\Projects\courses\desenvolvedor-io\dominando-o-aspnet-mvc-core\07 - BasicApp\BasicApp\BasicApp\obj\Debug\net5.0\Razor\Views\Products\Index.cshtml.g.cs
