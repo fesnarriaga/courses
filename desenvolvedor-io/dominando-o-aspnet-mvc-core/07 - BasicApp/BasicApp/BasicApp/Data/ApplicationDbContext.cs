@@ -16,11 +16,13 @@ namespace BasicApp.Data
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Rating> Ratings { get; set; }
 
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        //public DbSet<Product> Products { get; set; }
-        //public DbSet<Supplier> Suppliers { get; set; }
-        //public DbSet<Address> Addresses { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
