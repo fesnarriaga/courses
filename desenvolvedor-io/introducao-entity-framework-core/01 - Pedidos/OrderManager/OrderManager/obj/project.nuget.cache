@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "O+ojzRFVYoM45tUUUQgxu8tZ2V+5lfhvYu4SwlQ8gT9ffs0vvhglkRPMWrR6z8cVZ5PHwdAM3vn9Z7utffnDXg==",
+  "dgSpecHash": "csDvznTfYbMAIydWvx0zupdugReP7oY8BApPB+BhxLxl1YK5nhXLKmHgk6vmYY3rNwwLK05N6qHLyq/h/BeueA==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\OrderManager.csproj",
   "expectedPackageFiles": [
