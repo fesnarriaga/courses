@@ -1,4 +1,6 @@
+using CompleteApp.Business.Interfaces;
 using CompleteApp.Data.Context;
+using CompleteApp.Data.Repositories;
 using CompleteApp.Mvc.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +35,11 @@ namespace CompleteApp.Mvc
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddControllersWithViews();
+
+            services.AddScoped<CompleteAppContext>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ISupplierRepository, SupplierRepository>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

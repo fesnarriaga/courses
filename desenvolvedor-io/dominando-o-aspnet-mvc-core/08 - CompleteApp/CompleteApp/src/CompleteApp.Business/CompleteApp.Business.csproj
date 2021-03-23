@@ -8,7 +8,6 @@
     <Folder Include="Notifications\" />
     <Folder Include="Services\" />
     <Folder Include="Validations\" />
-    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>
