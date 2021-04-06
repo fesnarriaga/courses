@@ -12,13 +12,7 @@ namespace CompleteApp.Data.Repositories
     public class ProductRepository : Repository<Product>, IProductRepository
     {
         public ProductRepository(CompleteAppContext context) : base(context) { }
-
-        public async Task<IEnumerable<Product>> GetProductsBySupplier(Guid supplierId)
-        {
-            return await Find(p => p.SupplierId == supplierId);
-        }
-
-        public async Task<IEnumerable<Product>> GetAllProductsAndSuppliers()
+        public async Task<IEnumerable<Product>> GetProductsWithSuppliers()
         {
             return await _context.Products
                 .AsNoTracking()
@@ -27,12 +21,17 @@ namespace CompleteApp.Data.Repositories
                 .ToListAsync();
         }
 
-        public async Task<Product> GetProductSupplier(Guid id)
+        public async Task<Product> GetProductWithSupplier(Guid id)
         {
             return await _context.Products
                 .AsNoTracking()
                 .Include(s => s.Supplier)
                 .FirstOrDefaultAsync(p => p.Id == id);
+        }
+
+        public async Task<IEnumerable<Product>> GetProductsBySupplier(Guid supplierId)
+        {
+            return await Find(p => p.SupplierId == supplierId);
         }
     }
 }

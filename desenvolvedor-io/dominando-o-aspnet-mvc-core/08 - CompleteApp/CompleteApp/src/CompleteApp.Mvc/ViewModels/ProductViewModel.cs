@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -20,6 +21,7 @@ namespace CompleteApp.Mvc.ViewModels
 
         public string ImageUrl { get; set; }
 
+        [DisplayName("Product Image")]
         public IFormFile Image { get; set; }
 
         [Required(ErrorMessage = "Field {0} is required")]
@@ -31,6 +33,12 @@ namespace CompleteApp.Mvc.ViewModels
         [DisplayName("Is active?")]
         public bool IsActive { get; set; }
 
+        [Required(ErrorMessage = "Field {0} is required")]
+        [DisplayName("Supplier")]
+        public Guid SupplierId { get; set; }
+
         public SupplierViewModel Supplier { get; set; }
+
+        public IEnumerable<SupplierViewModel> Suppliers { get; set; }
     }
 }

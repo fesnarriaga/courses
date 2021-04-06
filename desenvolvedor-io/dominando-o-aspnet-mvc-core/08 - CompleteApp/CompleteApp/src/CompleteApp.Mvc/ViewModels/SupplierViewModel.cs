@@ -15,7 +15,7 @@ namespace CompleteApp.Mvc.ViewModels
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Field {0} is required")]
-        [StringLength(14, ErrorMessage = "Field {0} must be between {2} and {1} characters", MinimumLength = 1)]
+        [StringLength(14, ErrorMessage = "Field {0} must be between {2} and {1} characters", MinimumLength = 11)]
         public string Document { get; set; }
 
         [DisplayName("Type")]

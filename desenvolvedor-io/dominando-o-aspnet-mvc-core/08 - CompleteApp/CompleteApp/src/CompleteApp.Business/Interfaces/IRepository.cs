@@ -9,6 +9,7 @@ namespace CompleteApp.Business.Interfaces
     public interface IRepository<TEntity> : IDisposable where TEntity : Entity
     {
         Task<TEntity> GetById(Guid id);
+
         Task<List<TEntity>> GetAll();
 
         Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate);
