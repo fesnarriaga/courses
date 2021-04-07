@@ -2,9 +2,11 @@
 using CompleteApp.Business.Interfaces;
 using CompleteApp.Business.Models;
 using CompleteApp.Mvc.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace CompleteApp.Mvc.Controllers
@@ -49,12 +51,39 @@ namespace CompleteApp.Mvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProductViewModel productViewModel)
         {
+            productViewModel = await SetSuppliersList(productViewModel);
+
             if (!ModelState.IsValid)
-                return View(SetSuppliersList(productViewModel));
+                return View(productViewModel);
+
+            productViewModel.ImageUrl = await UploadFile(productViewModel.Image);
+
+            if (string.IsNullOrEmpty(productViewModel.ImageUrl))
+                return View(productViewModel);
 
             await _productRepository.Create(_mapper.Map<Product>(productViewModel));
 
             return RedirectToAction(nameof(Index));
+        }
+        
+        private async Task<string> UploadFile(IFormFile file)
+        {
+            if (file.Length <= 0)
+                return null;
+
+            var fileName = $"{Guid.NewGuid()}_{file.FileName}";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", fileName);
+
+            if (System.IO.File.Exists(path))
+            {
+                ModelState.AddModelError(string.Empty, "File name already exists");
+                return null;
+            }
+
+            await using var fileStream = new FileStream(path, FileMode.Create);
+            await file.CopyToAsync(fileStream);
+
+            return fileName;
         }
 
         public async Task<IActionResult> Edit(Guid id)

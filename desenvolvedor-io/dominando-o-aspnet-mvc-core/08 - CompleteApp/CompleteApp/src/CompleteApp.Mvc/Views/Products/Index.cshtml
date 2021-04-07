@@ -1,1 +1,79 @@
-﻿
+﻿@model IEnumerable<ProductViewModel>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">New Product</a>
+</p>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th></th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img class="list-image" src="~/img/@item.ImageUrl" alt="@item.Name" />
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+
+                <td class="text-right">
+                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+
+                    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.Id">
+                        <i class="fas fa-pencil-alt fa-fw"></i>
+                    </a>
+
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">
+                        <i class="fas fa-trash fa-fw"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
