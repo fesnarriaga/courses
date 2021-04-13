@@ -34,7 +34,7 @@ namespace CompleteApp.Mvc.ViewModels
         public string City { get; set; }
 
         [Required(ErrorMessage = "Field {0} is required")]
-        [StringLength(50, ErrorMessage = "Field {0} must be between {2} and {1} characters", MinimumLength = 3)]
+        [StringLength(50, ErrorMessage = "Field {0} must be between {2} and {1} characters", MinimumLength = 2)]
         public string State { get; set; }
 
         [HiddenInput]

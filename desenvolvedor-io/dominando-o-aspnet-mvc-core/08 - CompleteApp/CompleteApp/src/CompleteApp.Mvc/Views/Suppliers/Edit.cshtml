@@ -1,1 +1,62 @@
-﻿
+﻿@model SupplierViewModel
+
+@{
+    ViewData["Title"] = $"Edit {Model.Name}";
+}
+
+<h4>@ViewData["Title"]</h4>
+<hr />
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+            <label asp-for="Document"></label>
+            <input asp-for="Document" class="form-control" />
+            <span asp-validation-for="Document" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label asp-for="SupplierType"></label>
+            <div>
+                <input type="radio" value="1" asp-for="SupplierType" checked="@(Model.SupplierType == 1)" /> Person
+                <input type="radio" value="2" asp-for="SupplierType" checked="@(Model.SupplierType == 2)" /> Company
+            </div>
+
+            <div>
+                &nbsp;
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <partial name="_AddressDetails" />
+</div>
+
+<div>
+    <hr />
+    <h4>Products</h4>
+    <partial name="../Products/_ProductList" model="@Model.Products" />
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

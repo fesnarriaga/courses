@@ -1,11 +1,12 @@
-using System.Globalization;
 using CompleteApp.Business.Interfaces;
 using CompleteApp.Data.Context;
 using CompleteApp.Data.Repositories;
 using CompleteApp.Mvc.Data;
+using CompleteApp.Mvc.Extensions.Attributes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -43,6 +44,8 @@ namespace CompleteApp.Mvc
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ISupplierRepository, SupplierRepository>();
             services.AddScoped<IAddressRepository, AddressRepository>();
+
+            services.AddSingleton<IValidationAttributeAdapterProvider, CurrencyValidationAttributeAdapterProvider>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -57,6 +60,7 @@ namespace CompleteApp.Mvc
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -65,7 +69,14 @@ namespace CompleteApp.Mvc
             app.UseAuthentication();
             app.UseAuthorization();
 
-            var defaultCulture = new CultureInfo("en-US");
+            var supportedCultures = new[] { "en-US" };
+
+            var localizationOptions = new RequestLocalizationOptions()
+                .SetDefaultCulture(supportedCultures[0])
+                .AddSupportedCultures(supportedCultures)
+                .AddSupportedUICultures(supportedCultures);
+
+            app.UseRequestLocalization(localizationOptions);
 
             app.UseEndpoints(endpoints =>
             {

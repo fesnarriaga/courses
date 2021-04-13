@@ -1,1 +1,68 @@
-﻿
+﻿@model ProductViewModel
+
+@{
+    ViewData["Title"] = $"Delete - {Model.Name}";
+}
+
+<h4>@ViewData["Title"]</h4>
+
+<h5>Are you sure about that?</h5>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="~/img/@Model.ImageUrl" alt="@Model.Name" class="details-image" />
+    </div>
+
+    <div class="col-md-6">
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd>
+                @Model.Price.ToString("C")
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CreatedAt)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IsActive)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SupplierId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Supplier.Name)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a class="btn btn-info" href="javascript:window.history.back();">Back</a>
+        </form>
+    </div>
+</div>

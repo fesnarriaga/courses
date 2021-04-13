@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CompleteApp.Mvc.Extensions.Attributes;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,9 +26,11 @@ namespace CompleteApp.Mvc.ViewModels
         public IFormFile Image { get; set; }
 
         [Required(ErrorMessage = "Field {0} is required")]
+        [Currency]
         public decimal Price { get; set; }
 
         [ScaffoldColumn(false)]
+        [DisplayName("Created at")]
         public DateTime CreatedAt { get; set; }
 
         [DisplayName("Is active?")]

@@ -1,4 +1,5 @@
-﻿@model ProductViewModel
+﻿@using Microsoft.AspNetCore.Localization
+@model ProductViewModel
 
 @{
     ViewData["Title"] = $"Edit {Model.Name}";
@@ -67,6 +68,10 @@
         </form>
     </div>
 </div>
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+}
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
