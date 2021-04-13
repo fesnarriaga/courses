@@ -1,3 +1,4 @@
+using System.Globalization;
 using CompleteApp.Business.Interfaces;
 using CompleteApp.Data.Context;
 using CompleteApp.Data.Repositories;
@@ -63,6 +64,8 @@ namespace CompleteApp.Mvc
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            var defaultCulture = new CultureInfo("en-US");
 
             app.UseEndpoints(endpoints =>
             {

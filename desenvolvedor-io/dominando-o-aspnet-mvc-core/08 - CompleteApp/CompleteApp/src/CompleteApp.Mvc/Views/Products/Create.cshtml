@@ -34,11 +34,13 @@
 
             <div class="form-group">
                 <label asp-for="Image" class="control-label"></label>
+
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="Image" asp-for="Image" />
                     <label data-browse="Search" style="max-width: 400px;" class="custom-file-label" for="Image"></label>
                     <label style="display: none;" id="imageUrl"></label>
                 </div>
+
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
 
@@ -65,15 +67,5 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
-    <script>
-        $('#Image').change(function () {
-            if (this.files[0]) {
-                $('#imageUrl').text(this.files[0].name);
-                $('#imageUrl')[0].style.display = 'block';
-            }
-        });
-
-        $('#Image').attr('data-val', 'true');
-        $('#Image').attr('data-val-required', 'Image is required');
-    </script>
+    <script src="~/js/uploadFile.js"></script>
 }

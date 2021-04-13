@@ -65,26 +65,8 @@ namespace CompleteApp.Mvc.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-        
-        private async Task<string> UploadFile(IFormFile file)
-        {
-            if (file.Length <= 0)
-                return null;
 
-            var fileName = $"{Guid.NewGuid()}_{file.FileName}";
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", fileName);
 
-            if (System.IO.File.Exists(path))
-            {
-                ModelState.AddModelError(string.Empty, "File name already exists");
-                return null;
-            }
-
-            await using var fileStream = new FileStream(path, FileMode.Create);
-            await file.CopyToAsync(fileStream);
-
-            return fileName;
-        }
 
         public async Task<IActionResult> Edit(Guid id)
         {
@@ -103,11 +85,30 @@ namespace CompleteApp.Mvc.Controllers
             if (id != productViewModel.Id)
                 return NotFound();
 
+            var product = _mapper.Map<ProductViewModel>(await _productRepository.GetProductWithSupplier(id));
+
+            productViewModel.Supplier = product.Supplier;
+            productViewModel.ImageUrl = product.ImageUrl;
+
             if (!ModelState.IsValid)
                 return View(productViewModel);
-            //return View(SetSuppliersList(productViewModel));
 
-            await _productRepository.Update(_mapper.Map<Product>(productViewModel));
+            if (productViewModel.Image != null)
+            {
+                var imageUrl = await UploadFile(productViewModel.Image);
+
+                if (string.IsNullOrEmpty(imageUrl))
+                    return View(productViewModel);
+
+                product.ImageUrl = imageUrl;
+            }
+
+            product.Name = productViewModel.Name;
+            product.Description = productViewModel.Description;
+            product.Price = productViewModel.Price;
+            product.IsActive = productViewModel.IsActive;
+
+            await _productRepository.Update(_mapper.Map<Product>(product));
 
             return RedirectToAction(nameof(Index));
         }
@@ -151,6 +152,26 @@ namespace CompleteApp.Mvc.Controllers
             await SetSuppliersList(productViewModel);
 
             return productViewModel;
+        }
+
+        private async Task<string> UploadFile(IFormFile file)
+        {
+            if (file.Length <= 0)
+                return null;
+
+            var fileName = $"{Guid.NewGuid()}_{file.FileName}";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", fileName);
+
+            if (System.IO.File.Exists(path))
+            {
+                ModelState.AddModelError(string.Empty, "File name already exists");
+                return null;
+            }
+
+            await using var fileStream = new FileStream(path, FileMode.Create);
+            await file.CopyToAsync(fileStream);
+
+            return fileName;
         }
     }
 }
