@@ -1,8 +1,8 @@
-﻿using CompleteApp.Business.Models;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using CompleteApp.Business.Models;
 
-namespace CompleteApp.Business.Interfaces
+namespace CompleteApp.Business.Interfaces.Repositories
 {
     public interface ISupplierRepository : IRepository<Supplier>
     {

@@ -4,6 +4,7 @@ using CompleteApp.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
+using CompleteApp.Business.Interfaces.Repositories;
 
 namespace CompleteApp.Data.Repositories
 {

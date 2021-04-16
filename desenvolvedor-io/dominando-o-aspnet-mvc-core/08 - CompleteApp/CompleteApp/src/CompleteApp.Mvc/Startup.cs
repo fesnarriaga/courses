@@ -1,12 +1,7 @@
-using CompleteApp.Business.Interfaces;
 using CompleteApp.Data.Context;
-using CompleteApp.Data.Repositories;
-using CompleteApp.Mvc.Data;
-using CompleteApp.Mvc.Extensions.Attributes;
+using CompleteApp.Mvc.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,34 +13,36 @@ namespace CompleteApp.Mvc
     {
         public IConfiguration Configuration { get; }
 
-        public Startup(IConfiguration configuration)
+        public Startup(IHostEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", true, true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true)
+                .AddEnvironmentVariables();
+
+            if (env.IsDevelopment())
+            {
+                builder.AddUserSecrets<Startup>();
+            }
+
+            Configuration = builder.Build();
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentityConfiguration(Configuration);
 
             services.AddDbContext<CompleteAppContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddControllersWithViews();
+            services.AddMvcConfiguration();
 
-            services.AddScoped<CompleteAppContext>();
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<ISupplierRepository, SupplierRepository>();
-            services.AddScoped<IAddressRepository, AddressRepository>();
-
-            services.AddSingleton<IValidationAttributeAdapterProvider, CurrencyValidationAttributeAdapterProvider>();
+            services.AddDependencyInjectionConfiguration();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -66,25 +63,11 @@ namespace CompleteApp.Mvc
 
             app.UseRouting();
 
-            app.UseAuthentication();
-            app.UseAuthorization();
+            app.UseIdentityConfigurations();
 
-            var supportedCultures = new[] { "en-US" };
+            app.UseI18NConfigurations();
 
-            var localizationOptions = new RequestLocalizationOptions()
-                .SetDefaultCulture(supportedCultures[0])
-                .AddSupportedCultures(supportedCultures)
-                .AddSupportedUICultures(supportedCultures);
-
-            app.UseRequestLocalization(localizationOptions);
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
-            });
+            app.UseMvcConfiguration();
         }
     }
 }

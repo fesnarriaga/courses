@@ -1,10 +1,10 @@
-﻿using CompleteApp.Business.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using CompleteApp.Business.Models;
 
-namespace CompleteApp.Business.Interfaces
+namespace CompleteApp.Business.Interfaces.Repositories
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : Entity
     {

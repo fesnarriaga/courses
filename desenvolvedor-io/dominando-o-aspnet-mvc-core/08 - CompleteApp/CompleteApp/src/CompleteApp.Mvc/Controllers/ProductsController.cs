@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using CompleteApp.Business.Interfaces.Repositories;
 
 namespace CompleteApp.Mvc.Controllers
 {
@@ -27,11 +28,13 @@ namespace CompleteApp.Mvc.Controllers
             _supplierRepository = supplierRepository;
         }
 
+        [Route("products-list")]
         public async Task<IActionResult> Index()
         {
             return View(_mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetProductsWithSuppliers()));
         }
 
+        [Route("product-details/{id:guid}")]
         public async Task<IActionResult> Details(Guid id)
         {
             var productViewModel = await GetProductWithSupplierAndSuppliersList(id);
@@ -42,11 +45,13 @@ namespace CompleteApp.Mvc.Controllers
             return View(productViewModel);
         }
 
+        [Route("create-product")]
         public async Task<IActionResult> Create()
         {
             return View(await SetSuppliersList(new ProductViewModel()));
         }
 
+        [Route("create-product")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProductViewModel productViewModel)
@@ -66,8 +71,7 @@ namespace CompleteApp.Mvc.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
-
+        [Route("edit-product/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
             var productViewModel = await GetProductWithSupplierAndSuppliersList(id);
@@ -78,6 +82,7 @@ namespace CompleteApp.Mvc.Controllers
             return View(productViewModel);
         }
 
+        [Route("edit-product/{id:guid}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, ProductViewModel productViewModel)
@@ -113,6 +118,7 @@ namespace CompleteApp.Mvc.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Route("delete-product/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             var productViewModel = await GetProductWithSupplierAndSuppliersList(id);
@@ -123,6 +129,7 @@ namespace CompleteApp.Mvc.Controllers
             return View(productViewModel);
         }
 
+        [Route("delete-product/{id:guid}")]
         [HttpPost]
         [ActionName(nameof(Delete))]
         [ValidateAntiForgeryToken]
