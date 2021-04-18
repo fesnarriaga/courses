@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
-using CompleteApp.Business.Interfaces;
+using CompleteApp.Business.Interfaces.Notifications;
+using CompleteApp.Business.Interfaces.Repositories;
+using CompleteApp.Business.Interfaces.Services;
 using CompleteApp.Business.Models;
 using CompleteApp.Mvc.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using CompleteApp.Business.Interfaces.Repositories;
 
 namespace CompleteApp.Mvc.Controllers
 {
@@ -14,16 +15,17 @@ namespace CompleteApp.Mvc.Controllers
     {
         private readonly IMapper _mapper;
         private readonly ISupplierRepository _supplierRepository;
-        private readonly IAddressRepository _addressRepository;
+        private readonly ISupplierService _supplierService;
 
         public SuppliersController(
+            INotificator notificator,
             IMapper mapper,
             ISupplierRepository supplierRepository,
-            IAddressRepository addressRepository)
+            ISupplierService supplierService) : base(notificator)
         {
             _mapper = mapper;
             _supplierRepository = supplierRepository;
-            _addressRepository = addressRepository;
+            _supplierService = supplierService;
         }
 
         [Route("suppliers-list")]
@@ -57,7 +59,10 @@ namespace CompleteApp.Mvc.Controllers
             if (!ModelState.IsValid)
                 return View(supplierViewModel);
 
-            await _supplierRepository.Create(_mapper.Map<Supplier>(supplierViewModel));
+            await _supplierService.Add(_mapper.Map<Supplier>(supplierViewModel));
+
+            if (!ValidOperation())
+                return View(supplierViewModel);
 
             return RedirectToAction(nameof(Index));
         }
@@ -84,7 +89,10 @@ namespace CompleteApp.Mvc.Controllers
             if (!ModelState.IsValid)
                 return View(supplierViewModel);
 
-            await _supplierRepository.Update(_mapper.Map<Supplier>(supplierViewModel));
+            await _supplierService.Update(_mapper.Map<Supplier>(supplierViewModel));
+
+            if (!ValidOperation())
+                return View(await GetSupplierWithAddressAndProducts(id));
 
             return RedirectToAction(nameof(Index));
         }
@@ -111,7 +119,10 @@ namespace CompleteApp.Mvc.Controllers
             if (supplierViewModel == null)
                 return NotFound();
 
-            await _supplierRepository.Remove(id);
+            await _supplierService.Remove(id);
+
+            if (!ValidOperation())
+                return View(supplierViewModel);
 
             return RedirectToAction(nameof(Index));
         }
@@ -151,7 +162,10 @@ namespace CompleteApp.Mvc.Controllers
             if (!ModelState.IsValid)
                 return PartialView("_AddressUpdate", supplierViewModel);
 
-            await _addressRepository.Update(_mapper.Map<Address>(supplierViewModel.Address));
+            await _supplierService.UpdateAddress(_mapper.Map<Address>(supplierViewModel.Address));
+
+            if (!ValidOperation())
+                return PartialView("_AddressUpdate", supplierViewModel);
 
             var url = Url.Action("GetAddress", "Suppliers", new { supplierId = supplierViewModel.Address.SupplierId });
 

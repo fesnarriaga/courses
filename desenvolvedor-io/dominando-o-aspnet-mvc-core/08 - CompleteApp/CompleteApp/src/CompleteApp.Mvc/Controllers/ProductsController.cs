@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
-using CompleteApp.Business.Interfaces;
+using CompleteApp.Business.Interfaces.Notifications;
+using CompleteApp.Business.Interfaces.Repositories;
+using CompleteApp.Business.Interfaces.Services;
 using CompleteApp.Business.Models;
 using CompleteApp.Mvc.ViewModels;
 using Microsoft.AspNetCore.Http;
@@ -8,7 +10,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using CompleteApp.Business.Interfaces.Repositories;
 
 namespace CompleteApp.Mvc.Controllers
 {
@@ -17,15 +18,19 @@ namespace CompleteApp.Mvc.Controllers
         private readonly IMapper _mapper;
         private readonly IProductRepository _productRepository;
         private readonly ISupplierRepository _supplierRepository;
+        private readonly IProductService _productService;
 
         public ProductsController(
+            INotificator notificator,
             IMapper mapper,
             IProductRepository productRepository,
-            ISupplierRepository supplierRepository)
+            ISupplierRepository supplierRepository,
+            IProductService productService) : base(notificator)
         {
             _mapper = mapper;
             _productRepository = productRepository;
             _supplierRepository = supplierRepository;
+            _productService = productService;
         }
 
         [Route("products-list")]
@@ -66,7 +71,10 @@ namespace CompleteApp.Mvc.Controllers
             if (string.IsNullOrEmpty(productViewModel.ImageUrl))
                 return View(productViewModel);
 
-            await _productRepository.Create(_mapper.Map<Product>(productViewModel));
+            await _productService.Add(_mapper.Map<Product>(productViewModel));
+
+            if (!ValidOperation())
+                return View(productViewModel);
 
             return RedirectToAction(nameof(Index));
         }
@@ -113,7 +121,10 @@ namespace CompleteApp.Mvc.Controllers
             product.Price = productViewModel.Price;
             product.IsActive = productViewModel.IsActive;
 
-            await _productRepository.Update(_mapper.Map<Product>(product));
+            await _productService.Update(_mapper.Map<Product>(product));
+
+            if (!ValidOperation())
+                return View(productViewModel);
 
             return RedirectToAction(nameof(Index));
         }
@@ -140,7 +151,12 @@ namespace CompleteApp.Mvc.Controllers
             if (productViewModel == null)
                 return NotFound();
 
-            await _productRepository.Remove(id);
+            await _productService.Remove(id);
+
+            if (!ValidOperation())
+                return View(productViewModel);
+
+            TempData["Success"] = $"Product {productViewModel.Name} deleted";
 
             return RedirectToAction(nameof(Index));
         }

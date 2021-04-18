@@ -1,4 +1,5 @@
-﻿using CompleteApp.Business.Models;
+﻿using CompleteApp.Business.Interfaces.Notifications;
+using CompleteApp.Business.Models;
 using FluentValidation;
 using FluentValidation.Results;
 
@@ -6,9 +7,16 @@ namespace CompleteApp.Business.Services
 {
     public abstract class BaseService
     {
+        private readonly INotificator _notificator;
+
+        protected BaseService(INotificator notificator)
+        {
+            _notificator = notificator;
+        }
+
         protected void Notify(string message)
         {
-            // raise event
+            _notificator.Handle(new Notification(message));
         }
 
         protected void Notify(ValidationResult validationResult)

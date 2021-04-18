@@ -104,3 +104,7 @@ function getAddressFromPostalCode() {
         });
     });
 }
+
+$(document).ready(function () {
+    $("#messageBox").fadeOut(2500);
+});

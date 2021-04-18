@@ -1,5 +1,7 @@
-﻿using CompleteApp.Business.Interfaces;
+﻿using CompleteApp.Business.Interfaces.Notifications;
 using CompleteApp.Business.Interfaces.Repositories;
+using CompleteApp.Business.Interfaces.Services;
+using CompleteApp.Business.Services;
 using CompleteApp.Data.Context;
 using CompleteApp.Data.Repositories;
 using CompleteApp.Mvc.Extensions.Attributes;
@@ -19,6 +21,10 @@ namespace CompleteApp.Mvc.Configurations
             services.AddScoped<IAddressRepository, AddressRepository>();
 
             services.AddSingleton<IValidationAttributeAdapterProvider, CurrencyValidationAttributeAdapterProvider>();
+
+            services.AddScoped<INotificator, Notificator>();
+            services.AddScoped<ISupplierService, SupplierService>();
+            services.AddScoped<IProductService, ProductService>();
 
             return services;
         }

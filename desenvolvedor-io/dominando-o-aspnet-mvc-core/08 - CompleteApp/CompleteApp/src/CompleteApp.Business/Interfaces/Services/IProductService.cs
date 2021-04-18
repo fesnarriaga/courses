@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace CompleteApp.Business.Interfaces.Services
 {
-    public interface IProductService
+    public interface IProductService : IDisposable
     {
         Task Add(Product product);
         Task Update(Product product);
