@@ -3,7 +3,9 @@ using CompleteApp.Business.Interfaces.Notifications;
 using CompleteApp.Business.Interfaces.Repositories;
 using CompleteApp.Business.Interfaces.Services;
 using CompleteApp.Business.Models;
+using CompleteApp.Mvc.Extensions.Identity;
 using CompleteApp.Mvc.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,6 +15,7 @@ using System.Threading.Tasks;
 
 namespace CompleteApp.Mvc.Controllers
 {
+    [Authorize]
     public class ProductsController : BaseController
     {
         private readonly IMapper _mapper;
@@ -33,12 +36,14 @@ namespace CompleteApp.Mvc.Controllers
             _productService = productService;
         }
 
+        [AllowAnonymous]
         [Route("products-list")]
         public async Task<IActionResult> Index()
         {
             return View(_mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetProductsWithSuppliers()));
         }
 
+        [AllowAnonymous]
         [Route("product-details/{id:guid}")]
         public async Task<IActionResult> Details(Guid id)
         {
@@ -50,12 +55,14 @@ namespace CompleteApp.Mvc.Controllers
             return View(productViewModel);
         }
 
+        [ClaimsAuthorize("Product", "Create")]
         [Route("create-product")]
         public async Task<IActionResult> Create()
         {
             return View(await SetSuppliersList(new ProductViewModel()));
         }
 
+        [ClaimsAuthorize("Product", "Create")]
         [Route("create-product")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -79,6 +86,7 @@ namespace CompleteApp.Mvc.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [ClaimsAuthorize("Product", "Update")]
         [Route("edit-product/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
@@ -90,6 +98,7 @@ namespace CompleteApp.Mvc.Controllers
             return View(productViewModel);
         }
 
+        [ClaimsAuthorize("Product", "Update")]
         [Route("edit-product/{id:guid}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -129,6 +138,7 @@ namespace CompleteApp.Mvc.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [ClaimsAuthorize("Product", "Delete")]
         [Route("delete-product/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
@@ -140,6 +150,7 @@ namespace CompleteApp.Mvc.Controllers
             return View(productViewModel);
         }
 
+        [ClaimsAuthorize("Product", "Delete")]
         [Route("delete-product/{id:guid}")]
         [HttpPost]
         [ActionName(nameof(Delete))]

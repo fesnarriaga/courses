@@ -1,7 +1,6 @@
 ﻿using CompleteApp.Mvc.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Diagnostics;
 
 namespace CompleteApp.Mvc.Controllers
 {
@@ -24,10 +23,30 @@ namespace CompleteApp.Mvc.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [Route("error/{id:length(3,3):int}")]
+        public IActionResult Error(int id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var errorViewModel = new ErrorViewModel { ErrorCode = id };
+
+            switch (id)
+            {
+                case 500:
+                    errorViewModel.Title = "Internal server error";
+                    errorViewModel.Message = "An error occurred. Try again later.";
+                    break;
+                case 404:
+                    errorViewModel.Title = "Page not found";
+                    errorViewModel.Message = "Resource not found. Contact us.";
+                    break;
+                case 403:
+                    errorViewModel.Title = "Access denied";
+                    errorViewModel.Message = "You are not allowed";
+                    break;
+                default:
+                    return StatusCode(500);
+            }
+
+            return View("Error", errorViewModel);
         }
     }
 }
