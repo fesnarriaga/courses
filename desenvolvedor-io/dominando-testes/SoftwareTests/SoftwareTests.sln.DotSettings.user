@@ -1,0 +1,13 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f9798006_002D58ff_002D4a58_002Dbf49_002D9208f33e0e27/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CalculatorTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::0BFC6DD5-3819-41B9-9C84-9C2FF2AECD71::net5.0::Demo.Tests.CalculatorTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::0BFC6DD5-3819-41B9-9C84-9C2FF2AECD71::net5.0::Demo.Tests.AssertStringTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::0BFC6DD5-3819-41B9-9C84-9C2FF2AECD71::net5.0::Demo.Tests.AssertNumberTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::0BFC6DD5-3819-41B9-9C84-9C2FF2AECD71::net5.0::Demo.Tests.AssertNullBoolTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::0BFC6DD5-3819-41B9-9C84-9C2FF2AECD71::net5.0::Demo.Tests.AssertRangeTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::0BFC6DD5-3819-41B9-9C84-9C2FF2AECD71::net5.0::Demo.Tests.AssertExceptionTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::0BFC6DD5-3819-41B9-9C84-9C2FF2AECD71::net5.0::Demo.Tests.AssertCollectionTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::0BFC6DD5-3819-41B9-9C84-9C2FF2AECD71::net5.0::Demo.Tests.AssertObjectTypeTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

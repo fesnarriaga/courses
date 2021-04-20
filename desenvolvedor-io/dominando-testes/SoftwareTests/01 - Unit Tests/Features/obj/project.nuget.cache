@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "SRXuGFFgeWkde+T0JYn+QBFX9L2nOCPY83OHLgahPnCLCjYDZSA9OuzKeVJP6P44dtvO/j/7cxbyH0t7KWwmMA==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\dominando-testes\\SoftwareTests\\01 - Unit Tests\\Features\\Features.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\f_esn\\.nuget\\packages\\fluentvalidation\\10.0.4\\fluentvalidation.10.0.4.nupkg.sha512",
+    "C:\\Users\\f_esn\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
