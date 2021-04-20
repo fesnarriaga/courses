@@ -9,5 +9,7 @@
     &lt;TestId&gt;xUnit::0BFC6DD5-3819-41B9-9C84-9C2FF2AECD71::net5.0::Demo.Tests.AssertExceptionTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::0BFC6DD5-3819-41B9-9C84-9C2FF2AECD71::net5.0::Demo.Tests.AssertCollectionTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::0BFC6DD5-3819-41B9-9C84-9C2FF2AECD71::net5.0::Demo.Tests.AssertObjectTypeTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.CustomerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.OrderedTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
