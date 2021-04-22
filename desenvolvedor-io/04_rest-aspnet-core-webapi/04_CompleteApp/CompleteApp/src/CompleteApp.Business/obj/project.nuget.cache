@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JhV0jr3gpBd06Gh0VEAZT4Ri/79hSl0QTRNKZD2X39rmNK/pwKkv7cHtKo/YtcL1yiL0YWzd1vWTRj8HbXQmqw==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\04_rest-aspnet-core-webapi\\04_CompleteApp\\CompleteApp\\src\\CompleteApp.Business\\CompleteApp.Business.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\f_esn\\.nuget\\packages\\fluentvalidation\\10.0.4\\fluentvalidation.10.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

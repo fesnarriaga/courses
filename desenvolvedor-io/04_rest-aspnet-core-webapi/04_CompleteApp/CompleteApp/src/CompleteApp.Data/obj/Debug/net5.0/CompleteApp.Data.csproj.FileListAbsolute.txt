@@ -1,0 +1,15 @@
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\bin\Debug\net5.0\CompleteApp.Data.deps.json
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\bin\Debug\net5.0\CompleteApp.Data.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\bin\Debug\net5.0\ref\CompleteApp.Data.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\bin\Debug\net5.0\CompleteApp.Data.pdb
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\obj\Debug\net5.0\CompleteApp.Data.csprojAssemblyReference.cache
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\obj\Debug\net5.0\CompleteApp.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\obj\Debug\net5.0\CompleteApp.Data.AssemblyInfoInputs.cache
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\obj\Debug\net5.0\CompleteApp.Data.AssemblyInfo.cs
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\obj\Debug\net5.0\CompleteApp.Data.csproj.CoreCompileInputs.cache
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\obj\Debug\net5.0\CompleteApp.Data.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\obj\Debug\net5.0\ref\CompleteApp.Data.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\obj\Debug\net5.0\CompleteApp.Data.pdb
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\bin\Debug\net5.0\CompleteApp.Business.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\bin\Debug\net5.0\CompleteApp.Business.pdb
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\obj\Debug\net5.0\CompleteApp.Data.csproj.CopyComplete

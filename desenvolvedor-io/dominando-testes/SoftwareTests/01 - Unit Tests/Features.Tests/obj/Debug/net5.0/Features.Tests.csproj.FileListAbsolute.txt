@@ -102,3 +102,6 @@ C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Te
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features.Tests\obj\Debug\net5.0\ref\Features.Tests.dll
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features.Tests\obj\Debug\net5.0\Features.Tests.pdb
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features.Tests\obj\Debug\net5.0\Features.Tests.genruntimeconfig.cache
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features.Tests\bin\Debug\net5.0\Bogus.dll
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features.Tests\bin\Debug\net5.0\Castle.Core.dll
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features.Tests\bin\Debug\net5.0\Moq.dll

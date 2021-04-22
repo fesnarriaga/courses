@@ -1,21 +1,22 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\courses\\desenvolvedor-io\\introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\OrderManager.csproj": {}
+    "C:\\Projects\\courses\\desenvolvedor-io\\03_introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\OrderManager.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\courses\\desenvolvedor-io\\introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\OrderManager.csproj": {
+    "C:\\Projects\\courses\\desenvolvedor-io\\03_introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\OrderManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\courses\\desenvolvedor-io\\introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\OrderManager.csproj",
+        "projectUniqueName": "C:\\Projects\\courses\\desenvolvedor-io\\03_introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\OrderManager.csproj",
         "projectName": "OrderManager",
-        "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\OrderManager.csproj",
+        "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\03_introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\OrderManager.csproj",
         "packagesPath": "C:\\Users\\f_esn\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\courses\\desenvolvedor-io\\introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\obj\\",
+        "outputPath": "C:\\Projects\\courses\\desenvolvedor-io\\03_introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\f_esn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -76,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

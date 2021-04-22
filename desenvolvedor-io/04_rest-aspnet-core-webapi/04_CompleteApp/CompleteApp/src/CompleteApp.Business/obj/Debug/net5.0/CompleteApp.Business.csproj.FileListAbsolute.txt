@@ -1,0 +1,12 @@
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Business\bin\Debug\net5.0\CompleteApp.Business.deps.json
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Business\bin\Debug\net5.0\CompleteApp.Business.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Business\bin\Debug\net5.0\ref\CompleteApp.Business.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Business\bin\Debug\net5.0\CompleteApp.Business.pdb
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Business\obj\Debug\net5.0\CompleteApp.Business.csprojAssemblyReference.cache
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Business\obj\Debug\net5.0\CompleteApp.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Business\obj\Debug\net5.0\CompleteApp.Business.AssemblyInfoInputs.cache
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Business\obj\Debug\net5.0\CompleteApp.Business.AssemblyInfo.cs
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Business\obj\Debug\net5.0\CompleteApp.Business.csproj.CoreCompileInputs.cache
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Business\obj\Debug\net5.0\CompleteApp.Business.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Business\obj\Debug\net5.0\ref\CompleteApp.Business.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Business\obj\Debug\net5.0\CompleteApp.Business.pdb

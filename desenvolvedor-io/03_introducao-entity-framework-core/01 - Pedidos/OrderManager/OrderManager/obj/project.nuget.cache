@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "csDvznTfYbMAIydWvx0zupdugReP7oY8BApPB+BhxLxl1YK5nhXLKmHgk6vmYY3rNwwLK05N6qHLyq/h/BeueA==",
+  "dgSpecHash": "+yTCmXFuNMMhZTXfiAsyOxzvFY5wF9eV3cmBN0ui4SMU7ipEBpWTVvKvhMN5ae+T8wlhxtOPC4J+RANns44pYw==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\OrderManager.csproj",
+  "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\03_introducao-entity-framework-core\\01 - Pedidos\\OrderManager\\OrderManager\\OrderManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\f_esn\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
