@@ -57,3 +57,7 @@ C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\C
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\obj\Debug\net5.0\ref\CompleteApp.Api.dll
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\obj\Debug\net5.0\CompleteApp.Api.pdb
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\obj\Debug\net5.0\CompleteApp.Api.genruntimeconfig.cache
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\AutoMapper.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Humanizer.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll

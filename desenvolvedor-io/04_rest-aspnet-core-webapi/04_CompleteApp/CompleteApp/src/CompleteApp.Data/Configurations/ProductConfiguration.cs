@@ -21,6 +21,10 @@ namespace CompleteApp.Data.Configurations
             builder.Property(x => x.Image)
                 .IsRequired();
 
+            builder.Property(x => x.Price)
+                .IsRequired()
+                .HasColumnType("decimal (18, 2)");
+
             builder.HasIndex(x => x.Name)
                 .HasDatabaseName("IDX_PRODUCT_NAME");
         }

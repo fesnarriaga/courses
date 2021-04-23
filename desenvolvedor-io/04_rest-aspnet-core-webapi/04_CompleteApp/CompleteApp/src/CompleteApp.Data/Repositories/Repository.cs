@@ -38,6 +38,7 @@ namespace CompleteApp.Data.Repositories
 
         public async Task Add(TEntity entity)
         {
+            //DbContext.Database.Log = Console.Write;
             DbSet.Add(entity);
             await SaveChanges();
         }

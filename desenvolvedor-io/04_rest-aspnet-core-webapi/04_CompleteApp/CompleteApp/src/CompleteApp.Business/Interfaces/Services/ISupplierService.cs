@@ -8,7 +8,7 @@ namespace CompleteApp.Business.Interfaces.Services
     {
         Task<bool> Add(Supplier supplier);
         Task<bool> Update(Supplier supplier);
-        Task<bool> Delete(Guid id);
+        Task<bool> Remove(Guid id);
 
         Task UpdateAddress(Address address);
     }

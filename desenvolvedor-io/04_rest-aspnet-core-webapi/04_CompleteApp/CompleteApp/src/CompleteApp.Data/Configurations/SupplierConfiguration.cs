@@ -24,8 +24,7 @@ namespace CompleteApp.Data.Configurations
 
             // 1:N => Supplier : Products
             builder.HasMany(x => x.Products)
-                .WithOne(p => p.Supplier)
-                .HasForeignKey(p => p.SupplierId);
+                .WithOne(p => p.Supplier);
 
             builder.HasIndex(x => x.Document)
                 .HasDatabaseName("IDX_SUPPLIER_DOCUMENT");

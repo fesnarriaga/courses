@@ -11,6 +11,7 @@ namespace CompleteApp.Business.Services
     public class ProductService : BaseService, IProductService
     {
         private readonly IProductRepository _productRepository;
+
         public ProductService(
             INotificator notificator,
             IProductRepository productRepository) : base(notificator)

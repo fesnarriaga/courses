@@ -13,3 +13,6 @@ C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\C
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\bin\Debug\net5.0\CompleteApp.Business.dll
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\bin\Debug\net5.0\CompleteApp.Business.pdb
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\obj\Debug\net5.0\CompleteApp.Data.csproj.CopyComplete
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\bin\Debug\net5.0\CompleteApp.Data.runtimeconfig.json
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\bin\Debug\net5.0\CompleteApp.Data.runtimeconfig.dev.json
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Data\obj\Debug\net5.0\CompleteApp.Data.genruntimeconfig.cache

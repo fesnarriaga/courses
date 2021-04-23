@@ -54,7 +54,7 @@ namespace CompleteApp.Business.Services
             return true;
         }
 
-        public async Task<bool> Delete(Guid id)
+        public async Task<bool> Remove(Guid id)
         {
             if (_supplierRepository.GetSupplierWithAddressAndProducts(id).Result.Products.Any())
             {
