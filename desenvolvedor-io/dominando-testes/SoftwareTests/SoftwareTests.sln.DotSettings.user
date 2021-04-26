@@ -13,5 +13,10 @@
     &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.OrderedTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.CustomerBogusTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.CustomerServiceTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.ValidCustomerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.InvalidCustomerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.CustomerServiceAutoMockerTests.CustomerService_Add_ShouldBeSuccess&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.CustomerServiceAutoMockerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.CustomerAutoMockerFixtureTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
