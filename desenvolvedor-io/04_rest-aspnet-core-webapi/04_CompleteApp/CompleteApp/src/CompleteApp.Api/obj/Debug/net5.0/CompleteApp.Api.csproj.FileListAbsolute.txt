@@ -61,3 +61,13 @@ C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\C
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Humanizer.dll
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\CompleteApp.Api.StaticWebAssets.xml
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\obj\Debug\net5.0\CompleteApp.Api.MvcApplicationPartsAssemblyInfo.cs

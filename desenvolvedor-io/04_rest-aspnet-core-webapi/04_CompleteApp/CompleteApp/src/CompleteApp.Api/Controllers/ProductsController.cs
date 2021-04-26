@@ -93,8 +93,28 @@ namespace CompleteApp.Api.Controllers
                 return CustomResponse(productViewModel);
             }
 
+            var productToUpdate = await GetProductWithSupplier(id);
+
+            if (string.IsNullOrEmpty(productViewModel.Image))
+                productViewModel.Image = productToUpdate.Image;
+
             if (!ModelState.IsValid)
                 return CustomResponse(ModelState);
+
+            if (productViewModel.ImageBase64 != null)
+            {
+                var fileName = $"{Guid.NewGuid()}_{productViewModel.Image}";
+                if (!UploadFile(productViewModel.ImageBase64, fileName))
+                    return CustomResponse(productViewModel);
+
+                productViewModel.Image = fileName;
+            }
+
+            productToUpdate.Name = productViewModel.Name;
+            productToUpdate.Description = productViewModel.Description;
+            productToUpdate.Price = productViewModel.Price;
+            productToUpdate.IsActive = productViewModel.IsActive;
+            productToUpdate.SupplierId = productViewModel.SupplierId;
 
             await _productService.Update(_mapper.Map<Product>(productViewModel));
 

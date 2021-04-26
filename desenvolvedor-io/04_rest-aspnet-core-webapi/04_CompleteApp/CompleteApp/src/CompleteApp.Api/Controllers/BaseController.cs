@@ -1,11 +1,13 @@
 ﻿using CompleteApp.Business.Interfaces.Notifications;
 using CompleteApp.Business.Notifications;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Linq;
 
 namespace CompleteApp.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     public abstract class BaseController : ControllerBase
     {

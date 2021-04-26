@@ -4,6 +4,7 @@ using CompleteApp.Business.Interfaces.Notifications;
 using CompleteApp.Business.Interfaces.Repositories;
 using CompleteApp.Business.Interfaces.Services;
 using CompleteApp.Business.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,7 @@ namespace CompleteApp.Api.Controllers
             _addressRepository = addressRepository;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<SupplierViewModel>> GetAll()
         {
