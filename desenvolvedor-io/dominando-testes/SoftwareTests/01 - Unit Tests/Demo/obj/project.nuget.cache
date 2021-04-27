@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KRMaFDRKVMhsHeCScw8AXZhVGKIUyJzm+sKg8OePFca2/bF6yJSgl2OI0+OuOfwddEI9/AXVz7eX0I0+KzUxNQ==",
+  "dgSpecHash": "HwGe8/97C0kifziPxMgzZPyeSCdSFwXv0UJb8QvA2N3+sbnAj69HeKid6/MjoUTxVsTJNf0I8j9kNPsFEHasJg==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\dominando-testes\\SoftwareTests\\01 - Unit Tests\\Demo\\Demo.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\f_esn\\.nuget\\packages\\xunit.runner.console\\2.4.1\\xunit.runner.console.2.4.1.nupkg.sha512"
+  ],
   "logs": []
 }
