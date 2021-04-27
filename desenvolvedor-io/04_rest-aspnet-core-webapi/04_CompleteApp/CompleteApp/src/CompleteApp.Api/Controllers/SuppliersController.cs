@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CompleteApp.Api.Extensions;
 using CompleteApp.Api.ViewModels;
 using CompleteApp.Business.Interfaces.Notifications;
 using CompleteApp.Business.Interfaces.Repositories;
@@ -40,6 +41,7 @@ namespace CompleteApp.Api.Controllers
             return _mapper.Map<IEnumerable<SupplierViewModel>>(await _supplierRepository.GetAll());
         }
 
+        [ClaimsAuthorize("Supplier", "Read")]
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<SupplierViewModel>> GetById(Guid id)
         {
@@ -51,6 +53,7 @@ namespace CompleteApp.Api.Controllers
             return supplierViewModel;
         }
 
+        [ClaimsAuthorize("Supplier", "Create")]
         [HttpPost]
         public async Task<ActionResult<SupplierViewModel>> Add(SupplierViewModel supplierViewModel)
         {
@@ -62,6 +65,7 @@ namespace CompleteApp.Api.Controllers
             return CustomResponse(supplierViewModel);
         }
 
+        [ClaimsAuthorize("Supplier", "Update")]
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<SupplierViewModel>> Update(Guid id, SupplierViewModel supplierViewModel)
         {
@@ -79,6 +83,7 @@ namespace CompleteApp.Api.Controllers
             return CustomResponse(supplierViewModel);
         }
 
+        [ClaimsAuthorize("Supplier", "Delete")]
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<SupplierViewModel>> Remove(Guid id)
         {
@@ -92,12 +97,14 @@ namespace CompleteApp.Api.Controllers
             return CustomResponse(supplierViewModel);
         }
 
+        [AllowAnonymous]
         [HttpGet("address/{id:guid}")]
         public async Task<AddressViewModel> GetAddressById(Guid id)
         {
             return _mapper.Map<AddressViewModel>(await _addressRepository.GetById(id));
         }
 
+        [ClaimsAuthorize("Supplier", "Update")]
         [HttpPut("address/{id:guid}")]
         public async Task<ActionResult> UpdateAddress(Guid id, AddressViewModel addressViewModel)
         {

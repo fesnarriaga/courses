@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using CompleteApp.Api.Extensions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CompleteApp.Api.Controllers
 {
@@ -31,12 +33,14 @@ namespace CompleteApp.Api.Controllers
             _productRepository = productRepository;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<ProductViewModel>> GetAll()
         {
             return _mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetAllProductsWithSupplier());
         }
 
+        [ClaimsAuthorize("Product", "Read")]
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<ProductViewModel>> GetById(Guid id)
         {
@@ -48,6 +52,7 @@ namespace CompleteApp.Api.Controllers
             return productViewModel;
         }
 
+        [ClaimsAuthorize("Product", "Create")]
         [HttpPost]
         public async Task<ActionResult<ProductViewModel>> Add(ProductViewModel productViewModel)
         {
@@ -65,6 +70,7 @@ namespace CompleteApp.Api.Controllers
             return CustomResponse(productViewModel);
         }
 
+        [ClaimsAuthorize("Product", "Create")]
         //[DisableRequestSizeLimit]
         [RequestSizeLimit(4000000)]
         [HttpPost("i-form-file")]
@@ -84,6 +90,7 @@ namespace CompleteApp.Api.Controllers
             return CustomResponse(productViewModel);
         }
 
+        [ClaimsAuthorize("Product", "Update")]
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<ProductViewModel>> Update(Guid id, ProductViewModel productViewModel)
         {
@@ -121,6 +128,7 @@ namespace CompleteApp.Api.Controllers
             return CustomResponse(productViewModel);
         }
 
+        [ClaimsAuthorize("Product", "Delete")]
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<ProductViewModel>> Remove(Guid id)
         {

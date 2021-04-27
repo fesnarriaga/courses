@@ -20,7 +20,6 @@ C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\C
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
@@ -71,3 +70,4 @@ C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\C
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\obj\Debug\net5.0\CompleteApp.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Projects\courses\desenvolvedor-io\04_rest-aspnet-core-webapi\04_CompleteApp\CompleteApp\src\CompleteApp.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
