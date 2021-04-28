@@ -1,10 +1,13 @@
-﻿using CompleteApp.Business.Interfaces.Notifications;
+﻿using CompleteApp.Api.Extensions.Auth;
+using CompleteApp.Business.Interfaces.Auth;
+using CompleteApp.Business.Interfaces.Notifications;
 using CompleteApp.Business.Interfaces.Repositories;
 using CompleteApp.Business.Interfaces.Services;
 using CompleteApp.Business.Notifications;
 using CompleteApp.Business.Services;
 using CompleteApp.Data.Context;
 using CompleteApp.Data.Repositories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CompleteApp.Api.Configurations
@@ -23,6 +26,9 @@ namespace CompleteApp.Api.Configurations
             services.AddScoped<IProductService, ProductService>();
 
             services.AddScoped<INotificator, Notificator>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IUser, AppUser>();
 
             return services;
         }

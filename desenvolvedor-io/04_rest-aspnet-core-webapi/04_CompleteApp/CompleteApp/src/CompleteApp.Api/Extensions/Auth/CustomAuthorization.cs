@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using System.Linq;
+﻿using System.Linq;
+using Microsoft.AspNetCore.Http;
 
-namespace CompleteApp.Api.Extensions
+namespace CompleteApp.Api.Extensions.Auth
 {
     public class CustomAuthorization
     {

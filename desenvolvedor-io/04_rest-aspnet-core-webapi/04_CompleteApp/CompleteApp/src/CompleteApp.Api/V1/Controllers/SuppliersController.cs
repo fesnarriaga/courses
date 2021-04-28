@@ -1,19 +1,23 @@
-﻿using AutoMapper;
-using CompleteApp.Api.Extensions;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper;
+using CompleteApp.Api.Controllers;
+using CompleteApp.Api.Extensions.Auth;
 using CompleteApp.Api.ViewModels;
+using CompleteApp.Business.Interfaces.Auth;
 using CompleteApp.Business.Interfaces.Notifications;
 using CompleteApp.Business.Interfaces.Repositories;
 using CompleteApp.Business.Interfaces.Services;
 using CompleteApp.Business.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace CompleteApp.Api.Controllers
+namespace CompleteApp.Api.V1.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    //[ApiVersion("1.0",Deprecated = true)]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class SuppliersController : BaseController
     {
         private readonly IMapper _mapper;
@@ -26,7 +30,8 @@ namespace CompleteApp.Api.Controllers
             ISupplierService supplierService,
             ISupplierRepository supplierRepository,
             IAddressRepository addressRepository,
-            INotificator notificator) : base(notificator)
+            INotificator notificator,
+            IUser user) : base(notificator, user)
         {
             _mapper = mapper;
             _supplierService = supplierService;

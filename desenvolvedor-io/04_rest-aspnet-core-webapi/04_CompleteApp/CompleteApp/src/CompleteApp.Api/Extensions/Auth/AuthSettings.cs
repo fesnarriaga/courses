@@ -1,6 +1,6 @@
-﻿namespace CompleteApp.Api.Extensions
+﻿namespace CompleteApp.Api.Extensions.Auth
 {
-    public class AppSettings
+    public class AuthSettings
     {
         public string Secret { get; set; }
 

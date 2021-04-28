@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using CompleteApp.Api.Extensions.Auth;
 
 namespace CompleteApp.Api.Configurations
 {
@@ -27,9 +28,9 @@ namespace CompleteApp.Api.Configurations
 
             // JWT
             var appSettingsSection = configuration.GetSection("AppSettings");
-            services.Configure<AppSettings>(appSettingsSection);
+            services.Configure<AuthSettings>(appSettingsSection);
 
-            var appSettings = appSettingsSection.Get<AppSettings>();
+            var appSettings = appSettingsSection.Get<AuthSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
 
             services

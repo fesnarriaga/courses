@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System.Security.Claims;
 
-namespace CompleteApp.Api.Extensions
+namespace CompleteApp.Api.Extensions.Auth
 {
     public class RequiredClaimFilter : IAuthorizationFilter
     {

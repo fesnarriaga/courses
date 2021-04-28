@@ -1,8 +1,10 @@
-﻿using CompleteApp.Business.Interfaces.Notifications;
+﻿using CompleteApp.Business.Interfaces.Auth;
+using CompleteApp.Business.Interfaces.Notifications;
 using CompleteApp.Business.Notifications;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
 using System.Linq;
 
 namespace CompleteApp.Api.Controllers
@@ -12,10 +14,18 @@ namespace CompleteApp.Api.Controllers
     public abstract class BaseController : ControllerBase
     {
         private readonly INotificator _notificator;
+        protected readonly IUser AppUser;
 
-        protected BaseController(INotificator notificator)
+        protected Guid UserId { get; set; }
+        protected bool IsAuthenticated { get; set; }
+
+        protected BaseController(INotificator notificator, IUser user)
         {
             _notificator = notificator;
+            AppUser = user;
+
+            IsAuthenticated = AppUser.IsAuthenticated();
+            UserId = IsAuthenticated ? AppUser.GetUserId() : Guid.Empty;
         }
 
         protected bool IsSuccess()

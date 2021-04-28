@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
 
-namespace CompleteApp.Api.Extensions
+namespace CompleteApp.Api.Extensions.Auth
 {
     public class ClaimsAuthorizeAttribute : TypeFilterAttribute
     {

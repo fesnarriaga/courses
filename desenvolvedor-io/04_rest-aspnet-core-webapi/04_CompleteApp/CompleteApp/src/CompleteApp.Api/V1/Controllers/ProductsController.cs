@@ -1,21 +1,24 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
+using AutoMapper;
+using CompleteApp.Api.Controllers;
+using CompleteApp.Api.Extensions.Auth;
 using CompleteApp.Api.ViewModels;
+using CompleteApp.Business.Interfaces.Auth;
 using CompleteApp.Business.Interfaces.Notifications;
 using CompleteApp.Business.Interfaces.Repositories;
 using CompleteApp.Business.Interfaces.Services;
 using CompleteApp.Business.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
-using CompleteApp.Api.Extensions;
-using Microsoft.AspNetCore.Authorization;
 
-namespace CompleteApp.Api.Controllers
+namespace CompleteApp.Api.V1.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ProductsController : BaseController
     {
         private readonly IMapper _mapper;
@@ -26,7 +29,8 @@ namespace CompleteApp.Api.Controllers
             IMapper mapper,
             IProductService productService,
             IProductRepository productRepository,
-            INotificator notificator) : base(notificator)
+            INotificator notificator,
+            IUser user) : base(notificator, user)
         {
             _mapper = mapper;
             _productService = productService;

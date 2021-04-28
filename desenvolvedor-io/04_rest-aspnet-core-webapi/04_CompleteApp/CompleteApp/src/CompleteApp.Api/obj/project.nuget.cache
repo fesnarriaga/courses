@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qI6LAjlM8eEwKferBziJ6knXsib1xVtPGYMGy0vbRXscH7yqi9YlD+xmUzQSdi3x4DWZEsKkKQSyFZz/RVVmxw==",
+  "dgSpecHash": "4+QbMnrPk0WhN6ZItHgCXge1ylrO97/wb/n1AZkzJVkDmrREYnDA2T5SnlkZiXHZmtMAo/rk6ms31PmnI3xmKA==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\04_rest-aspnet-core-webapi\\04_CompleteApp\\CompleteApp\\src\\CompleteApp.Api\\CompleteApp.Api.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,8 @@
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.5\\microsoft.aspnetcore.cryptography.keyderivation.5.0.5.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.5\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.5.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\5.0.5\\microsoft.aspnetcore.identity.ui.5.0.5.nupkg.sha512",
+    "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.0.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.0.0.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

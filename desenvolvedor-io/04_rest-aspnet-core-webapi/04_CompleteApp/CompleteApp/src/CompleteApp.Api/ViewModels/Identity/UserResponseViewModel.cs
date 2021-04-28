@@ -2,7 +2,7 @@
 
 namespace CompleteApp.Api.ViewModels.Identity
 {
-    public class UserTokenViewModel
+    public class UserResponseViewModel
     {
         public string Id { get; set; }
 

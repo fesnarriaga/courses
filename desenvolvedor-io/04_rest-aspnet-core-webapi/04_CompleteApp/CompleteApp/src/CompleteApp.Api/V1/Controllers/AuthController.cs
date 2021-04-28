@@ -1,32 +1,36 @@
-﻿using CompleteApp.Api.Extensions;
+﻿using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
+using CompleteApp.Api.Controllers;
+using CompleteApp.Api.Extensions.Auth;
 using CompleteApp.Api.ViewModels.Identity;
+using CompleteApp.Business.Interfaces.Auth;
 using CompleteApp.Business.Interfaces.Notifications;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CompleteApp.Api.Controllers
+namespace CompleteApp.Api.V1.Controllers
 {
-    [Route("api")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}")]
     public class AuthController : BaseController
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly AppSettings _appSettings;
+        private readonly AuthSettings _appSettings;
 
         public AuthController(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
-            IOptions<AppSettings> appSettings,
-            INotificator notificator) : base(notificator)
+            IOptions<AuthSettings> appSettings,
+            INotificator notificator,
+            IUser user) : base(notificator, user)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -129,7 +133,7 @@ namespace CompleteApp.Api.Controllers
             {
                 AccessToken = encodedToken,
                 ExpiresIn = TimeSpan.FromHours(_appSettings.ExpiresIn).TotalSeconds,
-                UserToken = new UserTokenViewModel
+                User = new UserResponseViewModel
                 {
                     Id = user.Id,
                     Email = user.Email,

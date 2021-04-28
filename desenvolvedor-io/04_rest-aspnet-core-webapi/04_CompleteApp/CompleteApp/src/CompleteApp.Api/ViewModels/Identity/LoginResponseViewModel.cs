@@ -6,6 +6,6 @@
 
         public double ExpiresIn { get; set; }
 
-        public UserTokenViewModel UserToken { get; set; }
+        public UserResponseViewModel User { get; set; }
     }
 }
