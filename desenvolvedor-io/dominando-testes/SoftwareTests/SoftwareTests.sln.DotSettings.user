@@ -1,4 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\f_esn\AppData\Local\Temp\JetBrains\ReSharperPlatformVs16\vAny_2475ed8c\CoverageData\_SoftwareTests.-1128264986\Snapshot\snapshot.utdcvr</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f9798006_002D58ff_002D4a58_002Dbf49_002D9208f33e0e27/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CalculatorTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::0BFC6DD5-3819-41B9-9C84-9C2FF2AECD71::net5.0::Demo.Tests.CalculatorTests&lt;/TestId&gt;&#xD;
@@ -21,5 +22,7 @@
     &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.CustomerFluentAssertionTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.CustomerServicesFluentAssertionTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.TestNotWorkingBecauseSomething&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.CpfValidationTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::B4835B2B-3DA4-441B-B04B-197357B34615::net5.0::MyStore.Sales.Domain.Tests.OrderTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
