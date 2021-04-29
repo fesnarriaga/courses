@@ -9,6 +9,8 @@ using CompleteApp.Data.Context;
 using CompleteApp.Data.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace CompleteApp.Api.Configurations
 {
@@ -29,6 +31,8 @@ namespace CompleteApp.Api.Configurations
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IUser, AppUser>();
+
+            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 
             return services;
         }

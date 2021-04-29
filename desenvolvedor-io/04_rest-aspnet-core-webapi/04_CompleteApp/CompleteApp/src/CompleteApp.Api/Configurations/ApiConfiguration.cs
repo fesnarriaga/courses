@@ -62,6 +62,7 @@ namespace CompleteApp.Api.Configurations
             }
             else
             {
+                //app.UseCors("Development");
                 app.UseHsts();
             }
 

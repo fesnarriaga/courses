@@ -1,6 +1,7 @@
 using CompleteApp.Api.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,10 +27,17 @@ namespace CompleteApp.Api
             services.AddApi();
 
             services.AddDependencies();
+
+            services.AddSwaggerConfig();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(
+            IApplicationBuilder app,
+            IWebHostEnvironment env,
+            IApiVersionDescriptionProvider provider)
         {
+            app.UseSwaggerConfig(provider);
+
             app.UseApi(env);
         }
     }
