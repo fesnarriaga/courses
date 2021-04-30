@@ -20,40 +20,30 @@ namespace CompleteApp.Api.Configurations
             {
                 options.OperationFilter<SwaggerDefaultValues>();
 
-                //options.SwaggerDoc("v1",
-                //    new OpenApiInfo
-                //    {
-                //        Title = "Complete App API",
-                //        Version = "v1",
-                //        Description = "Awesome Complete App API",
-                //        TermsOfService = new Uri("https://www.google.com"),
-                //        Contact = new OpenApiContact
-                //        {
-                //            Name = "Felipe Esnarriaga",
-                //            Email = "f_esnarriaga@yahoo.com.br"
-                //        },
-                //        License = new OpenApiLicense
-                //        {
-                //            Name = "Apache 2.0",
-                //            Url = new Uri("http://www.apache.org/licenses/LICENSE-2.0.html")
-                //        }
-                //    });
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "JWT Token: Bearer {token}",
+                    Name = "Authorization",
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey
+                });
 
-                //options.DocInclusionPredicate((docName, apiDesc) =>
-                //{
-                //    if (!apiDesc.TryGetMethodInfo(out MethodInfo methodInfo)) return false;
-
-                //    var versions = methodInfo.DeclaringType
-                //        .GetCustomAttributes(true)
-                //        .OfType<ApiVersionAttribute>()
-                //        .SelectMany(attr => attr.Versions);
-
-                //    return versions.Any(v => $"v{v.ToString()}" == docName);
-                //});
-
-                //// Prevents naming collision
-                //// Payment.Product, Catalog.Product
-                //options.CustomSchemaIds((type) => type.FullName);
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Id = "Bearer",
+                                Type = ReferenceType.SecurityScheme
+                            }
+                        },
+                        new string[]{}
+                    }
+                });
             });
 
             return services;
@@ -61,6 +51,8 @@ namespace CompleteApp.Api.Configurations
 
         public static IApplicationBuilder UseSwaggerConfig(this IApplicationBuilder app, IApiVersionDescriptionProvider provider)
         {
+            //app.UseMiddleware<SwaggerAuthorizeMiddleware>();
+
             app.UseSwagger();
 
             app.UseSwaggerUI(options =>
@@ -68,7 +60,7 @@ namespace CompleteApp.Api.Configurations
                 foreach (var description in provider.ApiVersionDescriptions)
                 {
                     var version = description.GroupName;
-                    options.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"Complete App API {version}");
+                    options.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"Complete App API {version.ToUpperInvariant()}");
                 }
             });
 
