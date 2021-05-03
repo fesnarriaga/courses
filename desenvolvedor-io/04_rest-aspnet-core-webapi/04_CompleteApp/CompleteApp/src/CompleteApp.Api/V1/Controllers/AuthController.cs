@@ -1,10 +1,4 @@
-﻿using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using CompleteApp.Api.Controllers;
+﻿using CompleteApp.Api.Controllers;
 using CompleteApp.Api.Extensions.Auth;
 using CompleteApp.Api.ViewModels.Identity;
 using CompleteApp.Business.Interfaces.Auth;
@@ -12,8 +6,15 @@ using CompleteApp.Business.Interfaces.Notifications;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CompleteApp.Api.V1.Controllers
 {
@@ -24,17 +25,20 @@ namespace CompleteApp.Api.V1.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly AuthSettings _appSettings;
+        private readonly ILogger _logger;
 
         public AuthController(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             IOptions<AuthSettings> appSettings,
+            ILogger<AuthController> logger,
             INotificator notificator,
             IUser user) : base(notificator, user)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _appSettings = appSettings.Value;
+            _logger = logger;
         }
 
         [AllowAnonymous]
@@ -82,6 +86,7 @@ namespace CompleteApp.Api.V1.Controllers
 
             if (result.Succeeded)
             {
+                _logger.LogInformation($"User {loginUserViewModel.Email} logged at {DateTime.UtcNow}");
                 return CustomResponse(await GenerateJwt(loginUserViewModel.Email));
             }
 

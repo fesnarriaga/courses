@@ -1,8 +1,18 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using CompleteApp.Api.Extensions;
+using CompleteApp.Data.Context;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.Linq;
+using System.Net.Mime;
+using System.Text.Json;
 
 namespace CompleteApp.Api.Configurations
 {
@@ -29,6 +39,25 @@ namespace CompleteApp.Api.Configurations
             {
                 options.SuppressModelStateInvalidFilter = true;
             });
+
+            //services.AddHealthChecks()
+            //    .AddDbContextCheck<AppDbContext>();
+
+            //services
+            //    .AddHealthChecksUI(options =>
+            //    {
+            //        options.SetEvaluationTimeInSeconds(15);
+            //        options.MaximumHistoryEntriesPerEndpoint(60);
+            //        options.SetApiMaxActiveRequests(1);
+
+            //        options.AddHealthCheckEndpoint("API", "/healthz");
+            //    })
+            //    .AddInMemoryStorage();
+
+            //services.AddHealthChecks()
+            //    .AddDbContextCheck<AppDbContext>();
+
+            //services.AddHealthChecksUI();
 
             //services.AddCors(options =>
             //{
@@ -72,11 +101,58 @@ namespace CompleteApp.Api.Configurations
 
             app.UseIdentity();
 
+            app.UseMiddleware<ExceptionMiddleware>();
+
             app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
+                //endpoints.MapDefaultControllerRoute();
+
+                //endpoints.MapHealthChecks("/hc");
+
+                //endpoints.MapHealthChecks("/hc-details",
+                //    new HealthCheckOptions
+                //    {
+                //        ResponseWriter = async (context, report) =>
+                //        {
+                //            var result = JsonSerializer.Serialize(
+                //                new
+                //                {
+                //                    status = report.Status.ToString(),
+                //                    monitors = report.Entries.Select(e => new { key = e.Key, value = Enum.GetName(typeof(HealthStatus), e.Value.Status) })
+                //                });
+                //            context.Response.ContentType = MediaTypeNames.Application.Json;
+                //            await context.Response.WriteAsync(result);
+                //        }
+                //    }
+                //);
+
+                //endpoints.MapHealthChecks("/healthz", new HealthCheckOptions
+                //{
+                //    Predicate = _ => true,
+                //    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                //});
+
+                //endpoints.MapHealthChecksUI();
+
                 endpoints.MapControllers();
+
+                //endpoints.MapHealthChecks("/api/hc", new HealthCheckOptions()
+                //{
+                //    Predicate = _ => true,
+                //    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                //});
+
+                //endpoints.MapHealthChecksUI(options =>
+                //{
+                //    options.UIPath = "/api/hc-ui";
+                //    options.ResourcesPath = "/api/hc-ui-resources";
+
+                //    options.UseRelativeApiPath = false;
+                //    options.UseRelativeResourcesPath = false;
+                //    options.UseRelativeWebhookPath = false;
+                //});
             });
 
             return app;

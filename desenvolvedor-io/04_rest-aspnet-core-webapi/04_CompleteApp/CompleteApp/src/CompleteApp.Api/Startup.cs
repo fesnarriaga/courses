@@ -24,6 +24,8 @@ namespace CompleteApp.Api
 
             services.AddAutoMapper(typeof(Startup));
 
+            services.AddElmahConfiguration();
+
             services.AddApi();
 
             services.AddDependencies();
@@ -37,6 +39,8 @@ namespace CompleteApp.Api
             IApiVersionDescriptionProvider provider)
         {
             app.UseSwaggerConfig(provider);
+
+            app.UseElmahConfiguration();
 
             app.UseApi(env);
         }
