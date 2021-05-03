@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Xunit;
 
 namespace MyStore.Sales.Domain.Tests
@@ -10,7 +11,7 @@ namespace MyStore.Sales.Domain.Tests
         public void AddOrderItem_NewOrder_ShouldUpdateTotal()
         {
             // Arrange
-            var order = new Order();
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
             var orderItem = new OrderItem(Guid.NewGuid(), "Test Product", 100M, 2);
 
             // Act
@@ -18,6 +19,27 @@ namespace MyStore.Sales.Domain.Tests
 
             // Assert
             Assert.Equal(200M, order.Total);
+        }
+
+        [Fact(DisplayName = "Add OrderItem Existing OrderItem")]
+        [Trait("Category", "Order Tests")]
+        public void AddOrderItem_ExistingOrderItem_ShouldIncrementQuantityAndSumValues()
+        {
+            // Arrange
+            var productId = Guid.NewGuid();
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var orderItem = new OrderItem(productId, "Test Product", 100M, 2);
+            order.AddOrderItem(orderItem);
+
+            var anotherOrderItem = new OrderItem(productId, "Test Product", 100M, 1);
+
+            // Act
+            order.AddOrderItem(anotherOrderItem);
+
+            // Assert
+            Assert.Equal(300, order.Total);
+            Assert.Equal(1, order.OrderItems.Count);
+            Assert.Equal(3, order.OrderItems.FirstOrDefault(x => x.ProductId == productId)?.Quantity);
         }
     }
 }

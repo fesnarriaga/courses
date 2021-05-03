@@ -9,3 +9,4 @@ C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Sales.Domain\obj\Debug\net5.0\MyStore.Sales.Domain.dll
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Sales.Domain\obj\Debug\net5.0\ref\MyStore.Sales.Domain.dll
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Sales.Domain\obj\Debug\net5.0\MyStore.Sales.Domain.pdb
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Sales.Domain\obj\Debug\net5.0\MyStore.Sales.Domain.csprojAssemblyReference.cache
