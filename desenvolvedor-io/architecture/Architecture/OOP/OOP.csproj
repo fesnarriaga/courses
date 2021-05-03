@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <Folder Include="03 - Interface x Implementation\" />
-    <Folder Include="04 - Inheritance x Composition\" />
   </ItemGroup>
 
 </Project>
