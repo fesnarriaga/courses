@@ -1649,9 +1649,22 @@
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
       },
+      "MyStore.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MyStore.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyStore.Core.dll": {}
+        }
+      },
       "MyStore.Sales.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MyStore.Core": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/MyStore.Sales.Domain.dll": {}
         },
@@ -5622,6 +5635,11 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
+    "MyStore.Core/1.0.0": {
+      "type": "project",
+      "path": "../../src/MyStore.Core/MyStore.Core.csproj",
+      "msbuildProject": "../../src/MyStore.Core/MyStore.Core.csproj"
+    },
     "MyStore.Sales.Domain/1.0.0": {
       "type": "project",
       "path": "../../src/MyStore.Sales.Domain/MyStore.Sales.Domain.csproj",
@@ -5631,6 +5649,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.NET.Test.Sdk >= 16.7.1",
+      "MyStore.Core >= 1.0.0",
       "MyStore.Sales.Domain >= 1.0.0",
       "coverlet.collector >= 1.3.0",
       "xunit >= 2.4.1",
@@ -5674,6 +5693,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Projects\\courses\\desenvolvedor-io\\dominando-testes\\SoftwareTests\\02 - TDD\\src\\MyStore.Core\\MyStore.Core.csproj": {
+              "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\dominando-testes\\SoftwareTests\\02 - TDD\\src\\MyStore.Core\\MyStore.Core.csproj"
+            },
             "C:\\Projects\\courses\\desenvolvedor-io\\dominando-testes\\SoftwareTests\\02 - TDD\\src\\MyStore.Sales.Domain\\MyStore.Sales.Domain.csproj": {
               "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\dominando-testes\\SoftwareTests\\02 - TDD\\src\\MyStore.Sales.Domain\\MyStore.Sales.Domain.csproj"
             }

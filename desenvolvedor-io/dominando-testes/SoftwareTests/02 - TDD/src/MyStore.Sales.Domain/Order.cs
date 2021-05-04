@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyStore.Core.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,8 +7,10 @@ namespace MyStore.Sales.Domain
 {
     public class Order
     {
-
         #region Fields and Properties
+
+        public const int MaxItemsPerOrder = 15;
+        public const int MinItemsPerOrder = 1;
 
         private readonly List<OrderItem> _orderItems;
 
@@ -34,6 +37,9 @@ namespace MyStore.Sales.Domain
 
         public void AddOrderItem(OrderItem orderItem)
         {
+            if (orderItem.Quantity > MaxItemsPerOrder)
+                throw new DomainException($"Max of {MaxItemsPerOrder} items per order item");
+
             var orderItemExists = _orderItems.Find(x => x.ProductId == orderItem.ProductId);
 
             if (orderItemExists != null)

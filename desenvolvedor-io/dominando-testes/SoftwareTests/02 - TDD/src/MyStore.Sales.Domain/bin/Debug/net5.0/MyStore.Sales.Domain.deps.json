@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "MyStore.Sales.Domain/1.0.0": {
+        "dependencies": {
+          "MyStore.Core": "1.0.0"
+        },
         "runtime": {
           "MyStore.Sales.Domain.dll": {}
+        }
+      },
+      "MyStore.Core/1.0.0": {
+        "runtime": {
+          "MyStore.Core.dll": {}
         }
       }
     }
   },
   "libraries": {
     "MyStore.Sales.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyStore.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

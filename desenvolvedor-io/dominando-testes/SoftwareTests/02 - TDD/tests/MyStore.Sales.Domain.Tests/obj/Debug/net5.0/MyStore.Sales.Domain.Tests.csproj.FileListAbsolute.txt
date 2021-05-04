@@ -100,3 +100,5 @@ C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\tes
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\tests\MyStore.Sales.Domain.Tests\obj\Debug\net5.0\MyStore.Sales.Domain.Tests.genruntimeconfig.cache
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\tests\MyStore.Sales.Domain.Tests\bin\Debug\net5.0\MyStore.Sales.Domain.dll
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\tests\MyStore.Sales.Domain.Tests\bin\Debug\net5.0\MyStore.Sales.Domain.pdb
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\tests\MyStore.Sales.Domain.Tests\bin\Debug\net5.0\MyStore.Core.dll
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\tests\MyStore.Sales.Domain.Tests\bin\Debug\net5.0\MyStore.Core.pdb

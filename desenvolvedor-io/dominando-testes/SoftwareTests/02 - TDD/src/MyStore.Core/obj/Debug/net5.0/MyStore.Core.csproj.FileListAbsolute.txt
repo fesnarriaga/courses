@@ -1,0 +1,12 @@
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Core\bin\Debug\net5.0\MyStore.Core.deps.json
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Core\bin\Debug\net5.0\MyStore.Core.dll
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Core\bin\Debug\net5.0\ref\MyStore.Core.dll
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Core\bin\Debug\net5.0\MyStore.Core.pdb
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Core\obj\Debug\net5.0\MyStore.Core.csprojAssemblyReference.cache
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Core\obj\Debug\net5.0\MyStore.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Core\obj\Debug\net5.0\MyStore.Core.AssemblyInfoInputs.cache
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Core\obj\Debug\net5.0\MyStore.Core.AssemblyInfo.cs
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Core\obj\Debug\net5.0\MyStore.Core.csproj.CoreCompileInputs.cache
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Core\obj\Debug\net5.0\MyStore.Core.dll
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Core\obj\Debug\net5.0\ref\MyStore.Core.dll
+C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\02 - TDD\src\MyStore.Core\obj\Debug\net5.0\MyStore.Core.pdb

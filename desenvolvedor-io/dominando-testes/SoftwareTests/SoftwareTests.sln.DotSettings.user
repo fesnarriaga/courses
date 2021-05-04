@@ -24,5 +24,6 @@
     &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.TestNotWorkingBecauseSomething&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::24B968F1-7719-472F-BCC1-862A343B4945::net5.0::Features.Tests.CpfValidationTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::B4835B2B-3DA4-441B-B04B-197357B34615::net5.0::MyStore.Sales.Domain.Tests.OrderTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::B4835B2B-3DA4-441B-B04B-197357B34615::net5.0::MyStore.Sales.Domain.Tests.OrderItemTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

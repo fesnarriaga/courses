@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sOJ+KKE7vJcHjjgTh8Ce4OfkHuTal2EVDe3HLTyrLdGHPD5iZ9Fl1/qe9X+vHU8/ciQQSJy85uMS3UYs7JZwtA==",
+  "dgSpecHash": "cAilKoVs7pWRQyqncuUHinvdNGQn+dv3HNR12rE1Ny9Q5pgG/z607Oly+UHZLs9VB2z5Xdf5xlmNZTwRr+uISg==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\dominando-testes\\SoftwareTests\\02 - TDD\\tests\\MyStore.Sales.Domain.Tests\\MyStore.Sales.Domain.Tests.csproj",
   "expectedPackageFiles": [

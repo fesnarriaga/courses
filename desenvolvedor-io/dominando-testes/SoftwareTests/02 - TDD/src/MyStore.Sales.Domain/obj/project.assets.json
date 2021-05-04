@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "MyStore.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MyStore.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyStore.Core.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MyStore.Core/1.0.0": {
+      "type": "project",
+      "path": "../MyStore.Core/MyStore.Core.csproj",
+      "msbuildProject": "../MyStore.Core/MyStore.Core.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "MyStore.Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\f_esn\\.nuget\\packages\\": {},
@@ -43,7 +62,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projects\\courses\\desenvolvedor-io\\dominando-testes\\SoftwareTests\\02 - TDD\\src\\MyStore.Core\\MyStore.Core.csproj": {
+              "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\dominando-testes\\SoftwareTests\\02 - TDD\\src\\MyStore.Core\\MyStore.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

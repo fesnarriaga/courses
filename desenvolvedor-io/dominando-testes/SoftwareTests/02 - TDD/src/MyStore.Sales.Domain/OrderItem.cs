@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyStore.Core.Exceptions;
+using System;
 
 namespace MyStore.Sales.Domain
 {
@@ -14,14 +15,15 @@ namespace MyStore.Sales.Domain
 
         public int Quantity { get; private set; }
 
-
-
         #endregion
 
         #region Constructors
 
         public OrderItem(Guid productId, string productName, decimal productPrice, int quantity)
         {
+            if (quantity < Order.MinItemsPerOrder)
+                throw new DomainException($"Min of {Order.MinItemsPerOrder} items per order item");
+
             ProductId = productId;
             ProductName = productName;
             ProductPrice = productPrice;

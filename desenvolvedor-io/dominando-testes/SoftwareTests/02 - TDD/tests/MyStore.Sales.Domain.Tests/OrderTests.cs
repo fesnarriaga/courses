@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyStore.Core.Exceptions;
+using System;
 using System.Linq;
 using Xunit;
 
@@ -40,6 +41,21 @@ namespace MyStore.Sales.Domain.Tests
             Assert.Equal(300, order.Total);
             Assert.Equal(1, order.OrderItems.Count);
             Assert.Equal(3, order.OrderItems.FirstOrDefault(x => x.ProductId == productId)?.Quantity);
+        }
+
+        [Fact(DisplayName = "Add OrderItem with more than max units")]
+        [Trait("Category", "Order Tests")]
+        public void AddOrderItem_MoreThanMaxUnits_ShouldThrowException()
+        {
+            // Arrange
+            var productId = Guid.NewGuid();
+            var orderItem = new OrderItem(productId, "any_name", 1M, Order.MaxItemsPerOrder + 1);
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+
+            // Act
+
+            // Assert
+            Assert.Throws<DomainException>(() => order.AddOrderItem(orderItem));
         }
     }
 }
