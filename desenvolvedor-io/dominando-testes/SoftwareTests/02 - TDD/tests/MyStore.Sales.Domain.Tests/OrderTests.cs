@@ -8,7 +8,7 @@ namespace MyStore.Sales.Domain.Tests
     public class OrderTests
     {
         [Fact(DisplayName = "Add OrderItem New Order")]
-        [Trait("Category", "Order Tests")]
+        [Trait("Category", "Sales Order Tests")]
         public void AddOrderItem_NewOrder_ShouldUpdateTotal()
         {
             // Arrange
@@ -23,7 +23,7 @@ namespace MyStore.Sales.Domain.Tests
         }
 
         [Fact(DisplayName = "Add OrderItem Existing OrderItem")]
-        [Trait("Category", "Order Tests")]
+        [Trait("Category", "Sales Order Tests")]
         public void AddOrderItem_ExistingOrderItem_ShouldIncrementQuantityAndSumValues()
         {
             // Arrange
@@ -44,7 +44,7 @@ namespace MyStore.Sales.Domain.Tests
         }
 
         [Fact(DisplayName = "Add OrderItem with more than max units")]
-        [Trait("Category", "Order Tests")]
+        [Trait("Category", "Sales Order Tests")]
         public void AddOrderItem_MoreThanMaxUnits_ShouldThrowException()
         {
             // Arrange
@@ -53,6 +53,22 @@ namespace MyStore.Sales.Domain.Tests
             var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
 
             // Act
+
+            // Assert
+            Assert.Throws<DomainException>(() => order.AddOrderItem(orderItem));
+        }
+
+        [Fact(DisplayName = "Add OrderItem with more than max units from existing item")]
+        [Trait("Category", "Sales Order Tests")]
+        public void AddOrderItem_MoreThanMaxUnitsOnExistingItem_ShouldThrowException()
+        {
+            // Arrange
+            var productId = Guid.NewGuid();
+            var orderItem = new OrderItem(productId, "any_name", 1M, Order.MaxItemsPerOrder);
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+
+            // Act
+            order.AddOrderItem(orderItem);
 
             // Assert
             Assert.Throws<DomainException>(() => order.AddOrderItem(orderItem));

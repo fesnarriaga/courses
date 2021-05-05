@@ -37,18 +37,19 @@ namespace MyStore.Sales.Domain
 
         public void AddOrderItem(OrderItem orderItem)
         {
-            if (orderItem.Quantity > MaxItemsPerOrder)
-                throw new DomainException($"Max of {MaxItemsPerOrder} items per order item");
+            ValidateMaxOrderItemsQuantity(orderItem);
 
             var orderItemExists = _orderItems.Find(x => x.ProductId == orderItem.ProductId);
 
-            if (orderItemExists != null)
+            if (OrderItemExists(orderItemExists))
             {
+                var orderItemQuantity = orderItem.Quantity + orderItemExists.Quantity;
+
                 orderItem = new OrderItem(
                     orderItem.ProductId,
                     orderItem.ProductName,
                     orderItem.ProductPrice,
-                    orderItem.Quantity + orderItemExists.Quantity);
+                    orderItemQuantity);
 
                 _orderItems.Remove(orderItemExists);
             }
@@ -56,6 +57,26 @@ namespace MyStore.Sales.Domain
             _orderItems.Add(orderItem);
 
             CalculateTotalOrder();
+        }
+
+        private void ValidateMaxOrderItemsQuantity(OrderItem orderItem)
+        {
+            var quantity = orderItem.Quantity;
+
+            if (OrderItemExists(orderItem))
+            {
+                var existingOrderItem = _orderItems.FirstOrDefault(x => x.ProductId == orderItem.ProductId);
+
+                quantity += existingOrderItem.Quantity;
+            }
+
+            if (quantity > MaxItemsPerOrder)
+                throw new DomainException($"Max of {MaxItemsPerOrder} items per order item");
+        }
+
+        private bool OrderItemExists(OrderItem orderItem)
+        {
+            return _orderItems.Any(x => x.ProductId == orderItem.ProductId);
         }
 
         public void CalculateTotalOrder()

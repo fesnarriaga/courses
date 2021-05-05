@@ -7,7 +7,7 @@ namespace MyStore.Sales.Domain.Tests
     public class OrderItemTests
     {
         [Fact(DisplayName = "Create OrderItem with less than min units")]
-        [Trait("Category", "OrderItem Tests")]
+        [Trait("Category", "Sales OrderItem Tests")]
         public void New_LessThanMinUnits_ShouldThrowException()
         {
             // Arrange
