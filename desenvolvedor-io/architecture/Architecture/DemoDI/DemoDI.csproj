@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Cases\RealLife\" />
+    <Folder Include="Cases\01 - RealLife\" />
   </ItemGroup>
 
 </Project>

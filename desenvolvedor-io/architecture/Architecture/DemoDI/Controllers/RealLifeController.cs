@@ -1,4 +1,4 @@
-﻿using DemoDI.Cases.RealLife;
+﻿using DemoDI.Cases;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoDI.Controllers

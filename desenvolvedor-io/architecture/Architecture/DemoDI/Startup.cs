@@ -1,9 +1,10 @@
-using DemoDI.Cases.RealLife;
+using DemoDI.Cases;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace DemoDI
 {
@@ -24,6 +25,45 @@ namespace DemoDI
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<ICustomerServices, CustomerServices>();
+
+            #endregion
+
+            #region Life Cycle
+
+            services.AddTransient<IOperationTransient, Operation>();
+            services.AddScoped<IOperationScoped, Operation>();
+            services.AddSingleton<IOperationSingleton, Operation>();
+            services.AddSingleton<IOperationSingletonInstance>(new Operation(Guid.Empty));
+            services.AddTransient<OperationService>();
+
+            #endregion
+
+            #region Generics
+
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+            #endregion
+
+            #region MultipleClasses
+
+            services.AddTransient<ServiceA>();
+            services.AddTransient<ServiceB>();
+            services.AddTransient<ServiceC>();
+
+            services.AddTransient<Func<string, IService>>(serviceProvider => key =>
+            {
+                switch (key)
+                {
+                    case "A":
+                        return serviceProvider.GetService<ServiceA>();
+                    case "B":
+                        return serviceProvider.GetService<ServiceB>();
+                    case "C":
+                        return serviceProvider.GetService<ServiceC>();
+                    default:
+                        return null;
+                }
+            });
 
             #endregion
         }

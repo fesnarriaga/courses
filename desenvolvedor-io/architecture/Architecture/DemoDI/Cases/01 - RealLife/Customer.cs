@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DemoDI.Cases.RealLife
+namespace DemoDI.Cases
 {
     public class Customer
     {
