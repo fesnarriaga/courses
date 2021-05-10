@@ -1,0 +1,16 @@
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\bin\Debug\net5.0\DesignPatterns.exe
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\bin\Debug\net5.0\DesignPatterns.deps.json
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\bin\Debug\net5.0\DesignPatterns.runtimeconfig.json
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\bin\Debug\net5.0\DesignPatterns.runtimeconfig.dev.json
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\bin\Debug\net5.0\DesignPatterns.dll
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\bin\Debug\net5.0\ref\DesignPatterns.dll
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\bin\Debug\net5.0\DesignPatterns.pdb
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\obj\Debug\net5.0\DesignPatterns.csprojAssemblyReference.cache
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\obj\Debug\net5.0\DesignPatterns.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\obj\Debug\net5.0\DesignPatterns.AssemblyInfoInputs.cache
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\obj\Debug\net5.0\DesignPatterns.AssemblyInfo.cs
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\obj\Debug\net5.0\DesignPatterns.csproj.CoreCompileInputs.cache
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\obj\Debug\net5.0\DesignPatterns.dll
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\obj\Debug\net5.0\ref\DesignPatterns.dll
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\obj\Debug\net5.0\DesignPatterns.pdb
+C:\Projects\courses\desenvolvedor-io\architecture\Architecture\DesignPatterns\obj\Debug\net5.0\DesignPatterns.genruntimeconfig.cache
