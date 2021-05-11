@@ -2,7 +2,6 @@ C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Te
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features\bin\Debug\net5.0\Features.dll
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features\bin\Debug\net5.0\ref\Features.dll
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features\bin\Debug\net5.0\Features.pdb
-C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features\obj\Debug\net5.0\Features.csprojAssemblyReference.cache
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features\obj\Debug\net5.0\Features.GeneratedMSBuildEditorConfig.editorconfig
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features\obj\Debug\net5.0\Features.AssemblyInfoInputs.cache
 C:\Projects\courses\desenvolvedor-io\dominando-testes\SoftwareTests\01 - Unit Tests\Features\obj\Debug\net5.0\Features.AssemblyInfo.cs

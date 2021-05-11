@@ -73,5 +73,79 @@ namespace MyStore.Sales.Domain.Tests
             // Assert
             Assert.Throws<DomainException>(() => order.AddOrderItem(orderItem));
         }
+
+        [Fact(DisplayName = "Update OrderItem Nonexistent")]
+        [Trait("Category", "Sales Order Tests")]
+        public void UpdateOrderItem_OrderItemNotInList_ShouldReturnException()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var orderItem = new OrderItem(Guid.NewGuid(), "Test", 100, 5);
+
+            // Act
+
+            // Assert
+            Assert.Throws<DomainException>(() => order.UpdateOrderItem(orderItem));
+        }
+
+        [Fact(DisplayName = "Update Valid OrderItem")]
+        [Trait("Category", "Sales Order Tests")]
+        public void UpdateOrderItem_ValidOrderItem_ShouldUpdateQuantity()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var productId = Guid.NewGuid();
+            var orderItem = new OrderItem(productId, "Test", 100, 2);
+            order.AddOrderItem(orderItem);
+            var updatedQuantity = 5;
+            var updatedOrderItem = new OrderItem(productId, "Test", 100, updatedQuantity);
+
+            // Act
+            order.UpdateOrderItem(updatedOrderItem);
+
+            // Assert
+            Assert.Equal(updatedQuantity, order.OrderItems.FirstOrDefault(x => x.ProductId == productId)?.Quantity);
+        }
+
+        [Fact(DisplayName = "Update OrderItem Validate Total")]
+        [Trait("Category", "Sales Order Tests")]
+        public void UpdateOrderItem_OrderWithDistinctItems_ShouldUpdateTotal()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var productId = Guid.NewGuid();
+            var orderItemOne = new OrderItem(new Guid(), "Test One", 10, 2);
+            var orderItemTwo = new OrderItem(productId, "Test Two", 20, 3);
+            order.AddOrderItem(orderItemOne);
+            order.AddOrderItem(orderItemTwo);
+
+            var updatedOrderItem = new OrderItem(productId, "Test Two", 20, 5);
+            var total = orderItemOne.ProductPrice * orderItemOne.Quantity +
+                              updatedOrderItem.ProductPrice * updatedOrderItem.Quantity;
+
+            // Act
+            order.UpdateOrderItem(updatedOrderItem);
+
+            // Assert
+            Assert.Equal(total, order.Total);
+        }
+
+        [Fact(DisplayName = "Update OrderItem Validate Max Quantity")]
+        [Trait("Category", "Sales Order Tests")]
+        public void UpdateOrderItem_OrderItemQuantityGreaterThanMax_ShouldReturnException()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var productId = Guid.NewGuid();
+            var orderItem = new OrderItem(productId, "Test One", 10, 2);
+            order.AddOrderItem(orderItem);
+
+            var updatedOrderItem = new OrderItem(productId, "Test Two", 20, Order.MaxItemsPerOrder + 1);
+
+            // Act
+
+            // Assert
+            Assert.Throws<DomainException>(() => order.UpdateOrderItem(updatedOrderItem));
+        }
     }
 }

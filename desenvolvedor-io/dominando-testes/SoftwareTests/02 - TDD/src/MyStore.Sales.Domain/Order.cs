@@ -41,7 +41,7 @@ namespace MyStore.Sales.Domain
 
             var orderItemExists = _orderItems.Find(x => x.ProductId == orderItem.ProductId);
 
-            if (OrderItemExists(orderItemExists))
+            if (OrderItemExists(orderItem))
             {
                 var orderItemQuantity = orderItem.Quantity + orderItemExists.Quantity;
 
@@ -57,6 +57,29 @@ namespace MyStore.Sales.Domain
             _orderItems.Add(orderItem);
 
             CalculateTotalOrder();
+        }
+
+        public void UpdateOrderItem(OrderItem orderItem)
+        {
+            ValidateNonExistingOrderItem(orderItem);
+            ValidateMaxOrderItemsQuantity(orderItem);
+
+            var orderItemExists = _orderItems.FirstOrDefault(x => x.ProductId == orderItem.ProductId);
+
+            _orderItems.Remove(orderItemExists);
+            _orderItems.Add(orderItem);
+
+            CalculateTotalOrder();
+        }
+
+        public void CalculateTotalOrder()
+        {
+            Total = _orderItems.Sum(x => x.CalculateTotalOrderItem());
+        }
+
+        public void MakeDraft()
+        {
+            OrderStatus = OrderStatus.Draft;
         }
 
         private void ValidateMaxOrderItemsQuantity(OrderItem orderItem)
@@ -79,14 +102,10 @@ namespace MyStore.Sales.Domain
             return _orderItems.Any(x => x.ProductId == orderItem.ProductId);
         }
 
-        public void CalculateTotalOrder()
+        private void ValidateNonExistingOrderItem(OrderItem orderItem)
         {
-            Total = _orderItems.Sum(x => x.CalculateTotalOrderItem());
-        }
-
-        public void MakeDraft()
-        {
-            OrderStatus = OrderStatus.Draft;
+            if (!OrderItemExists(orderItem))
+                throw new DomainException("Order item do not exists");
         }
 
         #endregion
