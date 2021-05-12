@@ -1,4 +1,7 @@
 ﻿using DesignPatterns.AbstractFactory;
+using DesignPatterns.Adapter;
+using DesignPatterns.Composite;
+using DesignPatterns.Facade;
 using DesignPatterns.FactoryMethod;
 using DesignPatterns.Singleton;
 using System;
@@ -48,13 +51,13 @@ namespace DesignPatterns
                     ExecuteSingleton.Execute();
                     break;
                 case '4':
-                    ExecuteAbstractFactory.Execute();
+                    ExecuteAdapter.Execute();
                     break;
                 case '5':
-                    ExecuteAbstractFactory.Execute();
+                    ExecuteFacade.Execute();
                     break;
                 case '6':
-                    ExecuteAbstractFactory.Execute();
+                    ExecuteComposite.Execute();
                     break;
                 case '7':
                     ExecuteAbstractFactory.Execute();
