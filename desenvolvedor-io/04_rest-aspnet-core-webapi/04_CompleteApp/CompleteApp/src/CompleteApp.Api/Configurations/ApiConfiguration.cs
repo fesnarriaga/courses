@@ -1,18 +1,9 @@
 ﻿using CompleteApp.Api.Extensions;
-using CompleteApp.Data.Context;
-using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Linq;
-using System.Net.Mime;
-using System.Text.Json;
 
 namespace CompleteApp.Api.Configurations
 {
