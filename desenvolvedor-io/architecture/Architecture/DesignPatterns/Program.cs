@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.AbstractFactory;
 using DesignPatterns.Adapter;
+using DesignPatterns.Command;
 using DesignPatterns.Composite;
 using DesignPatterns.Facade;
 using DesignPatterns.FactoryMethod;
@@ -60,7 +61,7 @@ namespace DesignPatterns
                     ExecuteComposite.Execute();
                     break;
                 case '7':
-                    ExecuteAbstractFactory.Execute();
+                    ExecuteCommand.Execute();
                     break;
                 case '8':
                     ExecuteAbstractFactory.Execute();
