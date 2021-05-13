@@ -5,6 +5,7 @@ using DesignPatterns.Composite;
 using DesignPatterns.Facade;
 using DesignPatterns.FactoryMethod;
 using DesignPatterns.Singleton;
+using DesignPatterns.Strategy;
 using System;
 
 namespace DesignPatterns
@@ -64,7 +65,7 @@ namespace DesignPatterns
                     ExecuteCommand.Execute();
                     break;
                 case '8':
-                    ExecuteAbstractFactory.Execute();
+                    ExecuteStrategy.Execute();
                     break;
                 case '9':
                     ExecuteAbstractFactory.Execute();
