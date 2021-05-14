@@ -4,6 +4,7 @@ using DesignPatterns.Command;
 using DesignPatterns.Composite;
 using DesignPatterns.Facade;
 using DesignPatterns.FactoryMethod;
+using DesignPatterns.ObservablePattern;
 using DesignPatterns.Singleton;
 using DesignPatterns.Strategy;
 using System;
@@ -68,7 +69,7 @@ namespace DesignPatterns
                     ExecuteStrategy.Execute();
                     break;
                 case '9':
-                    ExecuteAbstractFactory.Execute();
+                    ExecuteObserver.Execute();
                     break;
             }
 
