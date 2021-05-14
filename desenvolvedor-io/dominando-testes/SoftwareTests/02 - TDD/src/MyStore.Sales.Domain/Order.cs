@@ -72,6 +72,15 @@ namespace MyStore.Sales.Domain
             CalculateTotalOrder();
         }
 
+        public void RemoveOrderItem(OrderItem orderItem)
+        {
+            ValidateNonExistingOrderItem(orderItem);
+
+            _orderItems.Remove(orderItem);
+
+            CalculateTotalOrder();
+        }
+
         public void CalculateTotalOrder()
         {
             Total = _orderItems.Sum(x => x.CalculateTotalOrderItem());
