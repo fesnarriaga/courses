@@ -5,13 +5,13 @@ namespace MyStore.Sales.Domain
 {
     public class VoucherApplicableValidation : AbstractValidator<Voucher>
     {
-        public static string CodeErrorMessage = "Invalid Code";
-        public static string CashDiscountErrorMessage = "Cash Discount must be greater than 0";
-        public static string PercentDiscountErrorMessage = "Percent Discount must be greater than 0";
-        public static string QuantityErrorMessage = "Quantity already used";
-        public static string ExpirationDateErrorMessage = "Voucher expired";
-        public static string ActiveErrorMessage = "Voucher is not active";
-        public static string UsedErrorMessage = "Voucher already used";
+        public const string CodeErrorMessage = "Invalid Code";
+        public const string CashDiscountErrorMessage = "Cash Discount must be greater than 0";
+        public const string PercentDiscountErrorMessage = "Percent Discount must be greater than 0";
+        public const string QuantityErrorMessage = "Quantity already used";
+        public const string ExpirationDateErrorMessage = "Voucher expired";
+        public const string ActiveErrorMessage = "Voucher is not active";
+        public const string UsedErrorMessage = "Voucher already used";
 
         public VoucherApplicableValidation()
         {

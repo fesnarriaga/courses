@@ -1,5 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\f_esn\AppData\Local\Temp\JetBrains\ReSharperPlatformVs16\vAny_2475ed8c\CoverageData\_SoftwareTests.-1128264986\Snapshot\snapshot.utdcvr</s:String>
+	
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f9798006_002D58ff_002D4a58_002Dbf49_002D9208f33e0e27/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CalculatorTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
@@ -30,5 +30,6 @@
     &lt;TestId&gt;xUnit::B4835B2B-3DA4-441B-B04B-197357B34615::net5.0::MyStore.Sales.Domain.Tests.VoucherTests.Voucher_ValueVoucherInvalid_ShouldBeInvalid&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::B4835B2B-3DA4-441B-B04B-197357B34615::net5.0::MyStore.Sales.Domain.Tests.VoucherTests.Voucher_PercentVoucherValid_ShouldBeValid&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::B4835B2B-3DA4-441B-B04B-197357B34615::net5.0::MyStore.Sales.Domain.Tests.VoucherTests.Voucher_PercentVoucherInvalid_ShouldBeInvalid&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::B4835B2B-3DA4-441B-B04B-197357B34615::net5.0::MyStore.Sales.Domain.Tests.VoucherTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
