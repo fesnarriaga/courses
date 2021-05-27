@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ITW4Y8i5uA5jYCwpeUQrKuXibesDZcw+UC4S70+8UD30sOoBRDqThX3zxtYZNQFkVil7cbgh4R2XwGV0xs3obw==",
+  "dgSpecHash": "4Sbc82xwDNEeppd1lLS0dW67r9fcnS1DBgul01/uzHAXmbnR0TO5SxxM7ruqEP2LSJZpVn5FQerZkrTlP4NDuA==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\04_rest-aspnet-core-webapi\\04_CompleteApp\\CompleteApp\\src\\CompleteApp.Api\\CompleteApp.Api.csproj",
   "expectedPackageFiles": [
