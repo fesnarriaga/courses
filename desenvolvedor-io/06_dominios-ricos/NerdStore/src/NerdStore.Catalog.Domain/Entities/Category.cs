@@ -12,10 +12,14 @@ namespace NerdStore.Catalog.Domain.Entities
         // EF Relations
         public ICollection<Product> Products { get; set; }
 
+        protected Category() { }
+
         public Category(string name, string code)
         {
             Name = name;
             Code = code;
+
+            Validate();
         }
 
         public override string ToString()

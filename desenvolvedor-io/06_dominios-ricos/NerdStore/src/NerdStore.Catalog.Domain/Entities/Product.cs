@@ -24,6 +24,8 @@ namespace NerdStore.Catalog.Domain.Entities
         // EF Relations
         public Category Category { get; private set; }
 
+        protected Product() { }
+
         public Product(
             string name,
             string description,
