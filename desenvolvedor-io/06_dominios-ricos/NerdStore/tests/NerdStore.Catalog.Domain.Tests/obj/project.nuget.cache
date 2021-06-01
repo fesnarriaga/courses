@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "cTgnYTvc7S8LUiitEzyLTlSD5xSlV0Z3DPyrHPEihP+TgksVYXc4c0EeVI/643ZNpbJq82EktRBF8TPC1wXBxg==",
+  "dgSpecHash": "XfWzPKxMtXHXqAtZcvjkUVHv5g0njR+67kakmK4oJ/IdGDcfATmf0vHAkxfYvw+bMaqQT2PR8jUab33pM5C/Jg==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\tests\\NerdStore.Catalog.Domain.Tests\\NerdStore.Catalog.Domain.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\f_esn\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
+    "C:\\Users\\f_esn\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.codecoverage\\16.7.1\\microsoft.codecoverage.16.7.1.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.net.test.sdk\\16.7.1\\microsoft.net.test.sdk.16.7.1.nupkg.sha512",

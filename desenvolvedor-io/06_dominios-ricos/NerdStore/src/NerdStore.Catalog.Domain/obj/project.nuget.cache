@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ajFuEbdwEuXnBY6SM7qcj/tC9pzo7+VAwcM6m8o/TXYllNVuznRhFTmnc59xFjZbgcZg6+J40vxScWB288Zzkg==",
+  "dgSpecHash": "98zZxXtDOafMXodS9OOVVz9xYAKyaUK/2EAcuIQtfwVQ0EqJ5QEWqoWoziSB1m2YXTEz0t6wejQ58T4LpHDeIQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Catalog.Domain\\NerdStore.Catalog.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\f_esn\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

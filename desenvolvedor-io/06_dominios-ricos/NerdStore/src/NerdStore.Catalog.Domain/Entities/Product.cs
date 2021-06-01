@@ -9,6 +9,8 @@ namespace NerdStore.Catalog.Domain.Entities
 {
     public class Product : Entity, IAggregateRoot
     {
+        public const int MinimumStockAmount = 10;
+
         public string Name { get; private set; }
         public string Description { get; private set; }
         public decimal Price { get; private set; }

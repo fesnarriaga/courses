@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hQk2CkCO3d0hwICCM/gDqWIhNF1wacwFSE4BJDQLEoB0ddECDN46fX5ZMjhPHYvpH5AGzJlF89xqEv/XuaXVGw==",
+  "dgSpecHash": "LoktQFEbt8vcqUUGxmM0ZbNO/kWGNxx8f9ke52bq5JckEuXimXZJTnq6MVm1IClx7Yjni2tvzaqmdjzMR/73xQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Catalog.Data\\NerdStore.Catalog.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\f_esn\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\f_esn\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
