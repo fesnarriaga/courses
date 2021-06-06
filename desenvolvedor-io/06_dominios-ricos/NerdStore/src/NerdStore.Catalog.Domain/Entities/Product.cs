@@ -16,7 +16,7 @@ namespace NerdStore.Catalog.Domain.Entities
         public decimal Price { get; private set; }
         public string Image { get; private set; }
         public int StockAmount { get; private set; }
-        public Dimensions Dimensions { get; set; }
+        public Dimensions Dimensions { get; private set; }
         public bool Active { get; private set; }
         public DateTime CreatedAt { get; private set; }
 

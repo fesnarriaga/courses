@@ -31,9 +31,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Catalog.Domain.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Catalog.Data", "src\NerdStore.Catalog.Data\NerdStore.Catalog.Data.csproj", "{06923EB3-39F4-4AA6-B18C-9CFB82B364BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalog.Service", "src\NerdStore.Catalog.Service\NerdStore.Catalog.Service.csproj", "{9D21E75B-CD23-4927-BDBA-094E43F3F2F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Catalog.Service", "src\NerdStore.Catalog.Service\NerdStore.Catalog.Service.csproj", "{9D21E75B-CD23-4927-BDBA-094E43F3F2F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalog.Application", "src\NerdStore.Catalog.Application\NerdStore.Catalog.Application.csproj", "{5C64E06F-6DFD-4781-A313-07355D802612}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Catalog.Application", "src\NerdStore.Catalog.Application\NerdStore.Catalog.Application.csproj", "{5C64E06F-6DFD-4781-A313-07355D802612}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.WebApp.Mvc", "src\NerdStore.WebApp.Mvc\NerdStore.WebApp.Mvc.csproj", "{4E121630-5128-4A50-AFC9-A95E4235BD7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{5C64E06F-6DFD-4781-A313-07355D802612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C64E06F-6DFD-4781-A313-07355D802612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C64E06F-6DFD-4781-A313-07355D802612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E121630-5128-4A50-AFC9-A95E4235BD7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E121630-5128-4A50-AFC9-A95E4235BD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E121630-5128-4A50-AFC9-A95E4235BD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E121630-5128-4A50-AFC9-A95E4235BD7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{06923EB3-39F4-4AA6-B18C-9CFB82B364BE} = {27B696F9-34D8-482B-A0DC-5F0A651FE749}
 		{9D21E75B-CD23-4927-BDBA-094E43F3F2F6} = {27B696F9-34D8-482B-A0DC-5F0A651FE749}
 		{5C64E06F-6DFD-4781-A313-07355D802612} = {27B696F9-34D8-482B-A0DC-5F0A651FE749}
+		{4E121630-5128-4A50-AFC9-A95E4235BD7F} = {692066E4-7A05-47D1-94D5-D6D56D73471A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BEF0D3D1-F8B3-4BBA-ADD5-560265F4C2AC}

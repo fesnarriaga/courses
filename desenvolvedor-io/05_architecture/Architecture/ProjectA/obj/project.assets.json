@@ -16,11 +16,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\courses\\desenvolvedor-io\\architecture\\Architecture\\ProjectA\\ProjectA.csproj",
+      "projectUniqueName": "C:\\Projects\\courses\\desenvolvedor-io\\05_architecture\\Architecture\\ProjectA\\ProjectA.csproj",
       "projectName": "ProjectA",
-      "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\architecture\\Architecture\\ProjectA\\ProjectA.csproj",
+      "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\05_architecture\\Architecture\\ProjectA\\ProjectA.csproj",
       "packagesPath": "C:\\Users\\f_esn\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\courses\\desenvolvedor-io\\architecture\\Architecture\\ProjectA\\obj\\",
+      "outputPath": "C:\\Projects\\courses\\desenvolvedor-io\\05_architecture\\Architecture\\ProjectA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -70,7 +70,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

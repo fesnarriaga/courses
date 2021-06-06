@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t7N46DiRCGN1A38ivoI5gJ7FZ1Zf65nMv0vDfTIcwGz/8hj3vx1ZuLkRqa8R0RbJuNmg1sEADiEF8VqXXdBVdg==",
+  "dgSpecHash": "JUhuWYuY3Th7OpMQFPcjqdlVqSAvbMraX+/4CXNeAqeYVSfbGplay1Esi2YOJzCnjkyXi6uva9kxpscEmEO3Ig==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\architecture\\Architecture\\SOLID\\SOLID.csproj",
+  "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\05_architecture\\Architecture\\SOLID\\SOLID.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

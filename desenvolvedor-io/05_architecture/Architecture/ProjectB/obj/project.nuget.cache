@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6TddrRZjmTPVr7njC9iUXRIZJG8m+CybyGvRhfdpLd0hK18uwYm5+EeIXwAka5WmN4+qWo9EWYnZpJ24PZ0ztA==",
+  "dgSpecHash": "kWhfmA3qfSUkqV0HjM15DKYSM9TYmQ8XJke54KDOij04cqDOZ66Zs4C/gHwvEORllJVQ1D6fd1srlb3cwg/Mmw==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\architecture\\Architecture\\ProjectB\\ProjectB.csproj",
+  "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\05_architecture\\Architecture\\ProjectB\\ProjectB.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
