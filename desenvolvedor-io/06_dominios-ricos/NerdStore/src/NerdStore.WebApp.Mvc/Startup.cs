@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NerdStore.Catalog.Application.AutoMapper;
+using NerdStore.Catalog.Data.Context;
 using NerdStore.WebApp.Mvc.Data;
 using NerdStore.WebApp.Mvc.Setup;
 
@@ -24,6 +25,9 @@ namespace NerdStore.WebApp.Mvc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<CatalogContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
@@ -64,7 +68,7 @@ namespace NerdStore.WebApp.Mvc
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Store}/{action=Index}/{id?}");
 
                 endpoints.MapRazorPages();
             });

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<ProductViewModel>
+
+@{
+    ViewData["Title"] = "Catalog";
+}
+
+<style>
+    h4 {
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .price {
+        font-size: 30px;
+        margin: 0 auto;
+        color: #333333;
+    }
+
+    .right {
+        float: right;
+        border-bottom: 2px solid #4B8E4B;
+    }
+
+    .thumbnail {
+        opacity: 0.7;
+        transition: all 0.4s;
+    }
+
+        .thumbnail:hover {
+            opacity: 1;
+            box-shadow: 0 0 10px #4BC6FF;
+        }
+
+    .line {
+        margin-bottom: 5px;
+    }
+
+    .product-view .modal-dialog {
+        max-width: 800px;
+        width: 100%;
+    }
+
+    .pre-cost {
+        text-decoration: line-through;
+        color: #A5A5A5;
+    }
+
+    .space-ten {
+        padding: 10px 0;
+    }
+
+    @@media screen and (max-width: 770px) {
+        .right {
+            float: left;
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="container">
+    <h2>Product Admin</h2>
+    <hr />
+
+    <div class="row">
+        <a asp-controller="ProductsAdmin" asp-action="NewProduct" class="btn btn-success right">+ New Product</a>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        @{
+            foreach (var product in Model.OrderBy(x => x.CategoryId))
+            {
+                <div class="col-sm-6 col-md-3">
+                    <span class="thumbnail">
+                        <img width="200" height="200" src="~/img/@product.Image" alt="@product.Name" />
+                        <h4>@product.Name</h4>
+                        <p>@product.StockAmount in stock</p>
+                        <p>@product.Description</p>
+                        <p class="price">@product.Price.ToString("C")</p>
+                        <hr class="line" />
+                        <div class="row">
+                            <a asp-controller="ProductsAdmin" asp-action="EditProduct" asp-route-id="@product.Id" class="btn btn-success right">Edit</a> &nbsp;
+                            <a asp-controller="ProductsAdmin" asp-action="ProductUpdateStock" asp-route-id="@product.Id" class="btn btn-info right">Stock</a>
+                        </div>
+                    </span>
+                </div>
+            }
+        }
+    </div>
+</div>
