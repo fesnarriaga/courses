@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MCOiS0ZWb8TJSjTs+ELaYgGr+TNSmzBKLThAr1S8gSza8yzOUY4PF3s+Mw0Uz3UKvi2r2ArGWs4TN+sMM7CfLg==",
+  "dgSpecHash": "KIDGlBArUKI1JxvdaaPnYZd8XwYAN27aoXayM7iVdhhqCSnHQIm1UW4XbcYPocdM6R2oGaIBqP/HKSgsFR9K1w==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\dominando-testes\\SoftwareTests\\02 - TDD\\src\\MyStore.Core\\MyStore.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\f_esn\\.nuget\\packages\\fluentvalidation\\10.1.0\\fluentvalidation.10.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

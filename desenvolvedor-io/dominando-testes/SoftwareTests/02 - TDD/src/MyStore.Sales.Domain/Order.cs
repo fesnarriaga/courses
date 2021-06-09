@@ -1,4 +1,5 @@
-﻿using MyStore.Core.Exceptions;
+﻿using FluentValidation.Results;
+using MyStore.Core.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,12 @@ namespace MyStore.Sales.Domain
 
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
 
+        public Voucher Voucher { get; set; }
+
+        public bool VoucherApplied { get; set; }
+
+        public decimal Discount { get; set; }
+
         #endregion
 
         #region Constructors
@@ -43,13 +50,16 @@ namespace MyStore.Sales.Domain
 
             if (OrderItemExists(orderItem))
             {
-                var orderItemQuantity = orderItem.Quantity + orderItemExists.Quantity;
+                if (orderItemExists != null)
+                {
+                    var orderItemQuantity = orderItem.Quantity + orderItemExists.Quantity;
 
-                orderItem = new OrderItem(
-                    orderItem.ProductId,
-                    orderItem.ProductName,
-                    orderItem.ProductPrice,
-                    orderItemQuantity);
+                    orderItem = new OrderItem(
+                        orderItem.ProductId,
+                        orderItem.ProductName,
+                        orderItem.ProductPrice,
+                        orderItemQuantity);
+                }
 
                 _orderItems.Remove(orderItemExists);
             }
@@ -72,6 +82,15 @@ namespace MyStore.Sales.Domain
             CalculateTotalOrder();
         }
 
+        public void RemoveOrderItem(OrderItem orderItem)
+        {
+            ValidateNonExistingOrderItem(orderItem);
+
+            _orderItems.Remove(orderItem);
+
+            CalculateTotalOrder();
+        }
+
         public void CalculateTotalOrder()
         {
             Total = _orderItems.Sum(x => x.CalculateTotalOrderItem());
@@ -82,6 +101,47 @@ namespace MyStore.Sales.Domain
             OrderStatus = OrderStatus.Draft;
         }
 
+        public ValidationResult ApplyVoucher(Voucher voucher)
+        {
+            var validationResult = voucher.Applicable();
+
+            if (!validationResult.IsValid)
+                return validationResult;
+
+            Voucher = voucher;
+            VoucherApplied = true;
+
+            CalculateRedeemTotal();
+
+            return validationResult;
+        }
+
+        private void CalculateRedeemTotal()
+        {
+            if (!VoucherApplied)
+                return;
+
+            var discount = 0M;
+
+            if (Voucher.DiscountType == VoucherDiscountType.Cash)
+            {
+                if (Voucher.CashDiscount.HasValue)
+                {
+                    discount = Voucher.CashDiscount.Value;
+                }
+            }
+            else
+            {
+                if (Voucher.PercentDiscount.HasValue)
+                {
+                    discount = (Total * Voucher.PercentDiscount.Value) / 100;
+                }
+            }
+
+            Total -= discount;
+            Discount = discount;
+        }
+
         private void ValidateMaxOrderItemsQuantity(OrderItem orderItem)
         {
             var quantity = orderItem.Quantity;
@@ -90,7 +150,10 @@ namespace MyStore.Sales.Domain
             {
                 var existingOrderItem = _orderItems.FirstOrDefault(x => x.ProductId == orderItem.ProductId);
 
-                quantity += existingOrderItem.Quantity;
+                if (existingOrderItem != null)
+                {
+                    quantity += existingOrderItem.Quantity;
+                }
             }
 
             if (quantity > MaxItemsPerOrder)

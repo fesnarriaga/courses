@@ -147,5 +147,142 @@ namespace MyStore.Sales.Domain.Tests
             // Assert
             Assert.Throws<DomainException>(() => order.UpdateOrderItem(updatedOrderItem));
         }
+
+        [Fact(DisplayName = "Remove Nonexistent OrderItem")]
+        [Trait("Category", "Sales Order Tests")]
+        public void RemoveOrderItem_NonExistentOrderItem_ShouldReturnException()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var orderItem = new OrderItem(Guid.NewGuid(), "Test One", 10, 2);
+
+            // Act
+
+            // Assert
+            Assert.Throws<DomainException>(() => order.RemoveOrderItem(orderItem));
+        }
+
+        [Fact(DisplayName = "Remove OrderItem and Recalculates Order")]
+        [Trait("Category", "Sales Order Tests")]
+        public void RemoveOrderItem_RemoveOrderItem_ShouldUpdateOrderTotal()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var productId = Guid.NewGuid();
+            var orderItem = new OrderItem(Guid.NewGuid(), "Test One", 10, 2);
+            var orderItemToRemove = new OrderItem(productId, "Test Two", 10, 2);
+            order.AddOrderItem(orderItem);
+            order.AddOrderItem(orderItemToRemove);
+            var totalOrder = orderItem.ProductPrice * orderItem.Quantity;
+
+            // Act
+            order.RemoveOrderItem(orderItemToRemove);
+
+            // Assert
+            Assert.Equal(totalOrder, order.Total);
+        }
+
+        [Fact(DisplayName = "Apply Valid Cash Voucher")]
+        [Trait("Category", "Sales Order Tests")]
+        public void ApplyVoucher_ValidCashVoucher_ShouldApplyWithSuccess()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var voucher = new Voucher(
+                "any_code",
+                VoucherDiscountType.Cash,
+                15,
+                null,
+                1,
+                DateTime.Now.AddDays(1),
+                true,
+                false);
+
+            // Act
+            var result = order.ApplyVoucher(voucher);
+
+            // Assert
+            Assert.True(result.IsValid);
+        }
+
+        [Fact(DisplayName = "Apply Invalid Cash Voucher")]
+        [Trait("Category", "Sales Order Tests")]
+        public void ApplyVoucher_InvalidCashVoucher_ShouldReturnError()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var voucher = new Voucher(
+                "any_code",
+                VoucherDiscountType.Cash,
+                15,
+                null,
+                1,
+                DateTime.Now.AddDays(-1),
+                true,
+                false);
+
+            // Act
+            var result = order.ApplyVoucher(voucher);
+
+            // Assert
+            Assert.False(result.IsValid);
+        }
+
+        [Fact(DisplayName = "Apply Discount Cash Voucher")]
+        [Trait("Category", "Sales Order Tests")]
+        public void ApplyVoucher_CashVoucher_ShouldRedeemTotal()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var orderItemOne = new OrderItem(Guid.NewGuid(), "any_one", 15, 2);
+            var orderItemTwo = new OrderItem(Guid.NewGuid(), "any_two", 20, 3);
+            order.AddOrderItem(orderItemOne);
+            order.AddOrderItem(orderItemTwo);
+            var voucher = new Voucher(
+                "any_code",
+                VoucherDiscountType.Cash,
+                15,
+                null,
+                1,
+                DateTime.Now.AddDays(1),
+                true,
+                false);
+            var finalValue = order.Total - voucher.CashDiscount;
+
+            // Act
+            order.ApplyVoucher(voucher);
+
+            // Assert
+            Assert.Equal(finalValue, order.Total);
+        }
+
+        [Fact(DisplayName = "Apply Discount Percent Voucher")]
+        [Trait("Category", "Sales Order Tests")]
+        public void ApplyVoucher_PercentVoucher_ShouldRedeemTotal()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var orderItemOne = new OrderItem(Guid.NewGuid(), "any_one", 15, 2);
+            var orderItemTwo = new OrderItem(Guid.NewGuid(), "any_two", 20, 3);
+            order.AddOrderItem(orderItemOne);
+            order.AddOrderItem(orderItemTwo);
+            var voucher = new Voucher(
+                "any_code",
+                VoucherDiscountType.Percent,
+                null,
+                10,
+                1,
+                DateTime.Now.AddDays(1),
+                true,
+                false);
+            var discountValue = (order.Total * voucher.PercentDiscount) / 100;
+            var finalValue = order.Total - discountValue;
+
+            // Act
+            order.ApplyVoucher(voucher);
+
+            // Assert
+            Assert.Equal(finalValue, order.Total);
+        }
     }
 }
