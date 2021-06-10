@@ -11,11 +11,16 @@ namespace NerdStore.Core.DomainObjects.Entities
             Id = Guid.NewGuid();
         }
 
+        public virtual bool IsValid()
+        {
+            throw new NotImplementedException();
+        }
+
         public override bool Equals(object obj)
         {
             var compareTo = obj as Entity;
 
-            if (ReferenceEquals(this, compareTo)) 
+            if (ReferenceEquals(this, compareTo))
                 return true;
 
             return compareTo is not null && Id.Equals(compareTo.Id);

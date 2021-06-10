@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "2Wm0qncvsVO0JLSBDqkyeoOAvOs6EpDYGwH/5EdsjY5deIduGwZsKLlOwU4nX4O7iqxkkGLSeICbVSXthbWttg==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Sales.Domain\\NerdStore.Sales.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\f_esn\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

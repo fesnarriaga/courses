@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "98zZxXtDOafMXodS9OOVVz9xYAKyaUK/2EAcuIQtfwVQ0EqJ5QEWqoWoziSB1m2YXTEz0t6wejQ58T4LpHDeIQ==",
+  "dgSpecHash": "lmLcypc5gkuqGBhV7H2avGQCneVhCQAS7CsLuzH3Oh9Exo383DKWEYrGVrMzSXhtheuiDL+DsX1e1lw+HUhEVA==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Catalog.Domain\\NerdStore.Catalog.Domain.csproj",
   "expectedPackageFiles": [
