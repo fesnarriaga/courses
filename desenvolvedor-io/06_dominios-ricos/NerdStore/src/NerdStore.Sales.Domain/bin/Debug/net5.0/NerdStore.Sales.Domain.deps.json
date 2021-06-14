@@ -14,6 +14,14 @@
           "NerdStore.Sales.Domain.dll": {}
         }
       },
+      "FluentValidation/10.2.3": {
+        "runtime": {
+          "lib/net5.0/FluentValidation.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "10.2.3.0"
+          }
+        }
+      },
       "MediatR/9.0.0": {
         "runtime": {
           "lib/netstandard2.1/MediatR.dll": {
@@ -24,6 +32,7 @@
       },
       "NerdStore.Core/1.0.0": {
         "dependencies": {
+          "FluentValidation": "10.2.3",
           "MediatR": "9.0.0"
         },
         "runtime": {
@@ -37,6 +46,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FluentValidation/10.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R2w/E6jgg9RPSlg7JQSTHg6AWDwlOXARaV4ZUKrPJ1gi1e+oaBEcomxmo29j9BLZivkyQhOpAboJ9nKZS4/xYA==",
+      "path": "fluentvalidation/10.2.3",
+      "hashPath": "fluentvalidation.10.2.3.nupkg.sha512"
     },
     "MediatR/9.0.0": {
       "type": "package",

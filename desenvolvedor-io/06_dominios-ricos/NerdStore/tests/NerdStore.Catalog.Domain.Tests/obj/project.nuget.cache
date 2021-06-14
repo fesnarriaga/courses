@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "NTcNVQmblfrrlv5DIuaIk0sigYJKsM2AAf84AL68rWjVAhqtCn66+aCF/A02EEb9BQ5hJcXq+RkP5i/ng3eUPQ==",
+  "dgSpecHash": "ebj2GR5gCLvwWMNT7b0f3wggHia9cyqC7BWGD1J6+eDiisxgiV6VRVt04iFPeeoW30+zdQNFcO1gLh480QMh2g==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\tests\\NerdStore.Catalog.Domain.Tests\\NerdStore.Catalog.Domain.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\f_esn\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
+    "C:\\Users\\f_esn\\.nuget\\packages\\fluentvalidation\\10.2.3\\fluentvalidation.10.2.3.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.codecoverage\\16.7.1\\microsoft.codecoverage.16.7.1.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",

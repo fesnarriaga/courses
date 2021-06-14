@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2Wm0qncvsVO0JLSBDqkyeoOAvOs6EpDYGwH/5EdsjY5deIduGwZsKLlOwU4nX4O7iqxkkGLSeICbVSXthbWttg==",
+  "dgSpecHash": "gSthSjXvtDQ9UNb3X2ymCGLIz3wTOnR2vEwwCyLKrz6Cr0gTUayXBRSoWD1MT1TLlfitV8emVeN+9EtL7WIy7A==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Sales.Domain\\NerdStore.Sales.Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\f_esn\\.nuget\\packages\\fluentvalidation\\10.2.3\\fluentvalidation.10.2.3.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
   ],
   "logs": []

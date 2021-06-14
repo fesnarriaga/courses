@@ -103,3 +103,4 @@ C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\tests\NerdStore
 C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\tests\NerdStore.Catalog.Domain.Tests\obj\Debug\net5.0\NerdStore.Catalog.Domain.Tests.genruntimeconfig.cache
 C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\tests\NerdStore.Catalog.Domain.Tests\obj\Debug\net5.0\NerdStore.Catalog.Domain.Tests.csproj.AssemblyReference.cache
 C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\tests\NerdStore.Catalog.Domain.Tests\bin\Debug\net5.0\MediatR.dll
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\tests\NerdStore.Catalog.Domain.Tests\bin\Debug\net5.0\FluentValidation.dll

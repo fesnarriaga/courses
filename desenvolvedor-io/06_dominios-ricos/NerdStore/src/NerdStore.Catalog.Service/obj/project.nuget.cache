@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "VWYi6tGjmBUaEUv5ipNSd/PJvNmkYmM1Hp7QBBVmsBwIdNwxi4I7ZyxHhI2pgxlaUWFbs08Ok3If4T2G9UcJ5w==",
+  "dgSpecHash": "Vn5xa/NIDYcpbetJXe/ZU2IDs2eCpWIJAX59PGUV+qAf7dvwTdJHkQSeC97joVqDRK4FhVYuqdwWdd/XMqtnWQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Catalog.Service\\NerdStore.Catalog.Service.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\f_esn\\.nuget\\packages\\fluentvalidation\\10.2.3\\fluentvalidation.10.2.3.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\f_esn\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

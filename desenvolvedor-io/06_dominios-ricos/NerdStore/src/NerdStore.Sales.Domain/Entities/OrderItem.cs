@@ -14,13 +14,13 @@ namespace NerdStore.Sales.Domain.Entities
         public Guid ProductId { get; private set; }
 
         // EF Relation
-        public Order Order { get; private set; }
+        public Order Order { get; set; }
 
         protected OrderItem() { }
 
-        public OrderItem(Guid orderId, string productName, int quantity, decimal price)
+        public OrderItem(Guid productId, string productName, int quantity, decimal price)
         {
-            OrderId = orderId;
+            ProductId = productId;
             ProductName = productName;
             Quantity = quantity;
             Price = price;
