@@ -25,6 +25,22 @@
 
 .display-3 {
   font-family: "Poppins", sans-serif;
+
+  &__title {
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    display: inline-block;
+    background-image: linear-gradient(to right, $primary, $secondary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.8rem;
+    }
+  }
 }
 
 .heading-line::before {

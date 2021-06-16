@@ -10800,6 +10800,22 @@ textarea.form-control-lg {
 .display-3 {
   font-family: "Poppins", sans-serif;
 }
+.display-3__title {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  display: inline-block;
+  background-image: linear-gradient(to right, #9926f0, #d122e3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media (min-width: 992px) {
+  .display-3__title {
+    font-size: 1.8rem;
+  }
+}
 
 .heading-line::before {
   content: "";
@@ -10886,6 +10902,40 @@ textarea.form-control-lg {
   color: #ffffff !important;
   text-transform: capitalize;
   font-weight: 600;
+}
+
+.services {
+  position: relative;
+  padding: 1rem 0;
+}
+.services__content {
+  padding: 1rem;
+  margin-top: 0;
+}
+.services__content p {
+  font-size: 0.8rem;
+}
+@media (min-width: 992px) {
+  .services__content p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .services__content {
+    margin-top: 5rem;
+  }
+}
+.services__content .icon {
+  font-size: 1.5rem;
+  color: #9926f0;
+}
+@media (min-width: 992px) {
+  .services__content .icon {
+    font-size: 2.5rem;
+  }
+}
+.services__picture {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */
