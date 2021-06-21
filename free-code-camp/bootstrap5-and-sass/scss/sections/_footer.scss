@@ -10,8 +10,13 @@
   position: relative;
 
   &__icon {
-    width: 4rem;
+    width: 2rem;
     stroke: $primary;
+    padding-top: 0.5rem;
+
+    @include media-breakpoint-up(sm) {
+      width: 4rem;
+    }
   }
 
   &__info {
@@ -21,13 +26,89 @@
     &-title {
       color: $white;
       text-decoration: none;
-      font-size: 1.4rem;
+      font-size: 1rem;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1.4rem;
+      }
     }
 
     &-subtitle {
       color: $gray-600;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.8rem;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1rem;
+      }
     }
+  }
+}
+
+.footer-social-media {
+  a {
+    color: $white;
+
+    i {
+      font-size: 1rem;
+      margin-left: 0.75rem;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1.75rem;
+      }
+    }
+  }
+}
+
+.company-list {
+  display: block;
+  list-style-type: none;
+  position: relative;
+
+  li {
+    margin-bottom: 0.5rem;
+
+    a {
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  background-color: $black;
+
+  &__copyright {
+    color: $gray-600;
+    font-weight: 400;
+
+    a {
+      color: $gray-300;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  right: 1.875rem;
+  bottom: 1.875rem;
+  z-index: 9999;
+
+  i {
+    color: $white;
+    font-size: 1rem;
+    @include absoluteCenter;
   }
 }
