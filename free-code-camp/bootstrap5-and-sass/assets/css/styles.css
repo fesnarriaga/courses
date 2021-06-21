@@ -10842,6 +10842,10 @@ textarea.form-control-lg {
   height: 100%;
 }
 
+.gradient {
+  background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95));
+}
+
 .companies {
   padding: 0 0 5rem 0;
 }
@@ -10858,6 +10862,44 @@ textarea.form-control-lg {
 }
 .companies__logo-box img {
   height: 100%;
+}
+
+.get-started {
+  padding: 4rem 0;
+  background-color: #e9ecef;
+}
+
+.cta-info {
+  padding: 3rem;
+  margin: 1rem 0;
+}
+.cta-info__list {
+  position: relative;
+  list-style-type: none;
+  display: block;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+.cta-info__list li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.form {
+  padding: 3rem;
+}
+.form button {
+  border: none;
+  color: #ffffff;
+}
+.form button a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: capitalize;
 }
 
 .intro-section {
@@ -10902,6 +10944,56 @@ textarea.form-control-lg {
   color: #ffffff !important;
   text-transform: capitalize;
   font-weight: 600;
+}
+
+.portfolio {
+  padding: 4rem 0;
+}
+.portfolio button {
+  text-transform: capitalize;
+}
+
+.portfolio-box {
+  position: relative;
+  width: 100%;
+  max-height: 18.5rem;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  border-top: 0.5rem solid #bb6ef5;
+}
+.portfolio-box img {
+  width: 100%;
+}
+.portfolio-box .portfolio-info {
+  background-color: rgba(153, 38, 240, 0.75);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.portfolio-box .portfolio-info .caption {
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.portfolio-box .portfolio-info .caption h4 {
+  text-transform: uppercase;
+  display: block;
+}
+.portfolio-box:hover img {
+  transform: scale(1.25);
+  transition-duration: 0.7s;
+  transition-property: all;
+}
+.portfolio-box:hover .portfolio-info {
+  opacity: 1;
+  visibility: visible;
 }
 
 .services {
