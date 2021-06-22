@@ -28,6 +28,7 @@ namespace NerdStore.WebApp.Mvc.Controllers
         public async Task<IActionResult> AddOrderItem(Guid productId, int quantity)
         {
             var product = await _productAppService.GetById(productId);
+
             if (product is null)
                 return BadRequest();
 

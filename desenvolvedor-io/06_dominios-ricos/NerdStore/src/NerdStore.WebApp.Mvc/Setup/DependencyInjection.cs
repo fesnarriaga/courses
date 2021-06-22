@@ -10,6 +10,7 @@ using NerdStore.Catalog.Domain.Services;
 using NerdStore.Catalog.Service.Services;
 using NerdStore.Core.Mediator;
 using NerdStore.Sales.Application.Commands;
+using NerdStore.Sales.Data.Context;
 using NerdStore.Sales.Data.Repositories;
 using NerdStore.Sales.Domain.Interfaces.Repositories;
 
@@ -24,11 +25,14 @@ namespace NerdStore.WebApp.Mvc.Setup
             services.AddScoped<IStockService, StockService>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<CatalogContext>();
+
             services.AddScoped<INotificationHandler<MinimumStockAmountEvent>, MinimumStockAmountEventHandler>();
 
             // Sales
-            services.AddScoped<IRequestHandler<AddOrderItemCommand, bool>, OrderCommandHandler>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<SalesContext>();
+
+            services.AddScoped<IRequestHandler<AddOrderItemCommand, bool>, OrderCommandHandler>();
 
             // MediatR (Memory Bus)
             services.AddScoped<IMediatorHandler, MediatorHandler>();

@@ -1,73 +1,103 @@
-﻿using NerdStore.Core.Interfaces.UnitOfWork;
+﻿using Microsoft.EntityFrameworkCore;
+using NerdStore.Core.Interfaces.UnitOfWork;
+using NerdStore.Sales.Data.Context;
 using NerdStore.Sales.Domain.Entities;
+using NerdStore.Sales.Domain.Enums;
 using NerdStore.Sales.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace NerdStore.Sales.Data.Repositories
 {
     public class OrderRepository : IOrderRepository
     {
-        public IUnitOfWork UnitOfWork { get; }
-        public Task<Order> GetById(Guid id)
+        private readonly SalesContext _context;
+
+        public IUnitOfWork UnitOfWork => _context;
+
+        public OrderRepository(SalesContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<IEnumerable<Order>> GetOrdersByCustomerId(Guid customerId)
+        public async Task<Order> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return await _context.Orders.FindAsync(id);
         }
 
-        public Task<Order> GetDraftOrderByCustomerId(Guid customerId)
+        public async Task<IEnumerable<Order>> GetOrdersByCustomerId(Guid customerId)
         {
-            throw new NotImplementedException();
+            return await _context.Orders
+                .AsNoTracking()
+                .Where(x => x.CustomerId == customerId)
+                .ToListAsync();
+        }
+
+        public async Task<Order> GetDraftOrderByCustomerId(Guid customerId)
+        {
+            var order = await _context.Orders
+                .FirstOrDefaultAsync(x => x.CustomerId == customerId && x.Status == OrderStatus.Draft);
+
+            if (order is null)
+                return null;
+
+            await _context.Entry(order).Collection(x => x.Items).LoadAsync();
+
+            if (order.Voucher != null)
+            {
+                await _context.Entry(order).Reference(x => x.Voucher).LoadAsync();
+            }
+
+            return order;
         }
 
         public void Add(Order order)
         {
-            throw new NotImplementedException();
+            _context.Orders.Add(order);
         }
 
         public void Update(Order order)
         {
-            throw new NotImplementedException();
+            _context.Orders.Update(order);
         }
 
-        public Task<OrderItem> GetOrderItemById(Guid orderItemId)
+        public async Task<OrderItem> GetOrderItemById(Guid orderItemId)
         {
-            throw new NotImplementedException();
+            return await _context.OrderItems.FindAsync(orderItemId);
         }
 
-        public Task<OrderItem> GetOrderItemByProductId(Guid orderId, Guid productId)
+        public async Task<OrderItem> GetOrderItemByProductId(Guid orderId, Guid productId)
         {
-            throw new NotImplementedException();
+            return await _context.OrderItems
+                .FirstOrDefaultAsync(x => x.OrderId == orderId && x.ProductId == productId);
         }
 
         public void AddOrderItem(OrderItem orderItem)
         {
-            throw new NotImplementedException();
+            _context.OrderItems.Add(orderItem);
         }
 
         public void UpdateOrderItem(OrderItem orderItem)
         {
-            throw new NotImplementedException();
+            _context.OrderItems.Update(orderItem);
         }
 
         public void RemoveOrderItem(OrderItem orderItem)
         {
-            throw new NotImplementedException();
+            _context.OrderItems.Remove(orderItem);
         }
 
-        public Task<Voucher> GetVoucherByCode(string code)
+        public async Task<Voucher> GetVoucherByCode(string code)
         {
-            throw new NotImplementedException();
+            return await _context.Vouchers
+                .FirstOrDefaultAsync(x => x.Code == code);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context?.Dispose();
         }
     }
 }

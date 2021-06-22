@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NerdStore.Core.Interfaces.UnitOfWork;
+using NerdStore.Core.Mediator;
 using NerdStore.Core.Messages;
 using NerdStore.Sales.Domain.Entities;
 using System;
@@ -8,13 +9,18 @@ using System.Threading.Tasks;
 
 namespace NerdStore.Sales.Data.Context
 {
-    public class OrderContext : DbContext, IUnitOfWork
+    public class SalesContext : DbContext, IUnitOfWork
     {
+        private readonly IMediatorHandler _mediatorHandler;
+
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Voucher> Vouchers { get; set; }
 
-        public OrderContext(DbContextOptions<OrderContext> options) : base(options) { }
+        public SalesContext(DbContextOptions<SalesContext> options, IMediatorHandler mediatorHandler) : base(options)
+        {
+            _mediatorHandler = mediatorHandler;
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,7 +40,7 @@ namespace NerdStore.Sales.Data.Context
 
             modelBuilder.Ignore<Event>();
 
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(OrderContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(SalesContext).Assembly);
 
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(x => x.GetForeignKeys()))
             {

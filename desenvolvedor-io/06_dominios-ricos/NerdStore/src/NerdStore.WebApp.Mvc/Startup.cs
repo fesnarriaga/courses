@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NerdStore.Catalog.Application.AutoMapper;
 using NerdStore.Catalog.Data.Context;
+using NerdStore.Sales.Data.Context;
 using NerdStore.WebApp.Mvc.Data;
 using NerdStore.WebApp.Mvc.Setup;
 
@@ -28,6 +29,9 @@ namespace NerdStore.WebApp.Mvc
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDbContext<CatalogContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<SalesContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
