@@ -2,6 +2,7 @@
 using NerdStore.Core.Interfaces.UnitOfWork;
 using NerdStore.Core.Mediator;
 using NerdStore.Core.Messages;
+using NerdStore.Sales.Data.Extensions;
 using NerdStore.Sales.Domain.Entities;
 using System;
 using System.Linq;
@@ -62,7 +63,12 @@ namespace NerdStore.Sales.Data.Context
                     entry.Property("CreatedAt").IsModified = false;
             }
 
-            return await base.SaveChangesAsync() > 0;
+            var success = await base.SaveChangesAsync() > 0;
+
+            if (success)
+                await _mediatorHandler.PublishNotifications(this);
+
+            return success;
         }
     }
 }

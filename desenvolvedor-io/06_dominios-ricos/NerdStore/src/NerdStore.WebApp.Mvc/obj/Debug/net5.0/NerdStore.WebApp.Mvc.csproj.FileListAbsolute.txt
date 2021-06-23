@@ -419,3 +419,4 @@ C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.W
 C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.WebApp.Mvc\bin\Debug\net5.0\NerdStore.Sales.Application.pdb
 C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.WebApp.Mvc\bin\Debug\net5.0\NerdStore.Sales.Data.pdb
 C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.WebApp.Mvc\bin\Debug\net5.0\NerdStore.Sales.Domain.pdb
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.WebApp.Mvc\obj\Debug\net5.0\Razor\Views\Shared\Components\Summary\Default.cshtml.g.cs

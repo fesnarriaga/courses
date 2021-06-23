@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using NerdStore.Core.Mediator;
 using NerdStore.Core.Messages;
+using NerdStore.Core.Messages.Notifications;
+using NerdStore.Sales.Application.Events;
 using NerdStore.Sales.Domain.Entities;
 using NerdStore.Sales.Domain.Interfaces.Repositories;
 using System.Linq;
@@ -35,6 +37,7 @@ namespace NerdStore.Sales.Application.Commands
                 order.AddItem(orderItem);
 
                 _orderRepository.Add(order);
+                order.AddEvent(new DraftOrderStartedEvent(request.CustomerId, order.Id));
             }
             else
             {
@@ -50,7 +53,17 @@ namespace NerdStore.Sales.Application.Commands
                 {
                     _orderRepository.AddOrderItem(orderItem);
                 }
+
+                order.AddEvent(new OrderUpdatedEvent(request.CustomerId, order.Id, order.Total));
             }
+
+            order.AddEvent(new OrderItemAddedEvent(
+                request.CustomerId,
+                order.Id,
+                request.ProductId,
+                request.ProductName,
+                request.Price,
+                request.Quantity));
 
             return await _orderRepository.UnitOfWork.Commit();
         }
@@ -62,7 +75,8 @@ namespace NerdStore.Sales.Application.Commands
 
             foreach (var error in command.ValidationResult.Errors)
             {
-                // Raise error event
+                _mediatorHandler.PublishNotification(
+                    new DomainNotification(command.MessageType, error.ErrorMessage));
             }
 
             return false;

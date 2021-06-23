@@ -142,7 +142,7 @@
 </style>
 <div class="container">
 
-    @*<vc:summary />*@
+    <vc:summary />
 
     <div class="row">
         <div class="col-xs-4 item-photo">
@@ -157,7 +157,7 @@
             <p>Only @Model.StockAmount in stock!</p>
             <p>@Model.Description</p>
             <form method="post" asp-controller="Cart" asp-action="AddOrderItem">
-                <input type="hidden" id="Id" name="productId" value="@Model.Id" />
+                <input type="hidden" id="productId" name="productId" value="@Model.Id" />
 
                 <div class="section" style="padding-bottom: 20px;">
                     <h6 class="title-attr"><small>AMOUNT</small></h6>
