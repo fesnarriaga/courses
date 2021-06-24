@@ -156,7 +156,7 @@
 
             <p>Only @Model.StockAmount in stock!</p>
             <p>@Model.Description</p>
-            <form method="post" asp-controller="Cart" asp-action="AddOrderItem">
+            <form method="post" asp-controller="Cart" asp-action="AddItem">
                 <input type="hidden" id="productId" name="productId" value="@Model.Id" />
 
                 <div class="section" style="padding-bottom: 20px;">

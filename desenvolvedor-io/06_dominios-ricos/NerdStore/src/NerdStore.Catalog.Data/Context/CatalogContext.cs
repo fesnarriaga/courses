@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NerdStore.Catalog.Domain.Entities;
 using NerdStore.Core.Interfaces.UnitOfWork;
+using NerdStore.Core.Messages;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,6 +30,8 @@ namespace NerdStore.Catalog.Data.Context
                     }
                 }
             }
+
+            modelBuilder.Ignore<Event>();
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CatalogContext).Assembly);
         }

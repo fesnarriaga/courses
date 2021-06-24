@@ -21,10 +21,10 @@ namespace NerdStore.Sales.Application.Validations
                 .GreaterThan(0).WithMessage("Price must be grater than 0");
 
             RuleFor(x => x.CustomerId)
-                .NotEqual(Guid.Empty).WithMessage("CustomerId invalid");
+                .NotEqual(Guid.Empty).WithMessage("CustomerId is required");
 
             RuleFor(x => x.ProductId)
-                .NotEqual(Guid.Empty).WithMessage("ProductId invalid");
+                .NotEqual(Guid.Empty).WithMessage("ProductId is required");
         }
     }
 }

@@ -28,7 +28,7 @@ namespace NerdStore.Sales.Application.Commands
             if (!ValidateCommand(request))
                 return false;
 
-            var order = await _orderRepository.GetDraftOrderByCustomerId(request.CustomerId);
+            var order = await _orderRepository.GetDraftOrderByCustomer(request.CustomerId);
             var orderItem = new OrderItem(request.ProductId, request.ProductName, request.Quantity, request.Price);
 
             if (order == null)

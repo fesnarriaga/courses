@@ -27,7 +27,7 @@ namespace NerdStore.Sales.Data.Repositories
             return await _context.Orders.FindAsync(id);
         }
 
-        public async Task<IEnumerable<Order>> GetOrdersByCustomerId(Guid customerId)
+        public async Task<IEnumerable<Order>> GetOrdersByCustomer(Guid customerId)
         {
             return await _context.Orders
                 .AsNoTracking()
@@ -35,7 +35,7 @@ namespace NerdStore.Sales.Data.Repositories
                 .ToListAsync();
         }
 
-        public async Task<Order> GetDraftOrderByCustomerId(Guid customerId)
+        public async Task<Order> GetDraftOrderByCustomer(Guid customerId)
         {
             var order = await _context.Orders
                 .FirstOrDefaultAsync(x => x.CustomerId == customerId && x.Status == OrderStatus.Draft);
@@ -68,7 +68,7 @@ namespace NerdStore.Sales.Data.Repositories
             return await _context.OrderItems.FindAsync(orderItemId);
         }
 
-        public async Task<OrderItem> GetOrderItemByProductId(Guid orderId, Guid productId)
+        public async Task<OrderItem> GetOrderItemByOrderAndProduct(Guid orderId, Guid productId)
         {
             return await _context.OrderItems
                 .FirstOrDefaultAsync(x => x.OrderId == orderId && x.ProductId == productId);

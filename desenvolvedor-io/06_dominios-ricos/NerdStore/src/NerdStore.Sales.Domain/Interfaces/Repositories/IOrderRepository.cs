@@ -9,15 +9,15 @@ namespace NerdStore.Sales.Domain.Interfaces.Repositories
     public interface IOrderRepository : IRepository<Order>
     {
         Task<Order> GetById(Guid id);
-        Task<IEnumerable<Order>> GetOrdersByCustomerId(Guid customerId);
-        Task<Order> GetDraftOrderByCustomerId(Guid customerId);
+        Task<IEnumerable<Order>> GetOrdersByCustomer(Guid customerId);
+        Task<Order> GetDraftOrderByCustomer(Guid customerId);
 
         void Add(Order order);
         void Update(Order order);
 
         // OrderItem
         Task<OrderItem> GetOrderItemById(Guid orderItemId);
-        Task<OrderItem> GetOrderItemByProductId(Guid orderId, Guid productId);
+        Task<OrderItem> GetOrderItemByOrderAndProduct(Guid orderId, Guid productId);
 
         void AddOrderItem(OrderItem orderItem);
         void UpdateOrderItem(OrderItem orderItem);
