@@ -6,13 +6,13 @@ namespace NerdStore.Sales.Application.Commands
 {
     public class CreateOrderCommand : Command
     {
-        public Guid CustomerId { get; set; }
-        public Guid OrderId { get; set; }
-        public decimal Total { get; set; }
-        public string CardName { get; set; }
-        public string CardNumber { get; set; }
-        public string CardExpiresAt { get; set; }
-        public string CardCode { get; set; }
+        public Guid CustomerId { get; private set; }
+        public Guid OrderId { get; private set; }
+        public decimal Total { get; private set; }
+        public string CardName { get; private set; }
+        public string CardNumber { get; private set; }
+        public string CardExpiresAt { get; private set; }
+        public string CardCode { get; private set; }
 
         public CreateOrderCommand(
             Guid customerId,

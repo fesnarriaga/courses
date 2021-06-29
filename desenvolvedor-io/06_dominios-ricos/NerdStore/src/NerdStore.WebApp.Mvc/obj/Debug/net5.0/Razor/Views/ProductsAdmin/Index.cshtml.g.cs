@@ -33,8 +33,15 @@ using NerdStore.Catalog.Application.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.WebApp.Mvc\Views\_ViewImports.cshtml"
+using NerdStore.Sales.Application.Queries.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bf7b8d9f87dff1209340ccb70b57ba12d1030bec", @"/Views/ProductsAdmin/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1dd7378dfd3e5ebdf86b515ea9f24151d7987e10", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5cb4d89bae4a28a7bfaf4e65607a7480e40d75ce", @"/Views/_ViewImports.cshtml")]
     public class Views_ProductsAdmin_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ProductViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "ProductsAdmin", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -131,7 +138,7 @@ using NerdStore.Catalog.Application.ViewModels;
 
     ");
             WriteLiteral("@media screen and (max-width: 770px) {\r\n        .right {\r\n            float: left;\r\n            width: 100%;\r\n        }\r\n    }\r\n</style>\r\n\r\n<div class=\"container\">\r\n    <h2>Product Admin</h2>\r\n    <hr />\r\n\r\n    <div class=\"row\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf7b8d9f87dff1209340ccb70b57ba12d1030bec7672", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf7b8d9f87dff1209340ccb70b57ba12d1030bec7923", async() => {
                 WriteLiteral("+ New Product");
             }
             );
@@ -160,7 +167,7 @@ using NerdStore.Catalog.Application.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("                <div class=\"col-sm-6 col-md-3\">\r\n                    <span class=\"thumbnail\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bf7b8d9f87dff1209340ccb70b57ba12d1030bec9646", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bf7b8d9f87dff1209340ccb70b57ba12d1030bec9897", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -226,7 +233,7 @@ AddHtmlAttributeValue("", 1556, product.Name, 1556, 13, false);
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n                        <hr class=\"line\" />\r\n                        <div class=\"row\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf7b8d9f87dff1209340ccb70b57ba12d1030bec13288", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf7b8d9f87dff1209340ccb70b57ba12d1030bec13539", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -260,7 +267,7 @@ AddHtmlAttributeValue("", 1556, product.Name, 1556, 13, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" &nbsp;\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf7b8d9f87dff1209340ccb70b57ba12d1030bec15856", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf7b8d9f87dff1209340ccb70b57ba12d1030bec16107", async() => {
                 WriteLiteral("Stock");
             }
             );

@@ -33,8 +33,15 @@ using NerdStore.Catalog.Application.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.WebApp.Mvc\Views\_ViewImports.cshtml"
+using NerdStore.Sales.Application.Queries.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"749f5a946636c498b5075032df2db52be8dd572a", @"/Views/Store/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1dd7378dfd3e5ebdf86b515ea9f24151d7987e10", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5cb4d89bae4a28a7bfaf4e65607a7480e40d75ce", @"/Views/_ViewImports.cshtml")]
     public class Views_Store_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ProductViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("width", new global::Microsoft.AspNetCore.Html.HtmlString("200"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -155,9 +162,9 @@ using NerdStore.Catalog.Application.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("                <div class=\"col-md-3 col-sm-6\">\r\n                    <span class=\"thumbnail\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "749f5a946636c498b5075032df2db52be8dd572a6994", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "749f5a946636c498b5075032df2db52be8dd572a7245", async() => {
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "749f5a946636c498b5075032df2db52be8dd572a7277", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "749f5a946636c498b5075032df2db52be8dd572a7528", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

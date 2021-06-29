@@ -45,7 +45,7 @@ namespace NerdStore.Sales.Data.Repositories
 
             await _context.Entry(order).Collection(x => x.Items).LoadAsync();
 
-            if (order.Voucher != null)
+            if (order.VoucherId.HasValue)
             {
                 await _context.Entry(order).Reference(x => x.Voucher).LoadAsync();
             }

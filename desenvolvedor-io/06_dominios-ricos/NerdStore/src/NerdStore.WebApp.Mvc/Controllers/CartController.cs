@@ -99,14 +99,9 @@ namespace NerdStore.WebApp.Mvc.Controllers
 
         [HttpPost]
         [Route("apply-voucher")]
-        public async Task<IActionResult> ApplyVoucher(Guid productId, int quantity)
+        public async Task<IActionResult> ApplyVoucher(string code)
         {
-            var product = await _productAppService.GetById(productId);
-
-            if (product == null)
-                return BadRequest();
-
-            var command = new UpdateOrderItemCommand(CustomerId, productId, quantity);
+            var command = new ApplyVoucherCommand(CustomerId, code);
             await _mediatorHandler.SendCommand(command);
 
             if (!HasErrors())
@@ -136,7 +131,6 @@ namespace NerdStore.WebApp.Mvc.Controllers
                 cart.Payment.Number,
                 cart.Payment.ExpiresAt,
                 cart.Payment.Code);
-
             await _mediatorHandler.SendCommand(command);
 
             if (!HasErrors())

@@ -1,5 +1,7 @@
-﻿using NerdStore.Core.DomainObjects.Entities;
+﻿using FluentValidation.Results;
+using NerdStore.Core.DomainObjects.Entities;
 using NerdStore.Sales.Domain.Enums;
+using NerdStore.Sales.Domain.Validations;
 using System;
 using System.Collections.Generic;
 
@@ -20,5 +22,10 @@ namespace NerdStore.Sales.Domain.Entities
 
         // EF Relation
         public ICollection<Order> Orders { get; private set; }
+
+        internal ValidationResult CanApply()
+        {
+            return new ApplyVoucherValidation().Validate(this);
+        }
     }
 }

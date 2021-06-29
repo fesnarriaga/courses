@@ -1,4 +1,5 @@
-﻿using NerdStore.Core.DomainObjects.Entities;
+﻿using FluentValidation.Results;
+using NerdStore.Core.DomainObjects.Entities;
 using NerdStore.Core.DomainObjects.Exceptions;
 using NerdStore.Core.DomainObjects.Interfaces;
 using NerdStore.Sales.Domain.Enums;
@@ -42,11 +43,17 @@ namespace NerdStore.Sales.Domain.Entities
             _orderItems = new List<OrderItem>();
         }
 
-        public void ApplyVoucher(Voucher voucher)
+        public ValidationResult ApplyVoucher(Voucher voucher)
         {
+            var validationResult = voucher.CanApply();
+            if (!validationResult.IsValid)
+                return validationResult;
+
             Voucher = voucher;
             AppliedVoucher = true;
             CalculateTotal();
+
+            return validationResult;
         }
 
         public void CalculateTotal()
@@ -136,9 +143,9 @@ namespace NerdStore.Sales.Domain.Entities
             CalculateTotal();
         }
 
-        public void IncreaseQuantity(OrderItem item, int value)
+        public void SetQuantity(OrderItem item, int value)
         {
-            item.IncreaseQuantity(value);
+            item.SetQuantity(value);
             UpdateItem(item);
         }
 

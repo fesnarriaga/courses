@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace NerdStore.Sales.Application.Queries
 {
-    public class OrderQueriesFacadeFacade : IOrderQueriesFacade
+    public class OrderQueriesFacade : IOrderQueriesFacade
     {
         private readonly IOrderRepository _orderRepository;
 
-        public OrderQueriesFacadeFacade(IOrderRepository orderRepository)
+        public OrderQueriesFacade(IOrderRepository orderRepository)
         {
             _orderRepository = orderRepository;
         }

@@ -12,6 +12,8 @@ using NerdStore.Core.Mediator;
 using NerdStore.Core.Messages.Notifications;
 using NerdStore.Sales.Application.Commands;
 using NerdStore.Sales.Application.Events;
+using NerdStore.Sales.Application.Interfaces.Queries;
+using NerdStore.Sales.Application.Queries;
 using NerdStore.Sales.Data.Context;
 using NerdStore.Sales.Data.Repositories;
 using NerdStore.Sales.Domain.Interfaces.Repositories;
@@ -31,13 +33,23 @@ namespace NerdStore.WebApp.Mvc.Setup
             services.AddScoped<INotificationHandler<MinimumStockAmountEvent>, MinimumStockAmountEventHandler>();
 
             // Sales
+            services.AddScoped<IRequestHandler<CreateOrderCommand, bool>, OrderCommandHandler>();
             services.AddScoped<IRequestHandler<AddOrderItemCommand, bool>, OrderCommandHandler>();
+            services.AddScoped<IRequestHandler<UpdateOrderItemCommand, bool>, OrderCommandHandler>();
+            services.AddScoped<IRequestHandler<RemoveOrderItemCommand, bool>, OrderCommandHandler>();
+            services.AddScoped<IRequestHandler<ApplyVoucherCommand, bool>, OrderCommandHandler>();
+
+            services.AddScoped<IOrderQueriesFacade, OrderQueriesFacade>();
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<SalesContext>();
 
             services.AddScoped<INotificationHandler<DraftOrderStartedEvent>, OrderEventHandler>();
+            services.AddScoped<INotificationHandler<OrderStartedEvent>, OrderEventHandler>();
             services.AddScoped<INotificationHandler<OrderUpdatedEvent>, OrderEventHandler>();
             services.AddScoped<INotificationHandler<OrderItemAddedEvent>, OrderEventHandler>();
+            services.AddScoped<INotificationHandler<OrderItemUpdatedEvent>, OrderEventHandler>();
+            services.AddScoped<INotificationHandler<OrderItemRemovedEvent>, OrderEventHandler>();
+            services.AddScoped<INotificationHandler<VoucherAppliedEvent>, OrderEventHandler>();
 
             // MediatR
             services.AddScoped<IMediatorHandler, MediatorHandler>();

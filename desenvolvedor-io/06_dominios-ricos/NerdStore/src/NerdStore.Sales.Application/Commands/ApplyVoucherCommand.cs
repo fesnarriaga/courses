@@ -6,8 +6,8 @@ namespace NerdStore.Sales.Application.Commands
 {
     public class ApplyVoucherCommand : Command
     {
-        public Guid CustomerId { get; set; }
-        public string VoucherCode { get; set; }
+        public Guid CustomerId { get; private set; }
+        public string VoucherCode { get; private set; }
 
         public ApplyVoucherCommand(Guid customerId, string voucherCode)
         {
