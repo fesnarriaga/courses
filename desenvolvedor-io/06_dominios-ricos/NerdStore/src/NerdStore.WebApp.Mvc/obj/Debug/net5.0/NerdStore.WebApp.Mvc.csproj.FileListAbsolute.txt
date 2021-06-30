@@ -422,3 +422,4 @@ C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.W
 C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.WebApp.Mvc\obj\Debug\net5.0\Razor\Views\Shared\Components\Summary\Default.cshtml.g.cs
 C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.WebApp.Mvc\obj\Debug\net5.0\Razor\Views\Shared\Components\Basket\Default.cshtml.g.cs
 C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.WebApp.Mvc\obj\Debug\net5.0\Razor\Views\Cart\Index.cshtml.g.cs
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.WebApp.Mvc\obj\Debug\net5.0\Razor\Views\Cart\ReviewCart.cshtml.g.cs

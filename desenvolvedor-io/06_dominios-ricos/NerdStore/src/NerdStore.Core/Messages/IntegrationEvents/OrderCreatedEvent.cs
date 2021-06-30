@@ -1,25 +1,24 @@
 ﻿using NerdStore.Core.DomainObjects.Dtos;
-using NerdStore.Core.Messages;
 using System;
 
-namespace NerdStore.Sales.Application.Events
+namespace NerdStore.Core.Messages.IntegrationEvents
 {
-    public class OrderStartedEvent : Event
+    public class OrderCreatedEvent : IntegrationEvent
     {
         public Guid CustomerId { get; private set; }
         public Guid OrderId { get; private set; }
         public decimal Total { get; private set; }
-        public OrderProductList ProductList { get; private set; }
+        public ProductList ProductList { get; private set; }
         public string CardName { get; private set; }
         public string CardNumber { get; private set; }
         public string CardExpiresAt { get; private set; }
         public string CardCode { get; private set; }
 
-        public OrderStartedEvent(
+        public OrderCreatedEvent(
             Guid customerId,
             Guid orderId,
             decimal total,
-            OrderProductList productList,
+            ProductList productList,
             string cardName,
             string cardNumber,
             string cardExpiresAt,

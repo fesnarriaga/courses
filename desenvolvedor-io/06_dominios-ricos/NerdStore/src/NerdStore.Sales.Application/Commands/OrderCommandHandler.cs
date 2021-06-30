@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using NerdStore.Core.DomainObjects.Dtos;
+using NerdStore.Core.Extensions;
 using NerdStore.Core.Mediator;
 using NerdStore.Core.Messages;
+using NerdStore.Core.Messages.IntegrationEvents;
 using NerdStore.Core.Messages.Notifications;
 using NerdStore.Sales.Application.Events;
 using NerdStore.Sales.Domain.Entities;
@@ -35,14 +37,13 @@ namespace NerdStore.Sales.Application.Commands
                 return false;
 
             var order = await _orderRepository.GetDraftOrderByCustomer(request.CustomerId);
-            order.StartOrder();
+            order.CreateOrder();
 
-            var items = new List<OrderProductListItem>();
-            order.Items.ToList().ForEach(x => items.Add(new OrderProductListItem { Id = x.Id, Quantity = x.Quantity }));
+            var items = new List<ProductListItem>();
+            order.Items.ForEach(x => items.Add(new ProductListItem { Id = x.Id, Quantity = x.Quantity }));
+            var products = new ProductList { OrderId = order.Id, Items = items };
 
-            var products = new OrderProductList { OrderId = order.Id, Items = items };
-
-            order.AddEvent(new OrderStartedEvent(
+            order.AddEvent(new OrderCreatedEvent(
                 request.CustomerId,
                 order.Id,
                 order.Total,

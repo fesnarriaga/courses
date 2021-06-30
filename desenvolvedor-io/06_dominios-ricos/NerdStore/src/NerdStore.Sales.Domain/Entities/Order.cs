@@ -159,7 +159,7 @@ namespace NerdStore.Sales.Domain.Entities
             Status = OrderStatus.Draft;
         }
 
-        public void StartOrder()
+        public void CreateOrder()
         {
             Status = OrderStatus.Started;
         }

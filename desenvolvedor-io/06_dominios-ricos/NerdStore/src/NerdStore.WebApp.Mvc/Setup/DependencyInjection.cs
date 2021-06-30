@@ -30,7 +30,7 @@ namespace NerdStore.WebApp.Mvc.Setup
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<CatalogContext>();
 
-            services.AddScoped<INotificationHandler<MinimumStockAmountEvent>, MinimumStockAmountEventHandler>();
+            services.AddScoped<INotificationHandler<MinimumStockAmountEvent>, ProductEventHandler>();
 
             // Sales
             services.AddScoped<IRequestHandler<CreateOrderCommand, bool>, OrderCommandHandler>();
@@ -44,7 +44,6 @@ namespace NerdStore.WebApp.Mvc.Setup
             services.AddScoped<SalesContext>();
 
             services.AddScoped<INotificationHandler<DraftOrderStartedEvent>, OrderEventHandler>();
-            services.AddScoped<INotificationHandler<OrderStartedEvent>, OrderEventHandler>();
             services.AddScoped<INotificationHandler<OrderUpdatedEvent>, OrderEventHandler>();
             services.AddScoped<INotificationHandler<OrderItemAddedEvent>, OrderEventHandler>();
             services.AddScoped<INotificationHandler<OrderItemUpdatedEvent>, OrderEventHandler>();

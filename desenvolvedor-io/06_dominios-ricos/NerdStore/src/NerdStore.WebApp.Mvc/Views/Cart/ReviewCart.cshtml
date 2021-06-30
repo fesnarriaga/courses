@@ -1,0 +1,100 @@
+﻿@model CartViewModel
+
+@{
+    ViewData["Title"] = "Cart Review";
+}
+
+<div class="container">
+    <vc:summary></vc:summary>
+
+    <div class="row">
+        @{
+            if (Model.Items.Any())
+            {
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Cart Review</span>
+                        <span class="badge badge-secondary badge-pill">@Model.Items.Count</span>
+                    </h4>
+
+                    <ul class="list-group mb-3">
+                        @{
+                            foreach (var item in Model.Items)
+                            {
+                                <li class="list-group-item d-flex justify-content-between lh-sm">
+                                    <div>
+                                        <h6 class="my-0">@item.ProductName</h6>
+                                        <small class="text-muted">@item.Quantity units</small>
+                                    </div>
+                                    <span class="text-muted">@item.Total.ToString("C")</span>
+                                </li>
+                            }
+
+                            if (!string.IsNullOrEmpty(Model.VoucherCode))
+                            {
+                                <li class="list-group-item d-flex justify-content-between bg-light">
+                                    <div class="text-success">
+                                        <h6 class="my-0">Applied Voucher</h6>
+                                        <small>@Model.VoucherCode</small>
+                                    </div>
+                                    <span class="text-success">@Model.Discount.ToString("C")</span>
+                                </li>
+                            }
+
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Total</span>
+                                <strong>@Model.Total.ToString("C")</strong>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="col-md-8 order-md-1">
+                    <form method="post" asp-controller="Cart" asp-action="CreateOrder">
+                        <h4 class="mb-3">Payment</h4>
+                        <hr class="mb-4" />
+                        <div class="row">
+                            <img class="img-fluid" src="~/img/cards.png" alt="Credit cards" />
+                        </div>
+                        <br /><br />
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Card Name</label>
+                                <input asp-for="Payment.Name" type="text" class="form-control" placeholder="Card Name" required />
+                                <small class="text-muted">Full Name described in card</small>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label>Card Number</label>
+                                <input asp-for="Payment.Number" type="text" class="form-control" placeholder="0000 0000 0000 0000" required />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label>Expire Date</label>
+                                <input asp-for="Payment.ExpiresAt" type="text" class="form-control" placeholder="00/0000" required />
+                            </div>
+
+                            <div class="col-md-3 mb-3">
+                                <label>Card Code</label>
+                                <input asp-for="Payment.Code" type="text" class="form-control" placeholder="000" required />
+                            </div>
+                        </div>
+
+                        <hr class="mb-4" />
+
+                        <button class="btn btn-primary btn-lg btn-block">Checkout</button>
+                    </form>
+                </div>
+            }
+            else
+            {
+                <div>
+                    <p>Empty Cart</p>
+                </div>
+            }
+        }
+    </div>
+</div>

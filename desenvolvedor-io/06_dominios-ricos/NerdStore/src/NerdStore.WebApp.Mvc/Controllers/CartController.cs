@@ -118,7 +118,7 @@ namespace NerdStore.WebApp.Mvc.Controllers
         }
 
         [HttpPost]
-        [Route("create-order")]
+        [Route("checkout")]
         public async Task<IActionResult> CreateOrder(CartViewModel cartViewModel)
         {
             var cart = await _orderQueriesFacade.GetCustomerCart(CustomerId);
@@ -127,10 +127,10 @@ namespace NerdStore.WebApp.Mvc.Controllers
                 CustomerId,
                 cart.OrderId,
                 cart.Total,
-                cart.Payment.Name,
-                cart.Payment.Number,
-                cart.Payment.ExpiresAt,
-                cart.Payment.Code);
+                cartViewModel.Payment.Name,
+                cartViewModel.Payment.Number,
+                cartViewModel.Payment.ExpiresAt,
+                cartViewModel.Payment.Code);
             await _mediatorHandler.SendCommand(command);
 
             if (!HasErrors())

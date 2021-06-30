@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using NerdStore.Core.Messages.IntegrationEvents;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -6,21 +7,22 @@ namespace NerdStore.Sales.Application.Events
 {
     public class OrderEventHandler :
         INotificationHandler<DraftOrderStartedEvent>,
-        INotificationHandler<OrderStartedEvent>,
+        INotificationHandler<OrderCreatedEvent>,
         INotificationHandler<OrderUpdatedEvent>,
         INotificationHandler<OrderItemAddedEvent>,
         INotificationHandler<OrderItemUpdatedEvent>,
         INotificationHandler<OrderItemRemovedEvent>,
-        INotificationHandler<VoucherAppliedEvent>
+        INotificationHandler<VoucherAppliedEvent>,
+        INotificationHandler<StockDecreaseFailedEvent>
     {
         public Task Handle(DraftOrderStartedEvent notification, CancellationToken cancellationToken)
         {
             return Task.CompletedTask;
         }
 
-        public Task Handle(OrderStartedEvent notification, CancellationToken cancellationToken)
+        public Task Handle(OrderCreatedEvent notification, CancellationToken cancellationToken)
         {
-            return Task.CompletedTask;
+            throw new System.NotImplementedException();
         }
 
         public Task Handle(OrderUpdatedEvent notification, CancellationToken cancellationToken)
@@ -45,6 +47,12 @@ namespace NerdStore.Sales.Application.Events
 
         public Task Handle(VoucherAppliedEvent notification, CancellationToken cancellationToken)
         {
+            return Task.CompletedTask;
+        }
+
+        public Task Handle(StockDecreaseFailedEvent notification, CancellationToken cancellationToken)
+        {
+            // TODO: Cancel payment process
             return Task.CompletedTask;
         }
     }

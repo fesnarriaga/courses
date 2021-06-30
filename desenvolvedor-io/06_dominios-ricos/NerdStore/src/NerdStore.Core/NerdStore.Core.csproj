@@ -10,8 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DomainObjects\Dtos\" />
-    <Folder Include="Messages\IntegrationEvents\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>
