@@ -6,6 +6,7 @@ using NerdStore.Core.Mediator;
 using NerdStore.Core.Messages.Notifications;
 using System;
 using System.Threading.Tasks;
+using NerdStore.Core.DomainObjects.Dtos.Order;
 
 namespace NerdStore.Catalog.Service.Services
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NerdStore.Core.DomainObjects.Dtos
+namespace NerdStore.Core.DomainObjects.Dtos.Order
 {
     public class ProductListItem
     {

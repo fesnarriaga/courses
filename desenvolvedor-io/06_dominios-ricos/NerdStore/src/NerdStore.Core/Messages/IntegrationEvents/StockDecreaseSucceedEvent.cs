@@ -1,5 +1,6 @@
 ﻿using NerdStore.Core.DomainObjects.Dtos;
 using System;
+using NerdStore.Core.DomainObjects.Dtos.Order;
 
 namespace NerdStore.Core.Messages.IntegrationEvents
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NerdStore.Core.DomainObjects.Dtos
+namespace NerdStore.Core.DomainObjects.Dtos.Order
 {
     public class ProductList
     {

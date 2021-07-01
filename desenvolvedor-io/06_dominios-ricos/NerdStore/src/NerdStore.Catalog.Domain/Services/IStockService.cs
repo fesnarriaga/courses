@@ -1,6 +1,7 @@
 ﻿using NerdStore.Core.DomainObjects.Dtos;
 using System;
 using System.Threading.Tasks;
+using NerdStore.Core.DomainObjects.Dtos.Order;
 
 namespace NerdStore.Catalog.Domain.Services
 {

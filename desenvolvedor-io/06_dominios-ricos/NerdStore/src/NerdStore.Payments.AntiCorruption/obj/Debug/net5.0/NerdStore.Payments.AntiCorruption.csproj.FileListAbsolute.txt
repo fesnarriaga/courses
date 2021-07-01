@@ -1,0 +1,17 @@
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\bin\Debug\net5.0\NerdStore.Payments.AntiCorruption.deps.json
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\bin\Debug\net5.0\NerdStore.Payments.AntiCorruption.dll
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\bin\Debug\net5.0\ref\NerdStore.Payments.AntiCorruption.dll
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\bin\Debug\net5.0\NerdStore.Payments.AntiCorruption.pdb
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\obj\Debug\net5.0\NerdStore.Payments.AntiCorruption.csproj.AssemblyReference.cache
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\obj\Debug\net5.0\NerdStore.Payments.AntiCorruption.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\obj\Debug\net5.0\NerdStore.Payments.AntiCorruption.AssemblyInfoInputs.cache
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\obj\Debug\net5.0\NerdStore.Payments.AntiCorruption.AssemblyInfo.cs
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\obj\Debug\net5.0\NerdStore.Payments.AntiCorruption.csproj.CoreCompileInputs.cache
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\obj\Debug\net5.0\NerdStore.Payments.AntiCorruption.dll
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\obj\Debug\net5.0\ref\NerdStore.Payments.AntiCorruption.dll
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\obj\Debug\net5.0\NerdStore.Payments.AntiCorruption.pdb
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\bin\Debug\net5.0\NerdStore.Core.dll
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\bin\Debug\net5.0\NerdStore.Payments.Business.dll
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\bin\Debug\net5.0\NerdStore.Payments.Business.pdb
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\bin\Debug\net5.0\NerdStore.Core.pdb
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.AntiCorruption\obj\Debug\net5.0\NerdStore.Payments.AntiCorruption.csproj.CopyComplete

@@ -1,0 +1,12 @@
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.Data\bin\Debug\net5.0\NerdStore.Payments.Data.deps.json
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.Data\bin\Debug\net5.0\NerdStore.Payments.Data.dll
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.Data\bin\Debug\net5.0\ref\NerdStore.Payments.Data.dll
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.Data\bin\Debug\net5.0\NerdStore.Payments.Data.pdb
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.Data\obj\Debug\net5.0\NerdStore.Payments.Data.csproj.AssemblyReference.cache
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.Data\obj\Debug\net5.0\NerdStore.Payments.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.Data\obj\Debug\net5.0\NerdStore.Payments.Data.AssemblyInfoInputs.cache
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.Data\obj\Debug\net5.0\NerdStore.Payments.Data.AssemblyInfo.cs
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.Data\obj\Debug\net5.0\NerdStore.Payments.Data.csproj.CoreCompileInputs.cache
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.Data\obj\Debug\net5.0\NerdStore.Payments.Data.dll
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.Data\obj\Debug\net5.0\ref\NerdStore.Payments.Data.dll
+C:\Projects\courses\desenvolvedor-io\06_dominios-ricos\NerdStore\src\NerdStore.Payments.Data\obj\Debug\net5.0\NerdStore.Payments.Data.pdb
