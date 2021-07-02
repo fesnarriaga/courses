@@ -13,7 +13,8 @@ namespace NerdStore.Sales.Application.Events
         INotificationHandler<OrderItemUpdatedEvent>,
         INotificationHandler<OrderItemRemovedEvent>,
         INotificationHandler<VoucherAppliedEvent>,
-        INotificationHandler<StockDecreaseFailedEvent>
+        INotificationHandler<OrderPaymentApprovedEvent>,
+        INotificationHandler<OrderPaymentRefusedEvent>
     {
         public Task Handle(DraftOrderStartedEvent notification, CancellationToken cancellationToken)
         {
@@ -53,6 +54,16 @@ namespace NerdStore.Sales.Application.Events
         public Task Handle(StockDecreaseFailedEvent notification, CancellationToken cancellationToken)
         {
             // TODO: Cancel payment process
+            return Task.CompletedTask;
+        }
+
+        public Task Handle(OrderPaymentApprovedEvent notification, CancellationToken cancellationToken)
+        {
+            return Task.CompletedTask;
+        }
+
+        public Task Handle(OrderPaymentRefusedEvent notification, CancellationToken cancellationToken)
+        {
             return Task.CompletedTask;
         }
     }
