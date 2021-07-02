@@ -46,6 +46,9 @@
           "NerdStore.Catalog.Domain": "1.0.0",
           "NerdStore.Catalog.Service": "1.0.0",
           "NerdStore.Core": "1.0.0",
+          "NerdStore.Payments.AntiCorruption": "1.0.0",
+          "NerdStore.Payments.Business": "1.0.0",
+          "NerdStore.Payments.Data": "1.0.0",
           "NerdStore.Sales.Application": "1.0.0",
           "NerdStore.Sales.Data": "1.0.0",
           "NerdStore.Sales.Domain": "1.0.0",
@@ -1758,6 +1761,41 @@
         },
         "compile": {
           "NerdStore.Core.dll": {}
+        }
+      },
+      "NerdStore.Payments.AntiCorruption/1.0.0": {
+        "dependencies": {
+          "NerdStore.Payments.Business": "1.0.0"
+        },
+        "runtime": {
+          "NerdStore.Payments.AntiCorruption.dll": {}
+        },
+        "compile": {
+          "NerdStore.Payments.AntiCorruption.dll": {}
+        }
+      },
+      "NerdStore.Payments.Business/1.0.0": {
+        "dependencies": {
+          "NerdStore.Core": "1.0.0"
+        },
+        "runtime": {
+          "NerdStore.Payments.Business.dll": {}
+        },
+        "compile": {
+          "NerdStore.Payments.Business.dll": {}
+        }
+      },
+      "NerdStore.Payments.Data/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
+          "NerdStore.Core": "1.0.0",
+          "NerdStore.Payments.Business": "1.0.0"
+        },
+        "runtime": {
+          "NerdStore.Payments.Data.dll": {}
+        },
+        "compile": {
+          "NerdStore.Payments.Data.dll": {}
         }
       },
       "NerdStore.Sales.Application/1.0.0": {
@@ -4336,6 +4374,21 @@
       "sha512": ""
     },
     "NerdStore.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NerdStore.Payments.AntiCorruption/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NerdStore.Payments.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NerdStore.Payments.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

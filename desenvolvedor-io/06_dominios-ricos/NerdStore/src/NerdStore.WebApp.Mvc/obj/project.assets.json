@@ -1984,6 +1984,47 @@
           "bin/placeholder/NerdStore.Core.dll": {}
         }
       },
+      "NerdStore.Payments.AntiCorruption/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "NerdStore.Payments.Business": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NerdStore.Payments.AntiCorruption.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NerdStore.Payments.AntiCorruption.dll": {}
+        }
+      },
+      "NerdStore.Payments.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "NerdStore.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NerdStore.Payments.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NerdStore.Payments.Business.dll": {}
+        }
+      },
+      "NerdStore.Payments.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
+          "NerdStore.Core": "1.0.0",
+          "NerdStore.Payments.Business": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NerdStore.Payments.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NerdStore.Payments.Data.dll": {}
+        }
+      },
       "NerdStore.Sales.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -6998,6 +7039,21 @@
       "path": "../NerdStore.Core/NerdStore.Core.csproj",
       "msbuildProject": "../NerdStore.Core/NerdStore.Core.csproj"
     },
+    "NerdStore.Payments.AntiCorruption/1.0.0": {
+      "type": "project",
+      "path": "../NerdStore.Payments.AntiCorruption/NerdStore.Payments.AntiCorruption.csproj",
+      "msbuildProject": "../NerdStore.Payments.AntiCorruption/NerdStore.Payments.AntiCorruption.csproj"
+    },
+    "NerdStore.Payments.Business/1.0.0": {
+      "type": "project",
+      "path": "../NerdStore.Payments.Business/NerdStore.Payments.Business.csproj",
+      "msbuildProject": "../NerdStore.Payments.Business/NerdStore.Payments.Business.csproj"
+    },
+    "NerdStore.Payments.Data/1.0.0": {
+      "type": "project",
+      "path": "../NerdStore.Payments.Data/NerdStore.Payments.Data.csproj",
+      "msbuildProject": "../NerdStore.Payments.Data/NerdStore.Payments.Data.csproj"
+    },
     "NerdStore.Sales.Application/1.0.0": {
       "type": "project",
       "path": "../NerdStore.Sales.Application/NerdStore.Sales.Application.csproj",
@@ -7029,6 +7085,9 @@
       "NerdStore.Catalog.Domain >= 1.0.0",
       "NerdStore.Catalog.Service >= 1.0.0",
       "NerdStore.Core >= 1.0.0",
+      "NerdStore.Payments.AntiCorruption >= 1.0.0",
+      "NerdStore.Payments.Business >= 1.0.0",
+      "NerdStore.Payments.Data >= 1.0.0",
       "NerdStore.Sales.Application >= 1.0.0",
       "NerdStore.Sales.Data >= 1.0.0",
       "NerdStore.Sales.Domain >= 1.0.0"
@@ -7085,6 +7144,15 @@
             },
             "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Core\\NerdStore.Core.csproj": {
               "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Core\\NerdStore.Core.csproj"
+            },
+            "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Payments.AntiCorruption\\NerdStore.Payments.AntiCorruption.csproj": {
+              "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Payments.AntiCorruption\\NerdStore.Payments.AntiCorruption.csproj"
+            },
+            "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Payments.Business\\NerdStore.Payments.Business.csproj": {
+              "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Payments.Business\\NerdStore.Payments.Business.csproj"
+            },
+            "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Payments.Data\\NerdStore.Payments.Data.csproj": {
+              "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Payments.Data\\NerdStore.Payments.Data.csproj"
             },
             "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Sales.Application\\NerdStore.Sales.Application.csproj": {
               "projectPath": "C:\\Projects\\courses\\desenvolvedor-io\\06_dominios-ricos\\NerdStore\\src\\NerdStore.Sales.Application\\NerdStore.Sales.Application.csproj"
