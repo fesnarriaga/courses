@@ -1,5 +1,7 @@
 ﻿using MediatR;
+using NerdStore.Core.Mediator;
 using NerdStore.Core.Messages.IntegrationEvents;
+using NerdStore.Sales.Application.Commands;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,6 +18,13 @@ namespace NerdStore.Sales.Application.Events
         INotificationHandler<OrderPaymentApprovedEvent>,
         INotificationHandler<OrderPaymentRefusedEvent>
     {
+        private readonly IMediatorHandler _mediatorHandler;
+
+        public OrderEventHandler(IMediatorHandler mediatorHandler)
+        {
+            _mediatorHandler = mediatorHandler;
+        }
+
         public Task Handle(DraftOrderStartedEvent notification, CancellationToken cancellationToken)
         {
             return Task.CompletedTask;
@@ -51,20 +60,20 @@ namespace NerdStore.Sales.Application.Events
             return Task.CompletedTask;
         }
 
-        public Task Handle(StockDecreaseFailedEvent notification, CancellationToken cancellationToken)
+        public async Task Handle(StockDecreaseFailedEvent notification, CancellationToken cancellationToken)
         {
-            // TODO: Cancel payment process
-            return Task.CompletedTask;
+            await _mediatorHandler.SendCommand(
+                new CancelOrderProcessCommand(notification.CustomerId, notification.OrderId));
         }
 
-        public Task Handle(OrderPaymentApprovedEvent notification, CancellationToken cancellationToken)
+        public async Task Handle(OrderPaymentApprovedEvent notification, CancellationToken cancellationToken)
         {
-            return Task.CompletedTask;
+            await _mediatorHandler.SendCommand(new PayOrderCommand(notification.CustomerId, notification.OrderId));
         }
 
-        public Task Handle(OrderPaymentRefusedEvent notification, CancellationToken cancellationToken)
+        public async Task Handle(OrderPaymentRefusedEvent notification, CancellationToken cancellationToken)
         {
-            return Task.CompletedTask;
+            await _mediatorHandler.SendCommand(new CancelOrderProcessAndRollbackStockCommand(notification.CustomerId, notification.OrderId));
         }
     }
 }

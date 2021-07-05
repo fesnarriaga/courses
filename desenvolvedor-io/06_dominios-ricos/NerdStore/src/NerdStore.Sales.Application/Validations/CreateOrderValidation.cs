@@ -18,7 +18,8 @@ namespace NerdStore.Sales.Application.Validations
                 .NotEmpty().WithMessage("CardName is required");
 
             RuleFor(x => x.CardNumber)
-                .CreditCard().WithMessage("CardNumber is invalid");
+                .NotEmpty().WithMessage("CardNumber is invalid");
+                //.CreditCard().WithMessage("CardNumber is invalid");
 
             RuleFor(x => x.CardExpiresAt)
                 .NotEmpty().WithMessage("CardExpiresAt is required");

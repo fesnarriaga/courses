@@ -1,16 +1,15 @@
-﻿using NerdStore.Core.DomainObjects.Dtos;
+﻿using NerdStore.Core.DomainObjects.Dtos.Order;
 using System;
 using System.Threading.Tasks;
-using NerdStore.Core.DomainObjects.Dtos.Order;
 
 namespace NerdStore.Catalog.Domain.Services
 {
     public interface IStockService : IDisposable
     {
         Task<bool> DecreaseStock(Guid productId, int quantity);
-        Task<bool> DecreaseStockList(ProductList productList);
+        Task<bool> DecreaseStockProductList(ProductList productList);
 
         Task<bool> IncreaseStock(Guid productId, int quantity);
-        Task<bool> IncreaseStockList(ProductList productList);
+        Task<bool> IncreaseStockProductList(ProductList productList);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using NerdStore.Core.DomainObjects.Dtos;
+using NerdStore.Core.DomainObjects.Dtos.Order;
 using NerdStore.Core.Extensions;
 using NerdStore.Core.Mediator;
 using NerdStore.Core.Messages;
@@ -12,7 +12,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using NerdStore.Core.DomainObjects.Dtos.Order;
 
 namespace NerdStore.Sales.Application.Commands
 {
@@ -21,7 +20,10 @@ namespace NerdStore.Sales.Application.Commands
         IRequestHandler<AddOrderItemCommand, bool>,
         IRequestHandler<UpdateOrderItemCommand, bool>,
         IRequestHandler<RemoveOrderItemCommand, bool>,
-        IRequestHandler<ApplyVoucherCommand, bool>
+        IRequestHandler<ApplyVoucherCommand, bool>,
+        IRequestHandler<PayOrderCommand, bool>,
+        IRequestHandler<CancelOrderProcessAndRollbackStockCommand, bool>,
+        IRequestHandler<CancelOrderProcessCommand, bool>
     {
         private readonly IMediatorHandler _mediatorHandler;
         private readonly IOrderRepository _orderRepository;
@@ -41,7 +43,7 @@ namespace NerdStore.Sales.Application.Commands
             order.CreateOrder();
 
             var items = new List<ProductListItem>();
-            order.Items.ForEach(x => items.Add(new ProductListItem { Id = x.Id, Quantity = x.Quantity }));
+            order.Items.ForEach(x => items.Add(new ProductListItem { Id = x.ProductId, Quantity = x.Quantity }));
             var products = new ProductList { OrderId = order.Id, Items = items };
 
             order.AddEvent(new OrderCreatedEvent(
@@ -209,6 +211,43 @@ namespace NerdStore.Sales.Application.Commands
 
             return await _orderRepository.UnitOfWork.Commit();
         }
+        public async Task<bool> Handle(PayOrderCommand request, CancellationToken cancellationToken)
+        {
+            var order = await _orderRepository.GetById(request.OrderId);
+
+            if (order is null)
+            {
+                await _mediatorHandler.PublishNotification(new DomainNotification("Order", "Order not found"));
+                return false;
+            }
+
+            order.PayOrder();
+
+            order.AddEvent(new OrderPayedEvent(order.Id));
+            return await _orderRepository.UnitOfWork.Commit();
+        }
+
+        public async Task<bool> Handle(CancelOrderProcessAndRollbackStockCommand request, CancellationToken cancellationToken)
+        {
+            var order = await _orderRepository.GetById(request.OrderId);
+
+            if (order is null)
+            {
+                await _mediatorHandler.PublishNotification(new DomainNotification("Order", "Order not found"));
+                return false;
+            }
+
+            var productListItems = new List<ProductListItem>();
+            order.Items.ForEach(x => productListItems.Add(
+                new ProductListItem { Id = x.ProductId, Quantity = x.Quantity }));
+
+            var productList = new ProductList { OrderId = order.Id, Items = productListItems };
+
+            order.AddEvent(new OrderProcessCanceledEvent(request.CustomerId, order.Id, productList));
+            order.DraftOrder();
+
+            return await _orderRepository.UnitOfWork.Commit();
+        }
 
         private bool ValidateCommand(Command command)
         {
@@ -222,6 +261,21 @@ namespace NerdStore.Sales.Application.Commands
             }
 
             return false;
+        }
+
+        public async Task<bool> Handle(CancelOrderProcessCommand request, CancellationToken cancellationToken)
+        {
+            var order = await _orderRepository.GetById(request.OrderId);
+
+            if (order is null)
+            {
+                await _mediatorHandler.PublishNotification(new DomainNotification("Order", "Order not found"));
+                return false;
+            }
+
+            order.DraftOrder();
+
+            return await _orderRepository.UnitOfWork.Commit();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace NerdStore.Catalog.Service.Services
             return await _productRepository.UnitOfWork.Commit();
         }
 
-        public async Task<bool> DecreaseStockList(ProductList productList)
+        public async Task<bool> DecreaseStockProductList(ProductList productList)
         {
             foreach (var product in productList.Items)
             {
@@ -48,7 +48,7 @@ namespace NerdStore.Catalog.Service.Services
             return await _productRepository.UnitOfWork.Commit();
         }
 
-        public async Task<bool> IncreaseStockList(ProductList productList)
+        public async Task<bool> IncreaseStockProductList(ProductList productList)
         {
             foreach (var product in productList.Items)
             {

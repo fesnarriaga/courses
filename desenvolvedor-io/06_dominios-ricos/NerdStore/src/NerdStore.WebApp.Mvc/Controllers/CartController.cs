@@ -131,6 +131,7 @@ namespace NerdStore.WebApp.Mvc.Controllers
                 cartViewModel.Payment.Number,
                 cartViewModel.Payment.ExpiresAt,
                 cartViewModel.Payment.Code);
+
             await _mediatorHandler.SendCommand(command);
 
             if (!HasErrors())

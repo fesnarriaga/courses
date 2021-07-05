@@ -15,6 +15,7 @@ using NerdStore.Payments.AntiCorruption.Configurations;
 using NerdStore.Payments.AntiCorruption.Facades;
 using NerdStore.Payments.AntiCorruption.Gateways;
 using NerdStore.Payments.AntiCorruption.Interfaces.PayPal;
+using NerdStore.Payments.Business.Events;
 using NerdStore.Payments.Business.Interfaces.Facades;
 using NerdStore.Payments.Business.Interfaces.Repositories;
 using NerdStore.Payments.Business.Interfaces.Services;
@@ -42,13 +43,18 @@ namespace NerdStore.WebApp.Mvc.Setup
             services.AddScoped<CatalogContext>();
 
             services.AddScoped<INotificationHandler<MinimumStockAmountEvent>, ProductEventHandler>();
+            services.AddScoped<INotificationHandler<OrderCreatedEvent>, ProductEventHandler>();
+            services.AddScoped<INotificationHandler<OrderProcessCanceledEvent>, ProductEventHandler>();
 
             // Sales
-            services.AddScoped<IRequestHandler<CreateOrderCommand, bool>, OrderCommandHandler>();
             services.AddScoped<IRequestHandler<AddOrderItemCommand, bool>, OrderCommandHandler>();
             services.AddScoped<IRequestHandler<UpdateOrderItemCommand, bool>, OrderCommandHandler>();
             services.AddScoped<IRequestHandler<RemoveOrderItemCommand, bool>, OrderCommandHandler>();
             services.AddScoped<IRequestHandler<ApplyVoucherCommand, bool>, OrderCommandHandler>();
+            services.AddScoped<IRequestHandler<CreateOrderCommand, bool>, OrderCommandHandler>();
+            services.AddScoped<IRequestHandler<PayOrderCommand, bool>, OrderCommandHandler>();
+            services.AddScoped<IRequestHandler<CancelOrderProcessCommand, bool>, OrderCommandHandler>();
+            services.AddScoped<IRequestHandler<CancelOrderProcessAndRollbackStockCommand, bool>, OrderCommandHandler>();
 
             services.AddScoped<IOrderQueriesFacade, OrderQueriesFacade>();
             services.AddScoped<IOrderRepository, OrderRepository>();
@@ -70,6 +76,8 @@ namespace NerdStore.WebApp.Mvc.Setup
             services.AddScoped<IConfigurationManager, ConfigurationManager>();
             services.AddScoped<IPaymentRepository, PaymentRepository>();
             services.AddScoped<PaymentsContext>();
+
+            services.AddScoped<INotificationHandler<StockDecreaseSucceedEvent>, PaymentEventHandler>();
 
             // MediatR
             services.AddScoped<IMediatorHandler, MediatorHandler>();

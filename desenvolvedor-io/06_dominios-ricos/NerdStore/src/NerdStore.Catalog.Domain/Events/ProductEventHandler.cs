@@ -10,7 +10,8 @@ namespace NerdStore.Catalog.Domain.Events
 {
     public class ProductEventHandler :
         INotificationHandler<MinimumStockAmountEvent>,
-        INotificationHandler<OrderCreatedEvent>
+        INotificationHandler<OrderCreatedEvent>,
+        INotificationHandler<OrderProcessCanceledEvent>
     {
         private readonly IMediatorHandler _mediatorHandler;
         private readonly IProductRepository _productRepository;
@@ -35,7 +36,7 @@ namespace NerdStore.Catalog.Domain.Events
 
         public async Task Handle(OrderCreatedEvent notification, CancellationToken cancellationToken)
         {
-            if (await _stockService.DecreaseStockList(notification.ProductList))
+            if (await _stockService.DecreaseStockProductList(notification.ProductList))
             {
                 await _mediatorHandler.RaiseEvent(new StockDecreaseSucceedEvent(
                     notification.CustomerId,
@@ -53,6 +54,11 @@ namespace NerdStore.Catalog.Domain.Events
                     notification.CustomerId,
                     notification.OrderId));
             }
+        }
+
+        public async Task Handle(OrderProcessCanceledEvent notification, CancellationToken cancellationToken)
+        {
+            await _stockService.IncreaseStockProductList(notification.ProductList);
         }
     }
 }

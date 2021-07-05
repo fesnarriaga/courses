@@ -12,16 +12,20 @@ namespace NerdStore.Payments.Data.Extensions
         {
             var domainEntities = context.ChangeTracker
                 .Entries<Entity>()
-                .Where(x => x.Entity.Events != null && x.Entity.Events.Any())
-                .ToList();
+                .Where(x => x.Entity.Events != null && x.Entity.Events.Any());
 
             var domainEvents = domainEntities
-                .SelectMany(x => x.Entity.Events);
+                .SelectMany(x => x.Entity.Events)
+                .ToList();
 
-            domainEntities.ForEach(x => x.Entity.ClearEvents());
+            domainEntities.ToList()
+                .ForEach(entity => entity.Entity.ClearEvents());
 
             var tasks = domainEvents
-                .Select(async (domainEvent) => await mediator.RaiseEvent(domainEvent));
+                .Select(async (domainEvent) =>
+                {
+                    await mediator.RaiseEvent(domainEvent);
+                });
 
             await Task.WhenAll(tasks);
         }
