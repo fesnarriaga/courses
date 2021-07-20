@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../mixins/validation_mixin.dart';
+
 class LoginScreen extends StatefulWidget {
   createState() {
     return LoginScreenState();
   }
 }
 
-class LoginScreenState extends State<LoginScreen> {
+class LoginScreenState extends State<LoginScreen> with ValidationMixin {
   final formKey = GlobalKey<FormState>();
+  String email = '';
+  String pass = '';
 
   Widget build(context) {
     return Container(
@@ -33,6 +37,10 @@ class LoginScreenState extends State<LoginScreen> {
         labelText: 'E-mail Address',
         hintText: 'you@example.com',
       ),
+      validator: validateEmail,
+      onSaved: (value) {
+        email = value!;
+      },
     );
   }
 
@@ -43,6 +51,10 @@ class LoginScreenState extends State<LoginScreen> {
         labelText: 'Password',
         hintText: 'Password',
       ),
+      validator: validatePassword,
+      onSaved: (value) {
+        pass = value!;
+      },
     );
   }
 
@@ -53,7 +65,12 @@ class LoginScreenState extends State<LoginScreen> {
       ),
       child: Text('Submit!'),
       onPressed: () {
-        formKey.currentState?.reset();
+        bool? isValid = formKey.currentState?.validate();
+        if (isValid!) {
+          formKey.currentState?.save();
+
+          print('$email - $pass');
+        }
       },
     );
   }
